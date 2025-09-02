@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>功能特色 — datax.cash</title>
+  <meta name="description" content="探索datax的強大功能：Docker應用商店、多主機管理、數據工具套件等。">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans TC','Microsoft JhengHei'}</style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="bg-white shadow">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <img src="../assets/images/logo.svg" alt="datax.cash logo" class="h-10 w-auto">
+        <div class="hidden sm:block text-sm text-gray-600">Price Ur Data, Cash Ur Data</div>
+      </div>
+      <nav class="hidden md:flex items-center space-x-6">
+        <a href="index.html" class="text-sm">首頁</a>
+        <a href="features.html" class="text-sm font-semibold">功能特色</a>
+        <a href="pricing.html" class="text-sm">價格方案</a>
+        <a href="docs.html" class="text-sm">文檔</a>
+        <a href="../index.html" class="text-sm">EN</a>
+      </nav>
+      <button id="burger" class="md:hidden p-2">
+        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden">
+      <div class="px-4 pb-4 space-y-2">
+        <a href="index.html" class="block">首頁</a>
+        <a href="features.html" class="block">功能特色</a>
+        <a href="pricing.html" class="block">價格方案</a>
+        <a href="docs.html" class="block">文檔</a>
+        <a href="../index.html" class="block">EN</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-12">
+    <section class="text-center mb-12">
+      <h1 class="text-4xl font-bold mb-4">功能特色</h1>
+      <p class="text-lg text-gray-600">探索datax的強大功能，簡化您的數據工具部署和管理</p>
+    </section>
+
+    <section class="grid gap-8 lg:grid-cols-2">
+      <article class="bg-white p-8 rounded-lg shadow-sm">
+        <div class="text-4xl mb-4">🐳</div>
+        <h2 class="text-xl font-semibold mb-3">Docker應用商店</h2>
+        <p class="text-gray-600 mb-6">一鍵瀏覽和部署預配置的數據工具：</p>
+        
+        <div class="grid gap-4 sm:grid-cols-1 lg:grid-cols-2 text-sm">
+          <div class="space-y-3">
+            <div>
+              <h4 class="font-semibold text-gray-800 mb-2">🗄️ 數據庫</h4>
+              <ul class="text-gray-600 space-y-1 ml-4">
+                <li>• PostgreSQL 🐘</li>
+                <li>• MySQL 🐬</li>
+                <li>• Oracle Database 🔶</li>
+                <li>• IBM DB2 🔷</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="font-semibold text-gray-800 mb-2">🛠️ 管理工具</h4>
+              <ul class="text-gray-600 space-y-1 ml-4">
+                <li>• pgAdmin</li>
+                <li>• MySQL Client 💻</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="space-y-3">
+            <div>
+              <h4 class="font-semibold text-gray-800 mb-2">⚙️ DATAX工具</h4>
+              <ul class="text-gray-600 space-y-1 ml-4">
+                <li>• X0 診斷工具 🔍</li>
+                <li>• X1 仿真工具 🎯</li>
+                <li>• M3 遷移工具 📦</li>
+                <li>• T3 同步工具 🔄</li>
+                <li>• V3 比較工具 ⚖️</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="font-semibold text-gray-800 mb-2">🔐 許可證工具</h4>
+              <ul class="text-gray-600 space-y-1 ml-4">
+                <li>• 許可證控制服務器</li>
+                <li>• 許可證看門狗 🐕</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="font-semibold text-gray-800 mb-2">🎨 自定義應用</h4>
+              <ul class="text-gray-600 space-y-1 ml-4">
+                <li>• 用戶自定義應用程式</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="bg-white p-8 rounded-lg shadow-sm">
+        <div class="text-4xl mb-4">🖥️</div>
+        <h2 class="text-xl font-semibold mb-3">多主機管理</h2>
+        <p class="text-gray-600 mb-4">從單一桌面界面管理多個遠程服務器：</p>
+        <ul class="text-sm text-gray-600 space-y-2">
+          <li>• <strong>SSH連接管理：</strong>安全連接到遠程主機</li>
+          <li>• <strong>統一控制面板：</strong>集中管理所有部署</li>
+          <li>• <strong>實時監控：</strong>監控應用程式狀態和性能</li>
+          <li>• <strong>批量操作：</strong>同時在多個主機上執行操作</li>
+          <li>• <strong>配置同步：</strong>在不同環境間同步配置</li>
+        </ul>
+      </article>
+
+      <article class="bg-white p-8 rounded-lg shadow-sm">
+        <div class="text-4xl mb-4">⚡</div>
+        <h2 class="text-xl font-semibold mb-3">一鍵部署</h2>
+        <p class="text-gray-600 mb-4">簡化的部署流程，節省時間和精力：</p>
+        <ul class="text-sm text-gray-600 space-y-2">
+          <li>• <strong>預配置模板：</strong>開箱即用的應用程式配置</li>
+          <li>• <strong>自動化設置：</strong>自動處理依賴項和配置</li>
+          <li>• <strong>版本管理：</strong>支持多個應用程式版本</li>
+          <li>• <strong>回滾功能：</strong>快速回滾到之前的版本</li>
+          <li>• <strong>健康檢查：</strong>自動驗證部署狀態</li>
+        </ul>
+      </article>
+
+      <article class="bg-white p-8 rounded-lg shadow-sm">
+        <div class="text-4xl mb-4">🔒</div>
+        <h2 class="text-xl font-semibold mb-3">安全與控制</h2>
+        <p class="text-gray-600 mb-4">企業級安全功能，保護您的數據和基礎設施：</p>
+        <ul class="text-sm text-gray-600 space-y-2">
+          <li>• <strong>SSH密鑰管理：</strong>安全的身份驗證機制</li>
+          <li>• <strong>訪問控制：</strong>細粒度的權限管理</li>
+          <li>• <strong>審計日誌：</strong>完整的操作記錄</li>
+          <li>• <strong>網絡隔離：</strong>安全的容器網絡配置</li>
+          <li>• <strong>數據加密：</strong>傳輸和存儲數據加密</li>
+        </ul>
+      </article>
+
+      <article class="bg-white p-8 rounded-lg shadow-sm">
+        <div class="text-4xl mb-4">📊</div>
+        <h2 class="text-xl font-semibold mb-3">監控與分析</h2>
+        <p class="text-gray-600 mb-4">全面的監控和分析功能：</p>
+        <ul class="text-sm text-gray-600 space-y-2">
+          <li>• <strong>實時指標：</strong>CPU、內存、磁盤使用情況</li>
+          <li>• <strong>性能分析：</strong>應用程式性能監控</li>
+          <li>• <strong>日誌聚合：</strong>集中化日誌管理</li>
+          <li>• <strong>告警系統：</strong>自動故障檢測和通知</li>
+          <li>• <strong>報告生成：</strong>定期性能和使用報告</li>
+        </ul>
+      </article>
+
+      <article class="bg-white p-8 rounded-lg shadow-sm">
+        <div class="text-4xl mb-4">🎯</div>
+        <h2 class="text-xl font-semibold mb-3">用戶體驗</h2>
+        <p class="text-gray-600 mb-4">直觀易用的界面設計：</p>
+        <ul class="text-sm text-gray-600 space-y-2">
+          <li>• <strong>現代化界面：</strong>清潔、直觀的用戶界面</li>
+          <li>• <strong>跨平台支援：</strong>Windows、macOS、Linux</li>
+          <li>• <strong>無需註冊：</strong>下載即可使用</li>
+          <li>• <strong>離線工作：</strong>本地管理功能</li>
+          <li>• <strong>快速搜索：</strong>快速找到所需的工具和配置</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="mt-16 bg-blue-50 rounded-lg p-8 text-center">
+      <h2 class="text-2xl font-bold mb-4">準備開始了嗎？</h2>
+      <p class="text-gray-600 mb-6">立即下載datax，體驗強大的數據工具部署平台</p>
+      <a href="index.html#download" class="px-8 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
+        免費下載
+      </a>
+    </section>
+  </main>
+
+  <footer class="bg-white border-t py-6 mt-12">
+    <div class="container mx-auto px-4 text-sm text-gray-500">
+      © 2025 datax.cash — <a href="docs.html" class="underline">文檔與支援</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

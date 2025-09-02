@@ -1,0 +1,16 @@
+<!-- assets/images/logo.svg - minimal DX icon + data/cash glyph, primary color #0b2747 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="40" viewBox="0 0 160 40" role="img" aria-label="datax.cash logo">
+  <defs>
+    <style>.b{fill:#0b2747}</style>
+  </defs>
+  <rect width="160" height="40" fill="none"/>
+  <!-- stylized DX -->
+  <g transform="translate(8,4)">
+    <text x="0" y="28" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="28" fill="#0b2747">DX</text>
+    <!-- small cash/data glyph: simplified stack -->
+    <g transform="translate(56,6)">
+      <rect x="0" y="6" width="28" height="16" rx="2" fill="#0b2747" opacity="0.15"/>
+      <rect x="4" y="2" width="26" height="8" rx="1.5" fill="#0b2747"/>
+    </g>
+  </g>
+</svg>

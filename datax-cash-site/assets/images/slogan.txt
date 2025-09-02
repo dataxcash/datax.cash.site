@@ -1,0 +1,4 @@
+Price Ur Data, Cash Ur Data
+
+# Note
+This file contains only the slogan text (separate from logo SVG/PNG). For multi-language slogans, use i18n JSON files in /i18n/.

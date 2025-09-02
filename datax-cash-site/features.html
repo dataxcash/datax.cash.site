@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Features — datax.cash</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial}</style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="bg-white shadow">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <img src="assets/images/logo.svg" alt="datax.cash logo" class="h-10 w-auto">
+        <div class="hidden sm:block text-sm text-gray-600">Price Ur Data, Cash Ur Data</div>
+      </div>
+      <nav class="hidden md:flex items-center space-x-6">
+        <a href="index.html" class="text-sm">Home</a>
+        <a href="features.html" class="text-sm font-semibold">Features</a>
+        <a href="pricing.html" class="text-sm">Pricing</a>
+        <a href="docs.html" class="text-sm">Docs</a>
+        <a href="/en/" class="text-sm">EN</a>
+        <a href="/zh-tw/" class="text-sm">繁體</a>
+      </nav>
+      <button id="burger" class="md:hidden p-2">
+        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden">
+      <div class="px-4 pb-4 space-y-2">
+        <a href="index.html" class="block">Home</a>
+        <a href="features.html" class="block">Features</a>
+        <a href="pricing.html" class="block">Pricing</a>
+        <a href="docs.html" class="block">Docs</a>
+        <a href="/en/" class="block">EN</a>
+        <a href="/zh-tw/" class="block">繁體</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-12">
+    <section class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-gray-900">datax Features</h1>
+      <p class="mt-4 text-lg text-gray-600">Everything you need to deploy and manage data tools across multiple hosts</p>
+    </section>
+
+    <section class="grid gap-8 lg:grid-cols-2">
+      <article class="bg-white p-8 rounded-lg shadow-sm">
+        <div class="text-4xl mb-4">🐳</div>
+        <h2 class="text-xl font-semibold mb-3">Docker App Store</h2>
+        <p class="text-gray-600 mb-6">Browse and deploy pre-configured data tools with one click:</p>
+        
+        <div class="grid gap-4 sm:grid-cols-1 lg:grid-cols-2 text-sm">
+          <div class="space-y-3">
+            <div>
+              <h4 class="font-semibold text-gray-800 mb-2">🗄️ Databases</h4>
+              <ul class="text-gray-600 space-y-1 ml-4">
+                <li>• PostgreSQL 🐘</li>
+                <li>• MySQL 🐬</li>
+                <li>• Oracle Database 🔶</li>
+                <li>• IBM DB2 🔷</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="font-semibold text-gray-800 mb-2">🛠️ Management Tools</h4>
+              <ul class="text-gray-600 space-y-1 ml-4">
+                <li>• pgAdmin</li>
+                <li>• MySQL Client 💻</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="space-y-3">
+            <div>
+              <h4 class="font-semibold text-gray-800 mb-2">⚙️ DATAX Tools</h4>
+              <ul class="text-gray-600 space-y-1 ml-4">
+                <li>• X0 Diagnosis 🔍</li>
+                <li>• X1 Simulation 🎯</li>
+                <li>• M3 Migration 📦</li>
+                <li>• T3 Sync 🔄</li>
+                <li>• V3 Comparison ⚖️</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="font-semibold text-gray-800 mb-2">🔐 License Tools</h4>
+              <ul class="text-gray-600 space-y-1 ml-4">
+                <li>• License Control Server</li>
+                <li>• License Control Dog 🐕</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="font-semibold text-gray-800 mb-2">🎨 Custom Apps</h4>
+              <ul class="text-gray-600 space-y-1 ml-4">
+                <li>• User-defined applications</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="bg-white p-8 rounded-lg shadow-sm">
+        <div class="text-4xl mb-4">🖥️</div>
+        <h2 class="text-xl font-semibold mb-3">Multi-Host Management</h2>
+        <p class="text-gray-600 mb-4">Manage multiple remote servers from a single interface:</p>
+        <ul class="text-sm text-gray-600 space-y-2">
+          <li>• SSH connection pooling and management</li>
+          <li>• Host grouping and tagging</li>
+          <li>• Credential management with encryption</li>
+          <li>• Real-time host status monitoring</li>
+          <li>• Batch operations across multiple hosts</li>
+        </ul>
+      </article>
+
+      <article class="bg-white p-8 rounded-lg shadow-sm">
+        <div class="text-4xl mb-4">⚡</div>
+        <h2 class="text-xl font-semibold mb-3">One-Click Deployment</h2>
+        <p class="text-gray-600 mb-4">Deploy complex data stacks in seconds:</p>
+        <ul class="text-sm text-gray-600 space-y-2">
+          <li>• Pre-configured Docker containers</li>
+          <li>• Automatic port management</li>
+          <li>• Environment variable configuration</li>
+          <li>• Volume mounting and persistence</li>
+          <li>• Network configuration</li>
+        </ul>
+      </article>
+
+      <article class="bg-white p-8 rounded-lg shadow-sm">
+        <div class="text-4xl mb-4">📊</div>
+        <h2 class="text-xl font-semibold mb-3">Application Monitoring</h2>
+        <p class="text-gray-600 mb-4">Keep track of your deployed applications:</p>
+        <ul class="text-sm text-gray-600 space-y-2">
+          <li>• Real-time container status</li>
+          <li>• Resource usage monitoring</li>
+          <li>• Log aggregation and viewing</li>
+          <li>• Health checks and alerts</li>
+          <li>• Performance metrics</li>
+        </ul>
+      </article>
+
+      <article class="bg-white p-8 rounded-lg shadow-sm">
+        <div class="text-4xl mb-4">🔒</div>
+        <h2 class="text-xl font-semibold mb-3">Security & Access Control</h2>
+        <p class="text-gray-600 mb-4">Enterprise-grade security features:</p>
+        <ul class="text-sm text-gray-600 space-y-2">
+          <li>• Encrypted credential storage</li>
+          <li>• SSH key management</li>
+          <li>• Role-based access control</li>
+          <li>• Audit logging</li>
+          <li>• Network isolation</li>
+        </ul>
+      </article>
+
+      <article class="bg-white p-8 rounded-lg shadow-sm">
+        <div class="text-4xl mb-4">🎯</div>
+        <h2 class="text-xl font-semibold mb-3">Desktop Experience</h2>
+        <p class="text-gray-600 mb-4">Native desktop application built with modern technologies:</p>
+        <ul class="text-sm text-gray-600 space-y-2">
+          <li>• Cross-platform: Windows, macOS, Linux</li>
+          <li>• Modern UI with Vue.js and Naive UI</li>
+          <li>• Keyboard shortcuts and navigation</li>
+          <li>• System tray integration</li>
+          <li>• Offline capability</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="mt-16 bg-blue-50 rounded-lg p-8 text-center">
+      <h2 class="text-2xl font-bold text-gray-900">Ready to Get Started?</h2>
+      <p class="mt-2 text-gray-600">Download datax and start deploying data tools in minutes</p>
+      <div class="mt-6">
+        <a href="/#download" class="px-6 py-3 bg-blue-700 text-white rounded-md shadow hover:bg-blue-800 transition-colors">
+          Download Free
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-white border-t py-6 mt-12">
+    <div class="container mx-auto px-4 text-sm text-gray-500">
+      © 2025 datax.cash — <a href="/docs.html" class="underline">Privacy & Logs</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

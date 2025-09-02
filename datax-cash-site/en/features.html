@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Features — datax.cash</title>
+  <meta name="description" content="Discover how datax.cash transforms your data into valuable assets with secure management, transparent pricing, and fast delivery.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- Tailwind CDN for quick preview; use Tailwind CLI for production builds (see README) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial}</style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="bg-white shadow">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <img src="../assets/images/logo.svg" alt="datax.cash logo" class="h-10 w-auto">
+        <div class="hidden sm:block text-sm text-gray-600">Price Ur Data, Cash Ur Data</div>
+      </div>
+      <nav class="hidden md:flex items-center space-x-6">
+        <a href="/en/" class="text-sm">Home</a>
+        <a href="features.html" class="text-sm font-semibold">Features</a>
+        <a href="pricing.html" class="text-sm">Pricing</a>
+        <a href="docs.html" class="text-sm">Docs</a>
+        <a href="/" class="text-sm">中文</a>
+        <a href="/zh-tw/" class="text-sm">繁體</a>
+      </nav>
+      <button id="burger" class="md:hidden p-2">
+        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden">
+      <div class="px-4 pb-4 space-y-2">
+        <a href="/en/" class="block">Home</a>
+        <a href="features.html" class="block font-semibold">Features</a>
+        <a href="pricing.html" class="block">Pricing</a>
+        <a href="docs.html" class="block">Docs</a>
+        <a href="/" class="block">中文</a>
+        <a href="/zh-tw/" class="block">繁體</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-12">
+    <!-- Hero Section -->
+    <section class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-0b2747 mb-6">Transform Data into Value</h1>
+      <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+        datax.cash provides a comprehensive platform for data monetization, combining secure management, 
+        transparent pricing, and efficient delivery to unlock the true potential of your datasets.
+      </p>
+    </section>
+
+    <!-- Core Features Grid -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-center mb-12">Core Features</h2>
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        
+        <!-- Data Security & Management -->
+        <article class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Secure Data Management</h3>
+          <p class="text-gray-600 mb-4">
+            Enterprise-grade security with encrypted storage, access controls, and audit trails. 
+            Your data remains protected while being monetized.
+          </p>
+          <ul class="text-sm text-gray-500 space-y-1">
+            <li>• End-to-end encryption</li>
+            <li>• Role-based access control</li>
+            <li>• Comprehensive audit logs</li>
+          </ul>
+        </article>
+
+        <!-- Transparent Pricing -->
+        <article class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Dynamic Pricing Engine</h3>
+          <p class="text-gray-600 mb-4">
+            AI-powered pricing algorithms that optimize data value based on demand, quality, 
+            and market conditions. Maximize your revenue potential.
+          </p>
+          <ul class="text-sm text-gray-500 space-y-1">
+            <li>• Real-time price optimization</li>
+            <li>• Market demand analysis</li>
+            <li>• Quality-based valuation</li>
+          </ul>
+        </article>
+
+        <!-- Fast Delivery -->
+        <article class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Lightning-Fast Delivery</h3>
+          <p class="text-gray-600 mb-4">
+            Optimized delivery infrastructure with CDN support, X-Accel-Redirect, 
+            and object storage for instant data access worldwide.
+          </p>
+          <ul class="text-sm text-gray-500 space-y-1">
+            <li>• Global CDN network</li>
+            <li>• Object storage integration</li>
+            <li>• Streaming data delivery</li>
+          </ul>
+        </article>
+
+        <!-- Transparent Logs -->
+        <article class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Complete Transparency</h3>
+          <p class="text-gray-600 mb-4">
+            Structured JSON logs for all access and downloads. Full auditability 
+            and transparency for data usage and revenue tracking.
+          </p>
+          <ul class="text-sm text-gray-500 space-y-1">
+            <li>• Detailed access logs</li>
+            <li>• Revenue tracking</li>
+            <li>• Usage analytics</li>
+          </ul>
+        </article>
+
+        <!-- Data Marketplace -->
+        <article class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M8 11v6a2 2 0 002 2h4a2 2 0 002-2v-6M8 11h8"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Decentralized Marketplace</h3>
+          <p class="text-gray-600 mb-4">
+            Connect with data buyers and sellers in a secure, decentralized marketplace. 
+            Future blockchain integration for trustless transactions.
+          </p>
+          <ul class="text-sm text-gray-500 space-y-1">
+            <li>• Peer-to-peer trading</li>
+            <li>• Smart contract integration</li>
+            <li>• Reputation system</li>
+          </ul>
+        </article>
+
+        <!-- Analytics & Insights -->
+        <article class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Advanced Analytics</h3>
+          <p class="text-gray-600 mb-4">
+            Comprehensive analytics dashboard with insights into data performance, 
+            market trends, and revenue optimization opportunities.
+          </p>
+          <ul class="text-sm text-gray-500 space-y-1">
+            <li>• Performance metrics</li>
+            <li>• Market trend analysis</li>
+            <li>• Revenue optimization</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl p-12">
+      <h2 class="text-3xl font-bold mb-4">Ready to Monetize Your Data?</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Join the data economy revolution and start earning from your valuable datasets today.
+      </p>
+      <div class="flex justify-center gap-4 flex-wrap">
+        <a href="pricing.html" class="px-8 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+          View Pricing
+        </a>
+        <a href="docs.html" class="px-8 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+          Get Started
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-white border-t py-6 mt-12">
+    <div class="container mx-auto px-4 text-sm text-gray-500">
+      © 2025 datax.cash — <a href="docs.html" class="underline">Privacy & Logs</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

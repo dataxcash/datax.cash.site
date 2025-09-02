@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>datax.cash — 數據工具部署平台</title>
+  <meta name="description" content="免費桌面應用程式，使用Docker容器在多主機上部署和管理數據工具。">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- Tailwind CDN for quick preview; use Tailwind CLI for production builds (see README) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans TC','Microsoft JhengHei'}</style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="bg-white shadow">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <img src="../assets/images/logo.svg" alt="datax.cash logo" class="h-10 w-auto">
+        <div class="hidden sm:block text-sm text-gray-600">Price Ur Data, Cash Ur Data</div>
+      </div>
+      <nav class="hidden md:flex items-center space-x-6">
+        <a href="index.html" class="text-sm font-semibold">首頁</a>
+        <a href="features.html" class="text-sm">功能特色</a>
+        <a href="pricing.html" class="text-sm">價格方案</a>
+        <a href="docs.html" class="text-sm">文檔</a>
+        <a href="../index.html" class="text-sm">EN</a>
+      </nav>
+      <button id="burger" class="md:hidden p-2">
+        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden">
+      <div class="px-4 pb-4 space-y-2">
+        <a href="index.html" class="block font-semibold">首頁</a>
+        <a href="features.html" class="block">功能特色</a>
+        <a href="pricing.html" class="block">價格方案</a>
+        <a href="docs.html" class="block">文檔</a>
+        <a href="../index.html" class="block">EN</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-12">
+    <section class="text-center">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-0b2747">datax.cash</h1>
+      <p class="mt-4 text-lg text-gray-700">Price Ur Data, Cash Ur Data — 使用Docker容器即時部署數據工具</p>
+      <div class="mt-8 flex justify-center gap-4">
+        <a href="#download" class="px-6 py-3 bg-blue-700 text-white rounded-md shadow hover:bg-blue-800 transition-colors">免費下載</a>
+        <a href="docs.html" class="px-6 py-3 border border-gray-200 rounded-md hover:bg-gray-50 transition-colors">查看文檔</a>
+      </div>
+    </section>
+
+    <section class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <article class="bg-white p-6 rounded-lg shadow-sm">
+        <h3 class="font-semibold">🐳 Docker應用商店</h3>
+        <p class="mt-2 text-sm text-gray-600">一鍵部署預配置的數據工具，包括PostgreSQL、MySQL、Oracle等數據庫和專業DATAX工具。</p>
+      </article>
+      <article class="bg-white p-6 rounded-lg shadow-sm">
+        <h3 class="font-semibold">🖥️ 多主機管理</h3>
+        <p class="mt-2 text-sm text-gray-600">通過SSH連接管理多個遠程服務器，從單一桌面界面部署應用程式。</p>
+      </article>
+      <article class="bg-white p-6 rounded-lg shadow-sm">
+        <h3 class="font-semibold">📊 數據工具套件</h3>
+        <p class="mt-2 text-sm text-gray-600">存取PostgreSQL、MySQL、Oracle、IBM DB2，以及專業的DATAX數據遷移、同步和比較工具。</p>
+      </article>
+    </section>
+
+    <section id="download" class="mt-16 bg-white rounded-lg p-8 text-center">
+      <h2 class="text-2xl font-bold mb-4">免費下載 datax</h2>
+      <p class="text-gray-600 mb-6">適用於Windows、macOS和Linux的桌面應用程式</p>
+      <div class="flex justify-center gap-4 flex-wrap">
+        <a href="#" class="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
+          🪟 Windows
+        </a>
+        <a href="#" class="px-6 py-3 bg-gray-800 text-white rounded-md hover:bg-gray-900 transition-colors">
+          🍎 macOS
+        </a>
+        <a href="#" class="px-6 py-3 bg-orange-600 text-white rounded-md hover:bg-orange-700 transition-colors">
+          🐧 Linux
+        </a>
+      </div>
+      <p class="text-sm text-gray-500 mt-4">
+        完全免費 • 無需註冊 • 跨平台支援
+      </p>
+    </section>
+  </main>
+
+  <footer class="bg-white border-t py-6 mt-12">
+    <div class="container mx-auto px-4 text-sm text-gray-500">
+      © 2025 datax.cash — <a href="docs.html" class="underline">文檔與支援</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

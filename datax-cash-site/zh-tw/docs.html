@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>文檔 — datax.cash</title>
+  <meta name="description" content="datax使用指南、安裝說明和故障排除。學習如何使用Docker容器部署數據工具。">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans TC','Microsoft JhengHei'}</style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="bg-white shadow">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <img src="../assets/images/logo.svg" alt="datax.cash logo" class="h-10 w-auto">
+        <div class="hidden sm:block text-sm text-gray-600">Price Ur Data, Cash Ur Data</div>
+      </div>
+      <nav class="hidden md:flex items-center space-x-6">
+        <a href="index.html" class="text-sm">首頁</a>
+        <a href="features.html" class="text-sm">功能特色</a>
+        <a href="pricing.html" class="text-sm">價格方案</a>
+        <a href="docs.html" class="text-sm font-semibold">文檔</a>
+        <a href="../index.html" class="text-sm">EN</a>
+      </nav>
+      <button id="burger" class="md:hidden p-2">
+        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden">
+      <div class="px-4 pb-4 space-y-2">
+        <a href="index.html" class="block">首頁</a>
+        <a href="features.html" class="block">功能特色</a>
+        <a href="pricing.html" class="block">價格方案</a>
+        <a href="docs.html" class="block">文檔</a>
+        <a href="../index.html" class="block">EN</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-12">
+    <section class="text-center mb-12">
+      <h1 class="text-4xl font-bold mb-4">文檔</h1>
+      <p class="text-lg text-gray-600">學習如何使用datax部署和管理您的數據工具</p>
+    </section>
+
+    <div class="grid gap-8 lg:grid-cols-4">
+      <!-- 側邊欄導航 -->
+      <aside class="lg:col-span-1">
+        <nav class="bg-white rounded-lg shadow-sm p-6 sticky top-6">
+          <h2 class="font-semibold mb-4">目錄</h2>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#getting-started" class="text-blue-600 hover:underline">快速開始</a></li>
+            <li><a href="#installation" class="text-blue-600 hover:underline">安裝指南</a></li>
+            <li><a href="#app-store" class="text-blue-600 hover:underline">應用商店</a></li>
+            <li><a href="#host-management" class="text-blue-600 hover:underline">主機管理</a></li>
+            <li><a href="#deployment" class="text-blue-600 hover:underline">部署應用</a></li>
+            <li><a href="#monitoring" class="text-blue-600 hover:underline">監控管理</a></li>
+            <li><a href="#troubleshooting" class="text-blue-600 hover:underline">故障排除</a></li>
+            <li><a href="#faq" class="text-blue-600 hover:underline">常見問題</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- 主要內容 -->
+      <main class="lg:col-span-3 space-y-8">
+        
+        <!-- 快速開始 -->
+        <section id="getting-started">
+          <div class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-2xl font-bold mb-4">🚀 快速開始</h2>
+            <p class="text-gray-600 mb-4">歡迎使用datax！這個快速指南將幫助您在幾分鐘內開始使用。</p>
+            
+            <div class="space-y-4">
+              <div class="border-l-4 border-blue-500 pl-4">
+                <h3 class="font-semibold">第1步：下載和安裝</h3>
+                <p class="text-sm text-gray-600">從官網下載適合您操作系統的datax安裝包</p>
+              </div>
+              
+              <div class="border-l-4 border-blue-500 pl-4">
+                <h3 class="font-semibold">第2步：添加主機</h3>
+                <p class="text-sm text-gray-600">配置SSH連接到您的遠程服務器</p>
+              </div>
+              
+              <div class="border-l-4 border-blue-500 pl-4">
+                <h3 class="font-semibold">第3步：部署應用</h3>
+                <p class="text-sm text-gray-600">從應用商店選擇並部署您需要的數據工具</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 安裝指南 -->
+        <section id="installation">
+          <div class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-2xl font-bold mb-4">💻 安裝指南</h2>
+            
+            <div class="grid gap-6 md:grid-cols-3">
+              <div class="border rounded-lg p-4">
+                <h3 class="font-semibold mb-2">🪟 Windows</h3>
+                <ol class="text-sm text-gray-600 space-y-1">
+                  <li>1. 下載 datax-windows.exe</li>
+                  <li>2. 以管理員身份運行安裝程式</li>
+                  <li>3. 按照安裝嚮導完成安裝</li>
+                  <li>4. 從開始菜單啟動datax</li>
+                </ol>
+              </div>
+              
+              <div class="border rounded-lg p-4">
+                <h3 class="font-semibold mb-2">🍎 macOS</h3>
+                <ol class="text-sm text-gray-600 space-y-1">
+                  <li>1. 下載 datax-macos.dmg</li>
+                  <li>2. 雙擊打開DMG文件</li>
+                  <li>3. 將datax拖拽到Applications文件夾</li>
+                  <li>4. 從Launchpad啟動datax</li>
+                </ol>
+              </div>
+              
+              <div class="border rounded-lg p-4">
+                <h3 class="font-semibold mb-2">🐧 Linux</h3>
+                <ol class="text-sm text-gray-600 space-y-1">
+                  <li>1. 下載 datax-linux.AppImage</li>
+                  <li>2. 添加執行權限：chmod +x datax-linux.AppImage</li>
+                  <li>3. 雙擊運行或使用終端：./datax-linux.AppImage</li>
+                  <li>4. 可選：集成到系統菜單</li>
+                </ol>
+              </div>
+            </div>
+
+            <div class="mt-6 p-4 bg-yellow-50 rounded-lg">
+              <h4 class="font-semibold mb-2">系統要求</h4>
+              <ul class="text-sm text-gray-600 space-y-1">
+                <li>• <strong>操作系統：</strong>Windows 10+、macOS 10.14+、Linux (Ubuntu 18.04+)</li>
+                <li>• <strong>內存：</strong>最少4GB RAM，推薦8GB+</li>
+                <li>• <strong>存儲：</strong>最少1GB可用空間</li>
+                <li>• <strong>網絡：</strong>互聯網連接（用於下載Docker鏡像）</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- 應用商店 -->
+        <section id="app-store">
+          <div class="bg-white rounded-lg shadow-sm p-6">
+            <h3 class="font-semibold mb-3">使用應用商店</h3>
+            <p class="text-gray-600 mb-4">datax包含精心策劃的預配置數據工具集合：</p>
+            
+            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-6">
+              <div class="p-4 bg-gray-50 rounded-lg">
+                <h4 class="font-semibold mb-3 text-gray-800">🗄️ 數據庫</h4>
+                <ul class="text-sm text-gray-600 space-y-1">
+                  <li>• PostgreSQL 🐘</li>
+                  <li>• MySQL 🐬</li>
+                  <li>• Oracle Database 🔶</li>
+                  <li>• IBM DB2 🔷</li>
+                </ul>
+              </div>
+              
+              <div class="p-4 bg-gray-50 rounded-lg">
+                <h4 class="font-semibold mb-3 text-gray-800">🛠️ 管理工具</h4>
+                <ul class="text-sm text-gray-600 space-y-1">
+                  <li>• pgAdmin</li>
+                  <li>• MySQL Client 💻</li>
+                </ul>
+              </div>
+              
+              <div class="p-4 bg-gray-50 rounded-lg">
+                <h4 class="font-semibold mb-3 text-gray-800">⚙️ DATAX工具</h4>
+                <ul class="text-sm text-gray-600 space-y-1">
+                  <li>• X0 診斷工具 🔍</li>
+                  <li>• X1 仿真工具 🎯</li>
+                  <li>• M3 遷移工具 📦</li>
+                  <li>• T3 同步工具 🔄</li>
+                  <li>• V3 比較工具 ⚖️</li>
+                </ul>
+              </div>
+              
+              <div class="p-4 bg-gray-50 rounded-lg">
+                <h4 class="font-semibold mb-3 text-gray-800">🔐 許可證工具</h4>
+                <ul class="text-sm text-gray-600 space-y-1">
+                  <li>• 許可證控制服務器</li>
+                  <li>• 許可證看門狗 🐕</li>
+                </ul>
+              </div>
+              
+              <div class="p-4 bg-gray-50 rounded-lg">
+                <h4 class="font-semibold mb-3 text-gray-800">🎨 自定義應用</h4>
+                <ul class="text-sm text-gray-600 space-y-1">
+                  <li>• 用戶自定義應用程式</li>
+                  <li>• 自定義Docker鏡像</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="p-4 bg-blue-50 rounded-lg">
+              <h4 class="font-semibold mb-2">如何使用應用商店</h4>
+              <ol class="text-sm text-gray-600 space-y-1">
+                <li>1. 在datax主界面點擊"應用商店"</li>
+                <li>2. 瀏覽可用的應用程式和工具</li>
+                <li>3. 點擊應用程式查看詳細信息和版本</li>
+                <li>4. 選擇目標主機和配置選項</li>
+                <li>5. 點擊"部署"開始安裝過程</li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        <!-- 主機管理 -->
+        <section id="host-management">
+          <div class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-2xl font-bold mb-4">🖥️ 主機管理</h2>
+            
+            <div class="space-y-6">
+              <div>
+                <h3 class="font-semibold mb-3">添加新主機</h3>
+                <ol class="text-sm text-gray-600 space-y-2">
+                  <li>1. 點擊"添加主機"按鈕</li>
+                  <li>2. 輸入主機信息：
+                    <ul class="ml-4 mt-1 space-y-1">
+                      <li>• 主機名稱（自定義標識）</li>
+                      <li>• IP地址或域名</li>
+                      <li>• SSH端口（默認22）</li>
+                      <li>• 用戶名</li>
+                    </ul>
+                  </li>
+                  <li>3. 配置SSH認證：
+                    <ul class="ml-4 mt-1 space-y-1">
+                      <li>• SSH密鑰文件（推薦）</li>
+                      <li>• 或密碼認證</li>
+                    </ul>
+                  </li>
+                  <li>4. 測試連接</li>
+                  <li>5. 保存配置</li>
+                </ol>
+              </div>
+
+              <div class="p-4 bg-green-50 rounded-lg">
+                <h4 class="font-semibold mb-2">SSH密鑰設置（推薦）</h4>
+                <p class="text-sm text-gray-600 mb-2">為了安全起見，建議使用SSH密鑰而不是密碼：</p>
+                <pre class="text-xs bg-gray-800 text-green-400 p-3 rounded overflow-x-auto">
+# 在本地生成SSH密鑰對
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+# 將公鑰複製到遠程服務器
+ssh-copy-id user@remote_host
+
+# 或手動添加到 ~/.ssh/authorized_keys
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys</pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 部署應用 -->
+        <section id="deployment">
+          <div class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-2xl font-bold mb-4">🚀 部署應用</h2>
+            
+            <div class="space-y-6">
+              <div>
+                <h3 class="font-semibold mb-3">部署流程</h3>
+                <div class="grid gap-4 md:grid-cols-2">
+                  <div class="border rounded-lg p-4">
+                    <h4 class="font-semibold mb-2">1. 選擇應用</h4>
+                    <p class="text-sm text-gray-600">從應用商店選擇您需要的工具，查看支持的版本和系統要求。</p>
+                  </div>
+                  
+                  <div class="border rounded-lg p-4">
+                    <h4 class="font-semibold mb-2">2. 配置參數</h4>
+                    <p class="text-sm text-gray-600">設置端口映射、卷掛載、環境變量等配置選項。</p>
+                  </div>
+                  
+                  <div class="border rounded-lg p-4">
+                    <h4 class="font-semibold mb-2">3. 選擇主機</h4>
+                    <p class="text-sm text-gray-600">選擇目標部署主機，檢查資源可用性。</p>
+                  </div>
+                  
+                  <div class="border rounded-lg p-4">
+                    <h4 class="font-semibold mb-2">4. 開始部署</h4>
+                    <p class="text-sm text-gray-600">確認配置後開始部署，實時查看部署進度和日誌。</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-4 bg-blue-50 rounded-lg">
+                <h4 class="font-semibold mb-2">部署最佳實踐</h4>
+                <ul class="text-sm text-gray-600 space-y-1">
+                  <li>• 在生產環境部署前先在測試環境驗證</li>
+                  <li>• 確保目標主機有足夠的資源（CPU、內存、磁盤）</li>
+                  <li>• 使用有意義的實例名稱便於管理</li>
+                  <li>• 定期備份重要數據和配置</li>
+                  <li>• 監控應用程式性能和資源使用情況</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 監控管理 -->
+        <section id="monitoring">
+          <div class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-2xl font-bold mb-4">📊 監控管理</h2>
+            
+            <div class="grid gap-6 md:grid-cols-2">
+              <div>
+                <h3 class="font-semibold mb-3">實時監控</h3>
+                <ul class="text-sm text-gray-600 space-y-2">
+                  <li>• <strong>容器狀態：</strong>運行、停止、重啟狀態</li>
+                  <li>• <strong>資源使用：</strong>CPU、內存、磁盤、網絡</li>
+                  <li>• <strong>性能指標：</strong>響應時間、吞吐量</li>
+                  <li>• <strong>健康檢查：</strong>自動檢測應用程式健康狀態</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 class="font-semibold mb-3">日誌管理</h3>
+                <ul class="text-sm text-gray-600 space-y-2">
+                  <li>• <strong>實時日誌：</strong>查看應用程式實時輸出</li>
+                  <li>• <strong>歷史日誌：</strong>搜索和過濾歷史日誌</li>
+                  <li>• <strong>日誌導出：</strong>導出日誌用於分析</li>
+                  <li>• <strong>告警設置：</strong>基於日誌內容設置告警</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 故障排除 -->
+        <section id="troubleshooting">
+          <div class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-2xl font-bold mb-4">🔧 故障排除</h2>
+            
+            <div class="space-y-6">
+              <div>
+                <h3 class="font-semibold mb-3">常見問題解決</h3>
+                
+                <div class="space-y-4">
+                  <div class="border-l-4 border-red-500 pl-4">
+                    <h4 class="font-semibold text-red-700">SSH連接失敗</h4>
+                    <ul class="text-sm text-gray-600 mt-1 space-y-1">
+                      <li>• 檢查網絡連接和防火牆設置</li>
+                      <li>• 驗證SSH服務是否在目標主機上運行</li>
+                      <li>• 確認用戶名、密碼或SSH密鑰正確</li>
+                      <li>• 檢查SSH端口是否正確（默認22）</li>
+                    </ul>
+                  </div>
+                  
+                  <div class="border-l-4 border-yellow-500 pl-4">
+                    <h4 class="font-semibold text-yellow-700">容器啟動失敗</h4>
+                    <ul class="text-sm text-gray-600 mt-1 space-y-1">
+                      <li>• 檢查Docker是否已安裝並運行</li>
+                      <li>• 驗證端口是否被其他服務占用</li>
+                      <li>• 確認主機資源充足（CPU、內存、磁盤）</li>
+                      <li>• 查看容器日誌獲取詳細錯誤信息</li>
+                    </ul>
+                  </div>
+                  
+                  <div class="border-l-4 border-blue-500 pl-4">
+                    <h4 class="font-semibold text-blue-700">性能問題</h4>
+                    <ul class="text-sm text-gray-600 mt-1 space-y-1">
+                      <li>• 監控資源使用情況，必要時升級硬件</li>
+                      <li>• 優化應用程式配置和參數</li>
+                      <li>• 檢查網絡延遲和帶寬</li>
+                      <li>• 考慮負載均衡和水平擴展</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-4 bg-gray-50 rounded-lg">
+                <h4 class="font-semibold mb-2">獲取幫助</h4>
+                <p class="text-sm text-gray-600">如果問題仍然存在，請：</p>
+                <ul class="text-sm text-gray-600 mt-2 space-y-1">
+                  <li>• 收集相關日誌和錯誤信息</li>
+                  <li>• 記錄重現問題的步驟</li>
+                  <li>• 檢查系統環境和版本信息</li>
+                  <li>• 查看官方文檔和社區資源</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 常見問題 -->
+        <section id="faq">
+          <div class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-2xl font-bold mb-4">❓ 常見問題</h2>
+            
+            <div class="space-y-6">
+              <div>
+                <h3 class="font-semibold mb-2">datax需要Docker嗎？</h3>
+                <p class="text-gray-600">是的，datax使用Docker容器來部署應用程式。目標主機需要安裝Docker。datax可以幫助您在遠程主機上自動安裝Docker。</p>
+              </div>
+              
+              <div>
+                <h3 class="font-semibold mb-2">可以管理多少個主機？</h3>
+                <p class="text-gray-600">沒有限制。您可以添加和管理任意數量的遠程主機，只要您的本地機器有足夠的資源來處理連接。</p>
+              </div>
+              
+              <div>
+                <h3 class="font-semibold mb-2">支持哪些操作系統？</h3>
+                <p class="text-gray-600">datax桌面應用支持Windows、macOS和Linux。遠程主機支持任何能運行Docker的Linux發行版。</p>
+              </div>
+              
+              <div>
+                <h3 class="font-semibold mb-2">數據安全如何保障？</h3>
+                <p class="text-gray-600">datax使用SSH加密連接，支持密鑰認證。所有數據傳輸都經過加密，本地不存儲敏感信息。</p>
+              </div>
+              
+              <div>
+                <h3 class="font-semibold mb-2">如何備份配置？</h3>
+                <p class="text-gray-600">datax配置存儲在本地配置文件中。建議定期備份配置目錄，並為重要的容器數據設置卷掛載。</p>
+              </div>
+              
+              <div>
+                <h3 class="font-semibold mb-2">可以自定義應用程式嗎？</h3>
+                <p class="text-gray-600">是的，您可以添加自定義Docker鏡像和配置模板。datax支持用戶自定義應用程式定義。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </main>
+
+  <footer class="bg-white border-t py-6 mt-12">
+    <div class="container mx-auto px-4 text-sm text-gray-500">
+      © 2025 datax.cash — <a href="docs.html" class="underline">文檔與支援</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
