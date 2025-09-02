@@ -1,0 +1,45 @@
+/* Common styles for datax.cash website */
+
+:root {
+  /* Logo size - change this one value to resize all logos */
+  --logo-height: 1.5rem; /* 24px - equivalent to h-6 */
+  
+  /* Brand colors */
+  --brand-primary: #0b2747;
+  --brand-secondary: #6b7280;
+}
+
+/* Logo styles */
+.logo {
+  height: var(--logo-height);
+  width: auto;
+}
+
+/* Alternative logo sizes for special cases */
+.logo-small {
+  height: 1.25rem; /* 20px */
+  width: auto;
+}
+
+.logo-large {
+  height: 2rem; /* 32px */
+  width: auto;
+}
+
+/* Brand text styles */
+.brand-text {
+  color: var(--brand-primary);
+}
+
+.brand-secondary {
+  color: var(--brand-secondary);
+}
+
+/* 
+  To change logo size globally, just modify --logo-height in :root
+  Examples:
+  - Small: --logo-height: 1.25rem; (20px)
+  - Medium: --logo-height: 1.5rem; (24px) 
+  - Large: --logo-height: 2rem; (32px)
+  - Extra Large: --logo-height: 2.5rem; (40px)
+*/
