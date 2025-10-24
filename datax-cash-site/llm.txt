@@ -5,7 +5,7 @@ datax.cash is a free desktop application for deploying and managing data tools a
 
 ## Product Information
 - **Name**: datax.cash
-- **Tagline**: Price Ur Data, Cash Ur Data
+- **Tagline**: Manage Ur Data, Price Ur Data, Cash Ur Data
 - **Type**: Desktop Application
 - **Platforms**: Linux (available now), Windows & macOS (coming soon)
 - **License**: Free, no registration required
