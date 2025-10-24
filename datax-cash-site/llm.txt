@@ -1,0 +1,72 @@
+# datax.cash - LLM-friendly Documentation
+
+## Overview
+datax.cash is a free desktop application for deploying and managing data tools across multiple hosts using Docker containers. It provides a Docker app store, multi-host management, and SSH connection pooling.
+
+## Product Information
+- **Name**: datax.cash
+- **Tagline**: Price Ur Data, Cash Ur Data
+- **Type**: Desktop Application
+- **Platforms**: Linux (available now), Windows & macOS (coming soon)
+- **License**: Free, no registration required
+- **Download**: https://github.com/dataxcash/data.x.cash/releases/download/firstrelease/dataX.0.99.1022.linux
+
+## Key Features
+1. **Docker App Store**: One-click deployment of pre-configured data tools
+   - Databases: PostgreSQL, MySQL, Oracle, IBM DB2
+   - Management Tools: pgAdmin, MySQL Client
+   - DATAX Tools: X0 Diagnosis, X1 Simulation, M3 Migration, T3 Sync, V3 Comparison
+   - License Tools: License Control Server
+
+2. **Multi-Host Management**: Manage multiple remote servers via SSH from a single desktop interface
+
+3. **Data Tools Suite**: Access to professional data migration, synchronization, and comparison tools
+
+4. **Security**: SSH connection pooling with secure access control
+
+5. **Cross-Platform**: Desktop application for Windows, macOS, and Linux
+
+## Website Structure
+- Homepage: /index.html (English), /zh-tw/index.html (Traditional Chinese)
+- Features: /features.html, /zh-tw/features.html
+- Pricing: /pricing.html, /zh-tw/pricing.html
+- Documentation: /docs.html, /zh-tw/docs.html
+
+## Use Cases
+- Database deployment and management
+- Data migration between systems
+- Multi-server application deployment
+- Development and testing environments
+- Data synchronization and comparison
+
+## Technical Stack
+- Frontend: HTML5, TailwindCSS, JavaScript
+- Backend: Docker containers
+- Connection: SSH protocol
+- Deployment: Remote server management
+
+## Target Audience
+- Database administrators
+- DevOps engineers
+- Data engineers
+- System administrators
+- Development teams
+
+## Pricing
+Completely free with no hidden fees, no registration required, and no time limits.
+
+## Support
+- Documentation: Available on website
+- Community: Open source project
+- Updates: Regular releases
+
+## Contact & Links
+- Website: https://datax.cash
+- GitHub: https://github.com/dataxcash/data.x.cash
+- Languages: English, Traditional Chinese (繁體中文)
+
+## SEO Keywords
+datax, data tools, docker deployment, database management, multi-host management, SSH connection, PostgreSQL, MySQL, Oracle, DB2, data migration, data synchronization, free desktop app, DevOps tools, container management
+
+---
+Last Updated: 2025-10-24

@@ -39,6 +39,13 @@
   </header>
 
   <main class="container mx-auto px-4 py-12">
+    <!-- Hero Section with Download -->
+    <section class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-gray-900">Documentation</h1>
+      <p class="mt-4 text-lg text-gray-600">Learn how to deploy and manage data tools with datax</p>
+      <div id="docs-hero-download" data-download-component class="mt-6"></div>
+    </section>
+
     <div class="flex flex-col lg:flex-row gap-8">
       <!-- Sidebar Navigation -->
       <aside class="lg:w-64 flex-shrink-0">
@@ -59,7 +66,7 @@
       <!-- Main Content -->
       <div class="flex-1">
         <section id="getting-started" class="mb-12">
-          <h1 class="text-3xl font-bold mb-6">Getting Started with datax</h1>
+          <h2 class="text-3xl font-bold mb-6">Getting Started with datax</h2>
           <div class="bg-white rounded-lg shadow-sm p-6">
             <p class="text-gray-600 mb-4">
               datax is a desktop application that helps you deploy and manage data tools across multiple hosts using Docker containers. 
@@ -77,25 +84,6 @@
         <section id="installation" class="mb-12">
           <h2 class="text-2xl font-bold mb-4">Installation</h2>
           <div class="bg-white rounded-lg shadow-sm p-6">
-            <h3 class="font-semibold mb-3">Download datax</h3>
-            <p class="text-gray-600 mb-4">Choose the appropriate version for your operating system:</p>
-            <div class="grid gap-4 sm:grid-cols-3 mb-6">
-              <a href="#" class="p-4 border rounded-lg text-center hover:bg-gray-50">
-                <div class="text-2xl mb-2">📱</div>
-                <div class="font-semibold">Windows</div>
-                <div class="text-sm text-gray-600">Windows 10+</div>
-              </a>
-              <a href="#" class="p-4 border rounded-lg text-center hover:bg-gray-50">
-                <div class="text-2xl mb-2">🍎</div>
-                <div class="font-semibold">macOS</div>
-                <div class="text-sm text-gray-600">macOS 10.14+</div>
-              </a>
-              <a href="#" class="p-4 border rounded-lg text-center hover:bg-gray-50">
-                <div class="text-2xl mb-2">🐧</div>
-                <div class="font-semibold">Linux</div>
-                <div class="text-sm text-gray-600">AppImage/DEB/RPM</div>
-              </a>
-            </div>
             <h3 class="font-semibold mb-3">First Launch</h3>
             <p class="text-gray-600">After installation, launch datax and you'll be greeted with the main interface. No registration or setup is required.</p>
           </div>
@@ -116,7 +104,6 @@
             <h3 class="font-semibold mb-3">Host Requirements</h3>
             <ul class="text-sm text-gray-600 space-y-1 mb-4">
               <li>• SSH server running and accessible</li>
-              <li>• Docker installed and running</li>
               <li>• User account with Docker permissions</li>
               <li>• Sufficient disk space for containers</li>
             </ul>
@@ -226,7 +213,6 @@
               <div class="p-4 bg-gray-50 rounded-lg">
                 <h4 class="font-semibold mb-2">Docker Deployment Failed</h4>
                 <ul class="text-sm text-gray-600 space-y-1">
-                  <li>• Verify Docker is installed and running</li>
                   <li>• Check user permissions for Docker commands</li>
                   <li>• Ensure sufficient disk space</li>
                   <li>• Review application logs for specific errors</li>
@@ -275,12 +261,10 @@
     </div>
   </main>
 
-  <footer class="bg-white border-t py-6 mt-12">
-    <div class="container mx-auto px-4 text-sm text-gray-500">
-      © 2025 datax.cash — <a href="#privacy" class="underline">Privacy & Logs</a>
-    </div>
-  </footer>
+  <footer class="bg-white border-t py-6 mt-12" data-footer-component data-lang="en"></footer>
 
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/download-component.js"></script>
+  <script src="assets/js/footer-component.js"></script>
 </body>
 </html>

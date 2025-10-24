@@ -17,10 +17,19 @@ document.addEventListener('click', (e) => {
   const a = e.target.closest && e.target.closest('a');
   if (!a) return;
   const href = a.getAttribute('href');
-  if (href && href.startsWith('#')) {
+  if (!href) return;
+  // Ignore plain '#', it's not a valid selector or target
+  if (href === '#') {
     e.preventDefault();
+    return;
+  }
+  // Only smooth-scroll when there is a valid hash target
+  if (href.startsWith('#')) {
     const el = document.querySelector(href);
-    if (el) el.scrollIntoView({behavior:'smooth'});
+    if (el) {
+      e.preventDefault();
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 });
 
@@ -146,9 +155,16 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Preload lightbox images for smoother experience
   function preloadImages() {
-    images.forEach(src => {
-      const img = new Image();
-      img.src = src;
+    // Only preload if lightbox exists on this page
+    if (!document.getElementById('lightbox')) {
+      return;
+    }
+    
+    // Get actual image sources from the page instead of hardcoded array
+    const galleryImages = document.querySelectorAll('.gallery-item img[data-src]');
+    galleryImages.forEach(img => {
+      const preloadImg = new Image();
+      preloadImg.src = img.dataset.src;
     });
   }
   
@@ -156,62 +172,6 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('load', function() {
     preloadImages();
   });
-  
-  // OS Detection and Auto-download selection functionality
-  function detectOS() {
-    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    
-    // Windows detection
-    if (userAgent.indexOf('Win') !== -1) {
-      return 'Windows';
-    }
-    
-    // macOS detection
-    if (userAgent.indexOf('Mac') !== -1) {
-      return 'macOS';
-    }
-    
-    // Linux detection
-    if (userAgent.indexOf('Linux') !== -1) {
-      return 'Linux';
-    }
-    
-    // Default to 'Unknown' if no match
-    return 'Unknown';
-  }
-  
-  // Set the download link based on detected OS
-  function setDownloadLink() {
-    const os = detectOS();
-    const downloadLink = document.getElementById('download-link');
-    const downloadText = document.getElementById('download-text');
-    const allDownloadsBtn = document.getElementById('all-downloads');
-    const platformDownloads = document.getElementById('platform-specific-downloads');
-    
-    // Set default download text based on OS
-    if (os === 'Windows') {
-      downloadText.textContent = `Download for ${os}`;
-      downloadLink.href = '#'; // Set to Windows download URL when available
-    } else if (os === 'macOS') {
-      downloadText.textContent = `Download for ${os}`;
-      downloadLink.href = '#'; // Set to macOS download URL when available
-    } else if (os === 'Linux') {
-      downloadText.textContent = `Download for ${os}`;
-      downloadLink.href = '#'; // Set to Linux download URL when available
-    } else {
-      downloadText.textContent = 'Download for Your OS';
-      downloadLink.href = '#';
-    }
-    
-    // Handle "All Downloads" button click
-    allDownloadsBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      platformDownloads.classList.toggle('hidden');
-    });
-  }
-  
-  // Initialize OS detection when DOM is loaded
-  setDownloadLink();
 });
 
 // Gallery filtering functionality
@@ -243,10 +203,11 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   });
-
+  
   // Keyboard navigation for lightbox
   document.addEventListener('keydown', (e) => {
-    if (document.getElementById('lightbox').classList.contains('active')) {
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox && lightbox.classList.contains('active')) {
       if (e.key === 'Escape') {
         closeLightbox();
       } else if (e.key === 'ArrowLeft') {

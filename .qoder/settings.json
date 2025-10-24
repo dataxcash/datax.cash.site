@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "ask": [
+      "Read(!/home/fila/jqdDev_2025/dbos_desk/datax.cash.web/**)",
+      "Edit(!/home/fila/jqdDev_2025/dbos_desk/datax.cash.web/**)"
+    ],
+    "allow": [
+      "Read(/home/fila/jqdDev_2025/dbos_desk/datax.cash.web/**)",
+      "Edit(/home/fila/jqdDev_2025/dbos_desk/datax.cash.web/**)"
+    ]
+  },
+  "memoryImport": {},
+  "monitoring": {}
+}

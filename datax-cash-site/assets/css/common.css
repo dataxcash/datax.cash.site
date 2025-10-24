@@ -9,6 +9,11 @@
   --brand-secondary: #6b7280;
 }
 
+/* Global font size adjustment - 90% of default */
+html {
+  font-size: 90%;
+}
+
 /* Logo styles */
 .logo {
   height: var(--logo-height);

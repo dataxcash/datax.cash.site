@@ -40,8 +40,8 @@
 
   <main class="container mx-auto px-4 py-12">
     <section class="text-center mb-12">
-      <h1 class="text-4xl font-bold text-gray-900">Simple Pricing</h1>
-      <p class="mt-4 text-lg text-gray-600">datax is completely free to use</p>
+      <h1 class="text-4xl font-bold text-gray-900">Pricing</h1>
+      <p class="mt-4 text-lg text-gray-600">datax is completely free, no registration required, no hidden fees</p>
     </section>
 
     <section class="max-w-2xl mx-auto">
@@ -65,11 +65,7 @@
           </ul>
         </div>
 
-        <div class="mb-6">
-          <a href="/#download" class="px-8 py-3 bg-blue-700 text-white rounded-md shadow hover:bg-blue-800 transition-colors text-lg font-semibold">
-            Download Now
-          </a>
-        </div>
+        <div id="pricing-download-section" data-download-component></div>
 
         <p class="text-sm text-gray-500">No registration required • No hidden fees • No time limits</p>
       </div>
@@ -112,12 +108,10 @@
     </section>
   </main>
 
-  <footer class="bg-white border-t py-6 mt-12">
-    <div class="container mx-auto px-4 text-sm text-gray-500">
-      © 2025 datax.cash — <a href="/docs.html" class="underline">Privacy & Logs</a>
-    </div>
-  </footer>
+  <footer class="bg-white border-t py-6 mt-12" data-footer-component data-lang="en"></footer>
 
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/download-component.js"></script>
+  <script src="assets/js/footer-component.js"></script>
 </body>
 </html>

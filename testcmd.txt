@@ -1,0 +1,6 @@
+# 模拟访问与下载
+curl -I http://localhost:8080/            # 访问首页
+curl -I http://localhost:8080/downloads/sample-file.csv  # 模拟下载
+
+# 查看容器内日志（在另一个终端）
+docker exec -it datax-nginx cat /var/log/nginx/access.log | tail -n 50

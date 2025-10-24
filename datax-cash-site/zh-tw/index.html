@@ -65,32 +65,266 @@
       </article>
     </section>
 
+    <!-- 圖片畫廊 -->
+    <section class="mt-16" id="gallery">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900">探索 datax.cash 界面</h2>
+        <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">發現我們桌面應用程式的強大功能和直觀界面</p>
+      </div>
+
+      <!-- 畫廊過濾按鈕 -->
+      <div class="gallery-filters">
+        <button class="filter-btn active" data-category="all">全部</button>
+        <button class="filter-btn" data-category="appstore">應用商店</button>
+        <button class="filter-btn" data-category="host_mgmt">主機管理</button>
+        <button class="filter-btn" data-category="taskbar">任務欄</button>
+        <button class="filter-btn" data-category="termapp">終端應用</button>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- 應用商店截圖 -->
+        <div class="gallery-item group" data-category="appstore">
+          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(0)">
+            <img data-src="../assets/images/screenshot/appstore/appstore_3Panel.png" alt="應用商店三面板視圖" class="w-full h-auto object-cover">
+            <div class="gallery-overlay">
+              <div class="gallery-caption">應用商店三面板視圖</div>
+            </div>
+          </div>
+          <div class="mt-2 text-center">
+            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">應用商店</span>
+            <p class="text-sm text-gray-600 mt-1">三面板視圖</p>
+          </div>
+        </div>
+
+        <div class="gallery-item group" data-category="appstore">
+          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(1)">
+            <img data-src="../assets/images/screenshot/appstore/appstore_authorization.png" alt="應用商店授權" class="w-full h-auto object-cover">
+            <div class="gallery-overlay">
+              <div class="gallery-caption">應用商店授權</div>
+            </div>
+          </div>
+          <div class="mt-2 text-center">
+            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">應用商店</span>
+            <p class="text-sm text-gray-600 mt-1">授權</p>
+          </div>
+        </div>
+
+        <div class="gallery-item group" data-category="appstore">
+          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(2)">
+            <img data-src="../assets/images/screenshot/appstore/appstore_hostlist.png" alt="應用商店主機列表" class="w-full h-auto object-cover">
+            <div class="gallery-overlay">
+              <div class="gallery-caption">應用商店主機列表</div>
+            </div>
+          </div>
+          <div class="mt-2 text-center">
+            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">應用商店</span>
+            <p class="text-sm text-gray-600 mt-1">主機列表</p>
+          </div>
+        </div>
+
+        <div class="gallery-item group" data-category="appstore">
+          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(3)">
+            <img data-src="../assets/images/screenshot/appstore/appstore_imagellist.png" alt="應用商店鏡像列表" class="w-full h-auto object-cover">
+            <div class="gallery-overlay">
+              <div class="gallery-caption">應用商店鏡像列表</div>
+            </div>
+          </div>
+          <div class="mt-2 text-center">
+            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">應用商店</span>
+            <p class="text-sm text-gray-600 mt-1">鏡像列表</p>
+          </div>
+        </div>
+
+        <!-- 主機管理截圖 -->
+        <div class="gallery-item group" data-category="host_mgmt">
+          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(4)">
+            <img data-src="../assets/images/screenshot/host_mgmt/AddHost_step01.png" alt="添加主機步驟1" class="w-full h-auto object-cover">
+            <div class="gallery-overlay">
+              <div class="gallery-caption">添加主機步驟1</div>
+            </div>
+          </div>
+          <div class="mt-2 text-center">
+            <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">主機管理</span>
+            <p class="text-sm text-gray-600 mt-1">添加主機步驟1</p>
+          </div>
+        </div>
+
+        <div class="gallery-item group" data-category="host_mgmt">
+          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(5)">
+            <img data-src="../assets/images/screenshot/host_mgmt/AddHost_step02.png" alt="添加主機步驟2" class="w-full h-auto object-cover">
+            <div class="gallery-overlay">
+              <div class="gallery-caption">添加主機步驟2</div>
+            </div>
+          </div>
+          <div class="mt-2 text-center">
+            <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">主機管理</span>
+            <p class="text-sm text-gray-600 mt-1">添加主機步驟2</p>
+          </div>
+        </div>
+
+        <div class="gallery-item group" data-category="host_mgmt">
+          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(6)">
+            <img data-src="../assets/images/screenshot/host_mgmt/AddHost_step03.png" alt="添加主機步驟3" class="w-full h-auto object-cover">
+            <div class="gallery-overlay">
+              <div class="gallery-caption">添加主機步驟3</div>
+            </div>
+          </div>
+          <div class="mt-2 text-center">
+            <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">主機管理</span>
+            <p class="text-sm text-gray-600 mt-1">添加主機步驟3</p>
+          </div>
+        </div>
+
+        <div class="gallery-item group" data-category="host_mgmt">
+          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(7)">
+            <img data-src="../assets/images/screenshot/host_mgmt/HostTable_Filter.png" alt="主機表格過濾" class="w-full h-auto object-cover">
+            <div class="gallery-overlay">
+              <div class="gallery-caption">主機表格過濾</div>
+            </div>
+          </div>
+          <div class="mt-2 text-center">
+            <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">主機管理</span>
+            <p class="text-sm text-gray-600 mt-1">主機表格過濾</p>
+          </div>
+        </div>
+
+        <!-- 任務欄截圖 -->
+        <div class="gallery-item group" data-category="taskbar">
+          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(8)">
+            <img data-src="../assets/images/screenshot/taskbar/taskbar_hostGroup.png" alt="任務欄主機組" class="w-full h-auto object-cover">
+            <div class="gallery-overlay">
+              <div class="gallery-caption">任務欄主機組</div>
+            </div>
+          </div>
+          <div class="mt-2 text-center">
+            <span class="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">任務欄</span>
+            <p class="text-sm text-gray-600 mt-1">主機組</p>
+          </div>
+        </div>
+
+        <div class="gallery-item group" data-category="taskbar">
+          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(9)">
+            <img data-src="../assets/images/screenshot/taskbar/taskbar-appGroup.png" alt="任務欄應用組" class="w-full h-auto object-cover">
+            <div class="gallery-overlay">
+              <div class="gallery-caption">任務欄應用組</div>
+            </div>
+          </div>
+          <div class="mt-2 text-center">
+            <span class="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">任務欄</span>
+            <p class="text-sm text-gray-600 mt-1">應用組</p>
+          </div>
+        </div>
+
+        <div class="gallery-item group" data-category="taskbar">
+          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(10)">
+            <img data-src="../assets/images/screenshot/taskbar/taskbar-launchApp.png" alt="任務欄啟動應用" class="w-full h-auto object-cover">
+            <div class="gallery-overlay">
+              <div class="gallery-caption">任務欄啟動應用</div>
+            </div>
+          </div>
+          <div class="mt-2 text-center">
+            <span class="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">任務欄</span>
+            <p class="text-sm text-gray-600 mt-1">啟動應用</p>
+          </div>
+        </div>
+
+        <!-- 終端應用截圖 -->
+        <div class="col-span-full">
+          <div class="text-center mb-6">
+            <h3 class="text-xl font-semibold text-gray-800">終端應用程式</h3>
+            <p class="text-gray-600 mt-2">我們的Docker應用商店中提供的各種終端應用程式</p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="gallery-item group" data-category="termapp">
+              <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(11)">
+                <img data-src="../assets/images/screenshot/termapp/termapp_first.png" alt="第一個終端" class="w-full h-auto object-cover">
+                <div class="gallery-overlay">
+                  <div class="gallery-caption">第一個終端</div>
+                </div>
+              </div>
+              <div class="mt-2 text-center">
+                <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">終端</span>
+                <p class="text-sm text-gray-600 mt-1">第一個終端</p>
+              </div>
+            </div>
+
+            <div class="gallery-item group" data-category="termapp">
+              <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(12)">
+                <img data-src="../assets/images/screenshot/termapp/termapp_mysqlcli.png" alt="MySQL CLI" class="w-full h-auto object-cover">
+                <div class="gallery-overlay">
+                  <div class="gallery-caption">MySQL CLI</div>
+                </div>
+              </div>
+              <div class="mt-2 text-center">
+                <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">終端</span>
+                <p class="text-sm text-gray-600 mt-1">MySQL CLI</p>
+              </div>
+            </div>
+
+            <div class="gallery-item group" data-category="termapp">
+              <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(13)">
+                <img data-src="../assets/images/screenshot/termapp/termapp_pgcli.png" alt="PostgreSQL CLI" class="w-full h-auto object-cover">
+                <div class="gallery-overlay">
+                  <div class="gallery-caption">PostgreSQL CLI</div>
+                </div>
+              </div>
+              <div class="mt-2 text-center">
+                <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">終端</span>
+                <p class="text-sm text-gray-600 mt-1">PostgreSQL CLI</p>
+              </div>
+            </div>
+
+            <div class="gallery-item group" data-category="termapp">
+              <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(14)">
+                <img data-src="../assets/images/screenshot/termapp/termapp_select.png" alt="終端應用選擇" class="w-full h-auto object-cover">
+                <div class="gallery-overlay">
+                  <div class="gallery-caption">應用選擇</div>
+                </div>
+              </div>
+              <div class="mt-2 text-center">
+                <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">終端</span>
+                <p class="text-sm text-gray-600 mt-1">應用選擇</p>
+              </div>
+            </div>
+
+            <div class="gallery-item group" data-category="termapp">
+              <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(15)">
+                <img data-src="../assets/images/screenshot/termapp/termapp_shell.png" alt="Shell終端" class="w-full h-auto object-cover">
+                <div class="gallery-overlay">
+                  <div class="gallery-caption">Shell終端</div>
+                </div>
+              </div>
+              <div class="mt-2 text-center">
+                <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">終端</span>
+                <p class="text-sm text-gray-600 mt-1">Shell終端</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lightbox -->
+      <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div class="lightbox-nav">
+          <button onclick="changeImage(-1)">&#10094;</button>
+          <button onclick="changeImage(1)">&#10095;</button>
+        </div>
+      </div>
+    </section>
+
     <section id="download" class="mt-16 bg-white rounded-lg p-8 text-center">
       <h2 class="text-2xl font-bold mb-4">免費下載 datax</h2>
       <p class="text-gray-600 mb-6">適用於Windows、macOS和Linux的桌面應用程式</p>
-      <div class="flex justify-center gap-4 flex-wrap">
-        <a href="#" class="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
-          🪟 Windows
-        </a>
-        <a href="#" class="px-6 py-3 bg-gray-800 text-white rounded-md hover:bg-gray-900 transition-colors">
-          🍎 macOS
-        </a>
-        <a href="#" class="px-6 py-3 bg-orange-600 text-white rounded-md hover:bg-orange-700 transition-colors">
-          🐧 Linux
-        </a>
-      </div>
-      <p class="text-sm text-gray-500 mt-4">
-        完全免費 • 無需註冊 • 跨平台支援
-      </p>
+      <div id="home-download-section-tw" data-download-component></div>
     </section>
   </main>
 
-  <footer class="bg-white border-t py-6 mt-12">
-    <div class="container mx-auto px-4 text-sm text-gray-500">
-      © 2025 datax.cash — <a href="docs.html" class="underline">文檔與支援</a>
-    </div>
-  </footer>
+  <footer class="bg-white border-t py-6 mt-12" data-footer-component data-lang="zh-tw"></footer>
 
   <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/download-component.js"></script>
+  <script src="../assets/js/footer-component.js"></script>
 </body>
 </html>

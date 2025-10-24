@@ -42,7 +42,7 @@
   <main class="container mx-auto px-4 py-12">
     <section class="text-center mb-12">
       <h1 class="text-4xl font-bold mb-4">價格方案</h1>
-      <p class="text-lg text-gray-600">datax完全免費，無需註冊，無隱藏費用</p>
+      <p class="text-lg text-gray-600">datax完全免費！無需註冊，無隱藏費用，立即下載使用。</p>
     </section>
 
     <section class="max-w-2xl mx-auto">
@@ -98,9 +98,7 @@
           </ul>
         </div>
 
-        <a href="index.html#download" class="w-full px-8 py-4 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors text-lg font-semibold inline-block">
-          立即免費下載
-        </a>
+        <div id="pricing-download-section" data-download-component></div>
       </div>
     </section>
 
@@ -160,18 +158,14 @@
     <section class="mt-16 text-center">
       <h2 class="text-2xl font-bold mb-4">準備開始了嗎？</h2>
       <p class="text-gray-600 mb-6">立即下載datax，開始您的數據工具部署之旅</p>
-      <a href="index.html#download" class="px-8 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
-        免費下載
-      </a>
+      <div id="pricing-download-section" data-download-component></div>
     </section>
   </main>
 
-  <footer class="bg-white border-t py-6 mt-12">
-    <div class="container mx-auto px-4 text-sm text-gray-500">
-      © 2025 datax.cash — <a href="docs.html" class="underline">文檔與支援</a>
-    </div>
-  </footer>
+  <footer class="bg-white border-t py-6 mt-12" data-footer-component data-lang="zh-tw"></footer>
 
   <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/download-component.js"></script>
+  <script src="../assets/js/footer-component.js"></script>
 </body>
 </html>

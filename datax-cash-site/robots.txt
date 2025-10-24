@@ -1,0 +1,43 @@
+# robots.txt for datax.cash
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://datax.cash/sitemap.xml
+
+# LLM-friendly documentation
+# See https://llmstxt.org/ for more information
+Allow: /llm.txt
+
+# Disallow admin or private directories (if any in future)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow all major search engines and AI crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Crawl delay (optional, adjust if needed)
+# Crawl-delay: 1

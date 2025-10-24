@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- English Pages -->
+  <url>
+    <loc>https://datax.cash/index.html</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://datax.cash/zh-tw/index.html"/>
+  </url>
+  
+  <url>
+    <loc>https://datax.cash/features.html</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://datax.cash/zh-tw/features.html"/>
+  </url>
+  
+  <url>
+    <loc>https://datax.cash/pricing.html</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://datax.cash/zh-tw/pricing.html"/>
+  </url>
+  
+  <url>
+    <loc>https://datax.cash/docs.html</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://datax.cash/zh-tw/docs.html"/>
+  </url>
+  
+  <!-- Traditional Chinese Pages -->
+  <url>
+    <loc>https://datax.cash/zh-tw/index.html</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://datax.cash/index.html"/>
+  </url>
+  
+  <url>
+    <loc>https://datax.cash/zh-tw/features.html</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://datax.cash/features.html"/>
+  </url>
+  
+  <url>
+    <loc>https://datax.cash/zh-tw/pricing.html</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://datax.cash/pricing.html"/>
+  </url>
+  
+  <url>
+    <loc>https://datax.cash/zh-tw/docs.html</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://datax.cash/docs.html"/>
+  </url>
+  
+  <!-- LLM Documentation -->
+  <url>
+    <loc>https://datax.cash/llm.txt</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+</urlset>

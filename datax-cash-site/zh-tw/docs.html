@@ -43,6 +43,7 @@
     <section class="text-center mb-12">
       <h1 class="text-4xl font-bold mb-4">文檔</h1>
       <p class="text-lg text-gray-600">學習如何使用datax部署和管理您的數據工具</p>
+      <div id="docs-hero-download" data-download-component class="mt-6"></div>
     </section>
 
     <div class="grid gap-8 lg:grid-cols-4">
@@ -96,9 +97,10 @@
           <div class="bg-white rounded-lg shadow-sm p-6">
             <h2 class="text-2xl font-bold mb-4">💻 安裝指南</h2>
             
-            <div class="grid gap-6 md:grid-cols-3">
+            <h3 class="font-semibold mb-3">安裝步驟</h3>
+            <div class="grid gap-6 md:grid-cols-3 mt-4">
               <div class="border rounded-lg p-4">
-                <h3 class="font-semibold mb-2">🪟 Windows</h3>
+                <h4 class="font-semibold mb-2">🪟 Windows</h4>
                 <ol class="text-sm text-gray-600 space-y-1">
                   <li>1. 下載 datax-windows.exe</li>
                   <li>2. 以管理員身份運行安裝程式</li>
@@ -108,7 +110,7 @@
               </div>
               
               <div class="border rounded-lg p-4">
-                <h3 class="font-semibold mb-2">🍎 macOS</h3>
+                <h4 class="font-semibold mb-2">🍎 macOS</h4>
                 <ol class="text-sm text-gray-600 space-y-1">
                   <li>1. 下載 datax-macos.dmg</li>
                   <li>2. 雙擊打開DMG文件</li>
@@ -349,7 +351,6 @@ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys</pre>
                   <div class="border-l-4 border-yellow-500 pl-4">
                     <h4 class="font-semibold text-yellow-700">容器啟動失敗</h4>
                     <ul class="text-sm text-gray-600 mt-1 space-y-1">
-                      <li>• 檢查Docker是否已安裝並運行</li>
                       <li>• 驗證端口是否被其他服務占用</li>
                       <li>• 確認主機資源充足（CPU、內存、磁盤）</li>
                       <li>• 查看容器日誌獲取詳細錯誤信息</li>
@@ -425,12 +426,10 @@ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys</pre>
     </div>
   </main>
 
-  <footer class="bg-white border-t py-6 mt-12">
-    <div class="container mx-auto px-4 text-sm text-gray-500">
-      © 2025 datax.cash — <a href="docs.html" class="underline">文檔與支援</a>
-    </div>
-  </footer>
+  <footer class="bg-white border-t py-6 mt-12" data-footer-component data-lang="zh-tw"></footer>
 
   <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/download-component.js"></script>
+  <script src="../assets/js/footer-component.js"></script>
 </body>
 </html>
