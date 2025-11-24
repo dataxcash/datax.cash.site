@@ -28,28 +28,46 @@ document.addEventListener('click', (e) => {
     const el = document.querySelector(href);
     if (el) {
       e.preventDefault();
-      el.scrollIntoView({ behavior: 'smooth' });
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 });
 
-// Lazy loading images using IntersectionObserver
+// Enhanced lazy loading images using IntersectionObserver with better error handling
 const lazyImages = [].slice.call(document.querySelectorAll('img[data-src]'));
 if ('IntersectionObserver' in window && lazyImages.length > 0) {
   const imgObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const img = entry.target;
-        img.src = img.dataset.src;
-        img.removeAttribute('data-src');
+        const src = img.dataset.src;
+        
+        // Set up error handling for image loading
+        img.onload = () => {
+          img.removeAttribute('data-src');
+          img.classList.add('loaded');
+        };
+        
+        img.onerror = () => {
+          // Fallback to a placeholder if image fails to load
+          img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjMyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIE5vdCBGb3VuZDwvdGV4dD48L3N2Zz4=';
+          img.removeAttribute('data-src');
+        };
+        
+        img.src = src;
         observer.unobserve(img);
       }
     });
   });
-  lazyImages.forEach(img => imgObserver.observe(img));
+  
+  lazyImages.forEach(img => {
+    // Add a loading class for styling
+    img.classList.add('loading');
+    imgObserver.observe(img);
+  });
 }
 
-// Gallery lightbox functionality
+// Gallery lightbox functionality with captions
 const images = [
   'assets/images/screenshot/appstore/appstore_3Panel.png',
   'assets/images/screenshot/appstore/appstore_authorization.png',
@@ -69,12 +87,40 @@ const images = [
   'assets/images/screenshot/termapp/termapp_shell.png'
 ];
 
+// Extract captions from gallery items
+const captions = [
+  'App Store 3 Panel View',
+  'App Store Authorization',
+  'App Store Host List',
+  'App Store Image List',
+  'Add Host Step 1',
+  'Add Host Step 2',
+  'Add Host Step 3',
+  'Host Table Filter',
+  'Taskbar Host Group',
+  'Taskbar App Group',
+  'Taskbar Launch App',
+  'First Terminal',
+  'MySQL CLI',
+  'PostgreSQL CLI',
+  'App Select',
+  'Shell Terminal'
+];
+
 let currentIndex = 0;
 let slideshowInterval;
 
 function openLightbox(index) {
   currentIndex = index;
-  document.getElementById('lightbox-img').src = images[currentIndex];
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.querySelector('.lightbox-caption');
+  
+  // Set image and caption
+  lightboxImg.src = images[currentIndex];
+  if (lightboxCaption) {
+    lightboxCaption.textContent = captions[currentIndex];
+  }
+  
   document.getElementById('lightbox').classList.add('active');
   document.body.style.overflow = 'hidden'; // Prevent background scrolling
   
@@ -101,7 +147,14 @@ function changeImage(direction) {
     currentIndex = 0;
   }
   
-  document.getElementById('lightbox-img').src = images[currentIndex];
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.querySelector('.lightbox-caption');
+  
+  // Set image and caption
+  lightboxImg.src = images[currentIndex];
+  if (lightboxCaption) {
+    lightboxCaption.textContent = captions[currentIndex];
+  }
   
   // Restart slideshow after a delay
   setTimeout(startSlideshow, 3000);
@@ -116,7 +169,13 @@ function startSlideshow() {
   // Set up auto-rotation every 5 seconds
   slideshowInterval = setInterval(() => {
     currentIndex = (currentIndex + 1) % images.length;
-    document.getElementById('lightbox-img').src = images[currentIndex];
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.querySelector('.lightbox-caption');
+    
+    lightboxImg.src = images[currentIndex];
+    if (lightboxCaption) {
+      lightboxCaption.textContent = captions[currentIndex];
+    }
   }, 5000);
 }
 
@@ -127,7 +186,7 @@ function stopSlideshow() {
   }
 }
 
-// Enhanced gallery image lazy loading
+// Enhanced gallery image lazy loading with better error handling
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize gallery images with Intersection Observer for lazy loading
   const galleryImages = document.querySelectorAll('.gallery-item img');
@@ -138,8 +197,19 @@ document.addEventListener('DOMContentLoaded', function() {
         if (entry.isIntersecting) {
           const img = entry.target;
           if (img.dataset.src) {
+            // Set up error handling for image loading
+            img.onload = () => {
+              img.removeAttribute('data-src');
+              img.classList.add('loaded');
+            };
+            
+            img.onerror = () => {
+              // Fallback to a placeholder if image fails to load
+              img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjMyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzM0MTU1Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2NjZDU4MSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlByZWxvYWQgRmFpbGVkPC90ZXh0Pjwvc3ZnPg==';
+              img.removeAttribute('data-src');
+            };
+            
             img.src = img.dataset.src;
-            img.removeAttribute('data-src');
           }
           observer.unobserve(img);
         }
@@ -148,6 +218,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     galleryImages.forEach(img => {
       if (img.dataset.src) {
+        // Add a loading class for styling
+        img.classList.add('loading');
         galleryObserver.observe(img);
       }
     });
@@ -174,7 +246,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Gallery filtering functionality
+// Gallery filtering functionality with animations
 document.addEventListener('DOMContentLoaded', function() {
   const filterButtons = document.querySelectorAll('.filter-btn');
   const galleryItems = document.querySelectorAll('.gallery-item');

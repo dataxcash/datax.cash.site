@@ -8,295 +8,492 @@
   <!-- Tailwind CDN for quick preview; use Tailwind CLI for production builds (see README) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="assets/css/common.css" rel="stylesheet">
-  <style>body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial}</style>
+  <style>
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background-color: #0f172a;
+      color: #f1f5f9;
+    }
+    
+    .dark-bg {
+      background-color: #0f172a;
+    }
+    
+    .card-bg {
+      background-color: #1e293b;
+    }
+    
+    .accent-blue {
+      color: #3b82f6;
+    }
+    
+    .accent-green {
+      color: #10b981;
+    }
+    
+    .accent-purple {
+      color: #8b5cf6;
+    }
+    
+    .hover-accent-blue:hover {
+      background-color: #3b82f6;
+    }
+    
+    .feature-card {
+      transition: all 0.3s ease;
+      border: 1px solid #334155;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+      border-color: #3b82f6;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25);
+    }
+    
+    .gallery-item {
+      transition: all 0.3s ease;
+    }
+    
+    .gallery-item:hover {
+      transform: scale(1.03);
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #3b82f6, #60a5fa);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid #475569;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-secondary:hover {
+      background-color: #1e293b;
+      border-color: #94a3b8;
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
-  <header class="bg-white shadow">
+<body class="dark-bg text-slate-100">
+  <header class="bg-slate-900 shadow-lg">
     <div class="container mx-auto px-4 py-4 flex items-center justify-between">
       <div class="flex items-center space-x-3">
         <img src="assets/images/logo.svg" alt="datax.cash logo" class="logo">
-        <div class="hidden sm:block text-sm text-gray-600">Manage Ur Data, Price Ur Data, Cash Ur Data</div>
+        <div class="hidden sm:block text-sm text-slate-400">Manage Ur Data, Price Ur Data, Cash Ur Data</div>
       </div>
       <nav class="hidden md:flex items-center space-x-6">
-        <a href="index.html" class="text-sm font-semibold">Home</a>
-        <a href="features.html" class="text-sm">Features</a>
-        <a href="pricing.html" class="text-sm">Pricing</a>
-        <a href="docs.html" class="text-sm">Docs</a>
-        <a href="zh-tw/" class="text-sm">繁體</a>
+        <a href="index.html" class="text-sm font-semibold accent-blue">Home</a>
+        <a href="features.html" class="text-sm text-slate-300 hover:text-white">Features</a>
+        <a href="pricing.html" class="text-sm text-slate-300 hover:text-white">Pricing</a>
+        <a href="docs.html" class="text-sm text-slate-300 hover:text-white">Docs</a>
+        <a href="zh-tw/" class="text-sm text-slate-300 hover:text-white">繁體</a>
       </nav>
-      <button id="burger" class="md:hidden p-2">
+      <button id="burger" class="md:hidden p-2 text-slate-300">
         <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
       </button>
     </div>
-    <div id="mobileMenu" class="md:hidden hidden">
-      <div class="px-4 pb-4 space-y-2">
-        <a href="index.html" class="block">Home</a>
-        <a href="features.html" class="block">Features</a>
-        <a href="pricing.html" class="block">Pricing</a>
-        <a href="docs.html" class="block">Docs</a>
-        <a href="zh-tw/" class="block">繁體</a>
+    <div id="mobileMenu" class="md:hidden hidden bg-slate-800">
+      <div class="px-4 pb-4 space-y-2 pt-2">
+        <a href="index.html" class="block py-2 text-slate-200">Home</a>
+        <a href="features.html" class="block py-2 text-slate-300">Features</a>
+        <a href="pricing.html" class="block py-2 text-slate-300">Pricing</a>
+        <a href="docs.html" class="block py-2 text-slate-300">Docs</a>
+        <a href="zh-tw/" class="block py-2 text-slate-300">繁體</a>
       </div>
     </div>
   </header>
 
   <main class="container mx-auto px-4 py-12">
-    <section class="text-center">
-      <h1 class="text-4xl md:text-5xl font-extrabold text-0b2747">datax.cash</h1>
-      <p class="mt-4 text-lg text-gray-700">Manage Ur Data, Price Ur Data, Cash Ur Data — Deploy data tools instantly with Docker</p>
-      <p class="mt-2 text-gray-600">Free desktop application for managing databases and data processing tools across multiple hosts</p>
-      <div class="mt-8 flex justify-center gap-4">
-        <a href="#download" class="px-6 py-3 bg-blue-700 text-white rounded-md shadow">Download Free</a>
-        <a href="docs.html" class="px-6 py-3 border border-gray-200 rounded-md">Documentation</a>
+    <!-- Hero Section -->
+    <section class="text-center mb-16">
+      <h1 class="text-4xl md:text-6xl font-extrabold mb-6">
+        <span class="block">datax.cash</span>
+        <span class="block text-2xl md:text-3xl font-normal mt-4 text-slate-300">Manage Ur Data, Price Ur Data, Cash Ur Data</span>
+      </h1>
+      <p class="mt-6 text-lg md:text-xl text-slate-300 max-w-3xl mx-auto">
+        The ultimate desktop application for managing databases and data processing tools across multiple hosts with Docker-powered deployment
+      </p>
+      <p class="mt-4 text-slate-400 max-w-2xl mx-auto">
+        Free desktop application for managing databases and data processing tools across multiple hosts
+      </p>
+      <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#download" class="px-8 py-4 btn-primary text-white rounded-lg shadow-lg font-semibold">
+          Download Free
+        </a>
+        <a href="docs.html" class="px-8 py-4 btn-secondary text-slate-200 rounded-lg font-semibold">
+          Documentation
+        </a>
       </div>
     </section>
 
-    <section class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      <article class="bg-white p-6 rounded-lg shadow-sm">
-        <h3 class="font-semibold">🐳 Docker App Store</h3>
-        <p class="mt-2 text-sm text-gray-600">Deploy databases and data tools instantly with pre-configured Docker containers across multiple hosts.</p>
-      </article>
-      <article class="bg-white p-6 rounded-lg shadow-sm">
-        <h3 class="font-semibold">🖥️ Multi-Host Management</h3>
-        <p class="mt-2 text-sm text-gray-600">Manage SSH connections and deploy applications across multiple remote servers from a single desktop interface.</p>
-      </article>
-      <article class="bg-white p-6 rounded-lg shadow-sm">
-        <h3 class="font-semibold">📊 Data Tools Suite</h3>
-        <p class="mt-2 text-sm text-gray-600">Access PostgreSQL, MySQL, Oracle, IBM DB2, and specialized DATAX tools for data migration, synchronization, and comparison.</p>
-      </article>
+    <!-- Key Features Section -->
+    <section class="mb-20">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Powerful Data Management Suite</h2>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+          Everything you need to deploy, manage, and monitor data tools across your infrastructure
+        </p>
+      </div>
+      
+      <div class="grid gap-8 md:grid-cols-3">
+        <article class="feature-card card-bg p-8 rounded-xl">
+          <div class="text-4xl mb-6 accent-blue">🐳</div>
+          <h3 class="text-xl font-bold mb-4">Docker App Store</h3>
+          <p class="text-slate-400 mb-6">
+            Deploy databases and data tools instantly with pre-configured Docker containers across multiple hosts.
+          </p>
+          <ul class="text-sm text-slate-400 space-y-2">
+            <li class="flex items-start">
+              <span class="text-green-400 mr-2">✓</span>
+              <span>PostgreSQL, MySQL, Oracle, IBM DB2</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-400 mr-2">✓</span>
+              <span>DATAX tools for migration & sync</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-400 mr-2">✓</span>
+              <span>One-click deployment</span>
+            </li>
+          </ul>
+        </article>
+        
+        <article class="feature-card card-bg p-8 rounded-xl">
+          <div class="text-4xl mb-6 accent-green">🖥️</div>
+          <h3 class="text-xl font-bold mb-4">Multi-Host Management</h3>
+          <p class="text-slate-400 mb-6">
+            Manage SSH connections and deploy applications across multiple remote servers from a single desktop interface.
+          </p>
+          <ul class="text-sm text-slate-400 space-y-2">
+            <li class="flex items-start">
+              <span class="text-green-400 mr-2">✓</span>
+              <span>SSH connection pooling</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-400 mr-2">✓</span>
+              <span>Host grouping and tagging</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-400 mr-2">✓</span>
+              <span>Credential management</span>
+            </li>
+          </ul>
+        </article>
+        
+        <article class="feature-card card-bg p-8 rounded-xl">
+          <div class="text-4xl mb-6 accent-purple">📊</div>
+          <h3 class="text-xl font-bold mb-4">Data Tools Suite</h3>
+          <p class="text-slate-400 mb-6">
+            Access PostgreSQL, MySQL, Oracle, IBM DB2, and specialized DATAX tools for data migration, synchronization, and comparison.
+          </p>
+          <ul class="text-sm text-slate-400 space-y-2">
+            <li class="flex items-start">
+              <span class="text-green-400 mr-2">✓</span>
+              <span>X0 Diagnosis & X1 Simulation</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-400 mr-2">✓</span>
+              <span>M3 Migration & T3 Sync</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-400 mr-2">✓</span>
+              <span>V3 Comparison tools</span>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Country SCREEN Features Section -->
+    <section class="mb-20 card-bg rounded-2xl p-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Global SCREEN Technology</h2>
+        <p class="text-lg text-slate-300 max-w-3xl mx-auto">
+          Our unique country-specific SCREEN technology ensures optimal performance and compliance across global deployments
+        </p>
+      </div>
+      
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div class="text-center p-6 bg-slate-800 rounded-xl">
+          <div class="text-3xl mb-4">🇺🇸</div>
+          <h3 class="text-xl font-bold mb-2">US SCREEN</h3>
+          <p class="text-slate-400 text-sm">
+            Optimized for North American data centers with enhanced security protocols
+          </p>
+        </div>
+        
+        <div class="text-center p-6 bg-slate-800 rounded-xl">
+          <div class="text-3xl mb-4">🇪🇺</div>
+          <h3 class="text-xl font-bold mb-2">EU SCREEN</h3>
+          <p class="text-slate-400 text-sm">
+            GDPR-compliant deployment with regional data sovereignty features
+          </p>
+        </div>
+        
+        <div class="text-center p-6 bg-slate-800 rounded-xl">
+          <div class="text-3xl mb-4">🇨🇳</div>
+          <h3 class="text-xl font-bold mb-2">CN SCREEN</h3>
+          <p class="text-slate-400 text-sm">
+            Optimized for Chinese data centers with local compliance support
+          </p>
+        </div>
+        
+        <div class="text-center p-6 bg-slate-800 rounded-xl">
+          <div class="text-3xl mb-4">🇯🇵</div>
+          <h3 class="text-xl font-bold mb-2">JP SCREEN</h3>
+          <p class="text-slate-400 text-sm">
+            High-performance deployment optimized for Asian infrastructure
+          </p>
+        </div>
+      </div>
+      
+      <div class="mt-10 text-center">
+        <p class="text-slate-300 max-w-2xl mx-auto">
+          Each country SCREEN provides region-specific optimizations, compliance features, and performance enhancements tailored to local infrastructure and regulatory requirements.
+        </p>
+      </div>
     </section>
 
     <!-- Image Gallery Section -->
-    <section class="mt-16" id="gallery">
+    <section class="mt-16 mb-20" id="gallery">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-900">Explore datax.cash Interface</h2>
-        <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Discover the powerful features and intuitive interface of our desktop application</p>
+        <h2 class="text-3xl font-bold mb-4">Explore datax.cash Interface</h2>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+          Discover the powerful features and intuitive interface of our desktop application
+        </p>
       </div>
 
       <!-- Gallery filter buttons -->
-      <div class="gallery-filters">
-        <button class="filter-btn active" data-category="all">All</button>
-        <button class="filter-btn" data-category="appstore">App Store</button>
-        <button class="filter-btn" data-category="host_mgmt">Host Management</button>
-        <button class="filter-btn" data-category="taskbar">Taskbar</button>
-        <button class="filter-btn" data-category="termapp">Terminal Apps</button>
+      <div class="gallery-filters flex flex-wrap justify-center gap-2 mb-8">
+        <button class="filter-btn active px-4 py-2 rounded-full bg-blue-600 text-white" data-category="all">All</button>
+        <button class="filter-btn px-4 py-2 rounded-full bg-slate-700 text-slate-200 hover:bg-slate-600" data-category="appstore">App Store</button>
+        <button class="filter-btn px-4 py-2 rounded-full bg-slate-700 text-slate-200 hover:bg-slate-600" data-category="host_mgmt">Host Management</button>
+        <button class="filter-btn px-4 py-2 rounded-full bg-slate-700 text-slate-200 hover:bg-slate-600" data-category="taskbar">Taskbar</button>
+        <button class="filter-btn px-4 py-2 rounded-full bg-slate-700 text-slate-200 hover:bg-slate-600" data-category="termapp">Terminal Apps</button>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         <!-- App Store Screenshots -->
         <div class="gallery-item group" data-category="appstore">
-          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(0)">
+          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 cursor-pointer" onclick="openLightbox(0)">
             <img data-src="assets/images/screenshot/appstore/appstore_3Panel.png" alt="App Store 3 Panel View" class="w-full h-auto object-cover">
-            <div class="gallery-overlay">
-              <div class="gallery-caption">App Store 3 Panel View</div>
+            <div class="gallery-overlay bg-black bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+              <div class="gallery-caption text-white text-center p-4">App Store 3 Panel View</div>
             </div>
           </div>
-          <div class="mt-2 text-center">
-            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">App Store</span>
-            <p class="text-sm text-gray-600 mt-1">3 Panel View</p>
+          <div class="mt-3 text-center">
+            <span class="inline-block bg-blue-900 text-blue-200 text-xs px-3 py-1 rounded-full">App Store</span>
+            <p class="text-sm text-slate-400 mt-2">3 Panel View</p>
           </div>
         </div>
 
         <div class="gallery-item group" data-category="appstore">
-          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(1)">
+          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 cursor-pointer" onclick="openLightbox(1)">
             <img data-src="assets/images/screenshot/appstore/appstore_authorization.png" alt="App Store Authorization" class="w-full h-auto object-cover">
-            <div class="gallery-overlay">
-              <div class="gallery-caption">App Store Authorization</div>
+            <div class="gallery-overlay bg-black bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+              <div class="gallery-caption text-white text-center p-4">App Store Authorization</div>
             </div>
           </div>
-          <div class="mt-2 text-center">
-            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">App Store</span>
-            <p class="text-sm text-gray-600 mt-1">Authorization</p>
+          <div class="mt-3 text-center">
+            <span class="inline-block bg-blue-900 text-blue-200 text-xs px-3 py-1 rounded-full">App Store</span>
+            <p class="text-sm text-slate-400 mt-2">Authorization</p>
           </div>
         </div>
 
         <div class="gallery-item group" data-category="appstore">
-          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(2)">
+          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 cursor-pointer" onclick="openLightbox(2)">
             <img data-src="assets/images/screenshot/appstore/appstore_hostlist.png" alt="App Store Host List" class="w-full h-auto object-cover">
-            <div class="gallery-overlay">
-              <div class="gallery-caption">App Store Host List</div>
+            <div class="gallery-overlay bg-black bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+              <div class="gallery-caption text-white text-center p-4">App Store Host List</div>
             </div>
           </div>
-          <div class="mt-2 text-center">
-            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">App Store</span>
-            <p class="text-sm text-gray-600 mt-1">Host List</p>
+          <div class="mt-3 text-center">
+            <span class="inline-block bg-blue-900 text-blue-200 text-xs px-3 py-1 rounded-full">App Store</span>
+            <p class="text-sm text-slate-400 mt-2">Host List</p>
           </div>
         </div>
 
         <div class="gallery-item group" data-category="appstore">
-          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(3)">
+          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 cursor-pointer" onclick="openLightbox(3)">
             <img data-src="assets/images/screenshot/appstore/appstore_imagellist.png" alt="App Store Image List" class="w-full h-auto object-cover">
-            <div class="gallery-overlay">
-              <div class="gallery-caption">App Store Image List</div>
+            <div class="gallery-overlay bg-black bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+              <div class="gallery-caption text-white text-center p-4">App Store Image List</div>
             </div>
           </div>
-          <div class="mt-2 text-center">
-            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">App Store</span>
-            <p class="text-sm text-gray-600 mt-1">Image List</p>
+          <div class="mt-3 text-center">
+            <span class="inline-block bg-blue-900 text-blue-200 text-xs px-3 py-1 rounded-full">App Store</span>
+            <p class="text-sm text-slate-400 mt-2">Image List</p>
           </div>
         </div>
 
         <!-- Host Management Screenshots -->
         <div class="gallery-item group" data-category="host_mgmt">
-          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(4)">
+          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 cursor-pointer" onclick="openLightbox(4)">
             <img data-src="assets/images/screenshot/host_mgmt/AddHost_step01.png" alt="Add Host Step 1" class="w-full h-auto object-cover">
-            <div class="gallery-overlay">
-              <div class="gallery-caption">Add Host Step 1</div>
+            <div class="gallery-overlay bg-black bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+              <div class="gallery-caption text-white text-center p-4">Add Host Step 1</div>
             </div>
           </div>
-          <div class="mt-2 text-center">
-            <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Host Mgmt</span>
-            <p class="text-sm text-gray-600 mt-1">Add Host Step 1</p>
+          <div class="mt-3 text-center">
+            <span class="inline-block bg-green-900 text-green-200 text-xs px-3 py-1 rounded-full">Host Mgmt</span>
+            <p class="text-sm text-slate-400 mt-2">Add Host Step 1</p>
           </div>
         </div>
 
         <div class="gallery-item group" data-category="host_mgmt">
-          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(5)">
+          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 cursor-pointer" onclick="openLightbox(5)">
             <img data-src="assets/images/screenshot/host_mgmt/AddHost_step02.png" alt="Add Host Step 2" class="w-full h-auto object-cover">
-            <div class="gallery-overlay">
-              <div class="gallery-caption">Add Host Step 2</div>
+            <div class="gallery-overlay bg-black bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+              <div class="gallery-caption text-white text-center p-4">Add Host Step 2</div>
             </div>
           </div>
-          <div class="mt-2 text-center">
-            <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Host Mgmt</span>
-            <p class="text-sm text-gray-600 mt-1">Add Host Step 2</p>
+          <div class="mt-3 text-center">
+            <span class="inline-block bg-green-900 text-green-200 text-xs px-3 py-1 rounded-full">Host Mgmt</span>
+            <p class="text-sm text-slate-400 mt-2">Add Host Step 2</p>
           </div>
         </div>
 
         <div class="gallery-item group" data-category="host_mgmt">
-          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(6)">
+          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 cursor-pointer" onclick="openLightbox(6)">
             <img data-src="assets/images/screenshot/host_mgmt/AddHost_step03.png" alt="Add Host Step 3" class="w-full h-auto object-cover">
-            <div class="gallery-overlay">
-              <div class="gallery-caption">Add Host Step 3</div>
+            <div class="gallery-overlay bg-black bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+              <div class="gallery-caption text-white text-center p-4">Add Host Step 3</div>
             </div>
           </div>
-          <div class="mt-2 text-center">
-            <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Host Mgmt</span>
-            <p class="text-sm text-gray-600 mt-1">Add Host Step 3</p>
+          <div class="mt-3 text-center">
+            <span class="inline-block bg-green-900 text-green-200 text-xs px-3 py-1 rounded-full">Host Mgmt</span>
+            <p class="text-sm text-slate-400 mt-2">Add Host Step 3</p>
           </div>
         </div>
 
         <div class="gallery-item group" data-category="host_mgmt">
-          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(7)">
+          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 cursor-pointer" onclick="openLightbox(7)">
             <img data-src="assets/images/screenshot/host_mgmt/HostTable_Filter.png" alt="Host Table Filter" class="w-full h-auto object-cover">
-            <div class="gallery-overlay">
-              <div class="gallery-caption">Host Table Filter</div>
+            <div class="gallery-overlay bg-black bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+              <div class="gallery-caption text-white text-center p-4">Host Table Filter</div>
             </div>
           </div>
-          <div class="mt-2 text-center">
-            <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Host Mgmt</span>
-            <p class="text-sm text-gray-600 mt-1">Host Table Filter</p>
+          <div class="mt-3 text-center">
+            <span class="inline-block bg-green-900 text-green-200 text-xs px-3 py-1 rounded-full">Host Mgmt</span>
+            <p class="text-sm text-slate-400 mt-2">Host Table Filter</p>
           </div>
         </div>
 
         <!-- Taskbar Screenshots -->
         <div class="gallery-item group" data-category="taskbar">
-          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(8)">
+          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 cursor-pointer" onclick="openLightbox(8)">
             <img data-src="assets/images/screenshot/taskbar/taskbar_hostGroup.png" alt="Taskbar Host Group" class="w-full h-auto object-cover">
-            <div class="gallery-overlay">
-              <div class="gallery-caption">Taskbar Host Group</div>
+            <div class="gallery-overlay bg-black bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+              <div class="gallery-caption text-white text-center p-4">Taskbar Host Group</div>
             </div>
           </div>
-          <div class="mt-2 text-center">
-            <span class="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Taskbar</span>
-            <p class="text-sm text-gray-600 mt-1">Host Group</p>
+          <div class="mt-3 text-center">
+            <span class="inline-block bg-purple-900 text-purple-200 text-xs px-3 py-1 rounded-full">Taskbar</span>
+            <p class="text-sm text-slate-400 mt-2">Host Group</p>
           </div>
         </div>
 
         <div class="gallery-item group" data-category="taskbar">
-          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(9)">
+          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 cursor-pointer" onclick="openLightbox(9)">
             <img data-src="assets/images/screenshot/taskbar/taskbar-appGroup.png" alt="Taskbar App Group" class="w-full h-auto object-cover">
-            <div class="gallery-overlay">
-              <div class="gallery-caption">Taskbar App Group</div>
+            <div class="gallery-overlay bg-black bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+              <div class="gallery-caption text-white text-center p-4">Taskbar App Group</div>
             </div>
           </div>
-          <div class="mt-2 text-center">
-            <span class="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Taskbar</span>
-            <p class="text-sm text-gray-600 mt-1">App Group</p>
+          <div class="mt-3 text-center">
+            <span class="inline-block bg-purple-900 text-purple-200 text-xs px-3 py-1 rounded-full">Taskbar</span>
+            <p class="text-sm text-slate-400 mt-2">App Group</p>
           </div>
         </div>
 
         <div class="gallery-item group" data-category="taskbar">
-          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(10)">
+          <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 cursor-pointer" onclick="openLightbox(10)">
             <img data-src="assets/images/screenshot/taskbar/taskbar-launchApp.png" alt="Taskbar Launch App" class="w-full h-auto object-cover">
-            <div class="gallery-overlay">
-              <div class="gallery-caption">Taskbar Launch App</div>
+            <div class="gallery-overlay bg-black bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+              <div class="gallery-caption text-white text-center p-4">Taskbar Launch App</div>
             </div>
           </div>
-          <div class="mt-2 text-center">
-            <span class="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Taskbar</span>
-            <p class="text-sm text-gray-600 mt-1">Launch App</p>
+          <div class="mt-3 text-center">
+            <span class="inline-block bg-purple-900 text-purple-200 text-xs px-3 py-1 rounded-full">Taskbar</span>
+            <p class="text-sm text-slate-400 mt-2">Launch App</p>
           </div>
         </div>
 
         <!-- Terminal App Screenshots -->
-        <div class="col-span-full"> <!-- Span full width to center -->
-          <div class="text-center mb-6">
-            <h3 class="text-xl font-semibold text-gray-800">Terminal Applications</h3>
-            <p class="text-gray-600 mt-2">Various terminal applications available in our Docker app store</p>
+        <div class="col-span-full">
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold text-slate-200">Terminal Applications</h3>
+            <p class="text-slate-400 mt-2">Various terminal applications available in our Docker app store</p>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div class="gallery-item group" data-category="termapp">
-              <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(11)">
+              <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 cursor-pointer" onclick="openLightbox(11)">
                 <img data-src="assets/images/screenshot/termapp/termapp_first.png" alt="Terminal App First" class="w-full h-auto object-cover">
-                <div class="gallery-overlay">
-                  <div class="gallery-caption">First Terminal</div>
+                <div class="gallery-overlay bg-black bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                  <div class="gallery-caption text-white text-center p-4">First Terminal</div>
                 </div>
               </div>
-              <div class="mt-2 text-center">
-                <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">Terminal</span>
-                <p class="text-sm text-gray-600 mt-1">First Terminal</p>
+              <div class="mt-3 text-center">
+                <span class="inline-block bg-yellow-900 text-yellow-200 text-xs px-3 py-1 rounded-full">Terminal</span>
+                <p class="text-sm text-slate-400 mt-2">First Terminal</p>
               </div>
             </div>
 
             <div class="gallery-item group" data-category="termapp">
-              <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(12)">
+              <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 cursor-pointer" onclick="openLightbox(12)">
                 <img data-src="assets/images/screenshot/termapp/termapp_mysqlcli.png" alt="MySQL CLI" class="w-full h-auto object-cover">
-                <div class="gallery-overlay">
-                  <div class="gallery-caption">MySQL CLI</div>
+                <div class="gallery-overlay bg-black bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                  <div class="gallery-caption text-white text-center p-4">MySQL CLI</div>
                 </div>
               </div>
-              <div class="mt-2 text-center">
-                <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">Terminal</span>
-                <p class="text-sm text-gray-600 mt-1">MySQL CLI</p>
+              <div class="mt-3 text-center">
+                <span class="inline-block bg-yellow-900 text-yellow-200 text-xs px-3 py-1 rounded-full">Terminal</span>
+                <p class="text-sm text-slate-400 mt-2">MySQL CLI</p>
               </div>
             </div>
 
             <div class="gallery-item group" data-category="termapp">
-              <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(13)">
+              <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 cursor-pointer" onclick="openLightbox(13)">
                 <img data-src="assets/images/screenshot/termapp/termapp_pgcli.png" alt="PostgreSQL CLI" class="w-full h-auto object-cover">
-                <div class="gallery-overlay">
-                  <div class="gallery-caption">PostgreSQL CLI</div>
+                <div class="gallery-overlay bg-black bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                  <div class="gallery-caption text-white text-center p-4">PostgreSQL CLI</div>
                 </div>
               </div>
-              <div class="mt-2 text-center">
-                <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">Terminal</span>
-                <p class="text-sm text-gray-600 mt-1">PostgreSQL CLI</p>
+              <div class="mt-3 text-center">
+                <span class="inline-block bg-yellow-900 text-yellow-200 text-xs px-3 py-1 rounded-full">Terminal</span>
+                <p class="text-sm text-slate-400 mt-2">PostgreSQL CLI</p>
               </div>
             </div>
 
             <div class="gallery-item group" data-category="termapp">
-              <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(14)">
+              <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 cursor-pointer" onclick="openLightbox(14)">
                 <img data-src="assets/images/screenshot/termapp/termapp_select.png" alt="Terminal App Select" class="w-full h-auto object-cover">
-                <div class="gallery-overlay">
-                  <div class="gallery-caption">App Select</div>
+                <div class="gallery-overlay bg-black bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                  <div class="gallery-caption text-white text-center p-4">App Select</div>
                 </div>
               </div>
-              <div class="mt-2 text-center">
-                <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">Terminal</span>
-                <p class="text-sm text-gray-600 mt-1">App Select</p>
+              <div class="mt-3 text-center">
+                <span class="inline-block bg-yellow-900 text-yellow-200 text-xs px-3 py-1 rounded-full">Terminal</span>
+                <p class="text-sm text-slate-400 mt-2">App Select</p>
               </div>
             </div>
 
             <div class="gallery-item group" data-category="termapp">
-              <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl group-hover:scale-[1.02] cursor-pointer" onclick="openLightbox(15)">
+              <div class="overflow-hidden rounded-lg shadow-md transition-transform duration-300 cursor-pointer" onclick="openLightbox(15)">
                 <img data-src="assets/images/screenshot/termapp/termapp_shell.png" alt="Shell Terminal" class="w-full h-auto object-cover">
-                <div class="gallery-overlay">
-                  <div class="gallery-caption">Shell Terminal</div>
+                <div class="gallery-overlay bg-black bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                  <div class="gallery-caption text-white text-center p-4">Shell Terminal</div>
                 </div>
               </div>
-              <div class="mt-2 text-center">
-                <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">Terminal</span>
-                <p class="text-sm text-gray-600 mt-1">Shell Terminal</p>
+              <div class="mt-3 text-center">
+                <span class="inline-block bg-yellow-900 text-yellow-200 text-xs px-3 py-1 rounded-full">Terminal</span>
+                <p class="text-sm text-slate-400 mt-2">Shell Terminal</p>
               </div>
             </div>
           </div>
@@ -311,18 +508,21 @@
           <button onclick="changeImage(-1)">&#10094;</button>
           <button onclick="changeImage(1)">&#10095;</button>
         </div>
+        <div class="lightbox-caption text-white text-center mt-4"></div>
       </div>
     </section>
 
-    <!-- Download section (shared component) -->
-    <section id="download" class="mt-16 bg-white rounded-lg p-8 text-center">
-      <h2 class="text-2xl font-bold text-gray-900">Download datax</h2>
-      <p class="mt-2 text-gray-600">Currently available for Linux. Windows and macOS versions coming soon.</p>
+    <!-- Download section -->
+    <section id="download" class="mt-16 card-bg rounded-2xl p-10 text-center">
+      <h2 class="text-3xl font-bold mb-4">Get datax.cash Today</h2>
+      <p class="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
+        Start managing your data tools across multiple hosts with our powerful desktop application
+      </p>
       <div id="home-download-section" data-download-component></div>
     </section>
   </main>
 
-  <footer class="bg-white border-t py-6 mt-12" data-footer-component data-lang="en"></footer>
+  <footer class="bg-slate-900 border-t border-slate-800 py-8 mt-16" data-footer-component data-lang="en"></footer>
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/download-component.js"></script>

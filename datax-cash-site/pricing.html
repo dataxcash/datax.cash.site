@@ -7,108 +7,288 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="assets/css/common.css" rel="stylesheet">
-  <style>body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial}</style>
+  <style>
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background-color: #0f172a;
+      color: #f1f5f9;
+    }
+    
+    .dark-bg {
+      background-color: #0f172a;
+    }
+    
+    .card-bg {
+      background-color: #1e293b;
+    }
+    
+    .accent-blue {
+      color: #3b82f6;
+    }
+    
+    .accent-green {
+      color: #10b981;
+    }
+    
+    .pricing-card {
+      border: 2px solid #334155;
+      transition: all 0.3s ease;
+    }
+    
+    .pricing-card:hover {
+      border-color: #3b82f6;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25);
+    }
+    
+    .pricing-card.featured {
+      border-color: #3b82f6;
+      position: relative;
+    }
+    
+    .pricing-card.featured:before {
+      content: "MOST POPULAR";
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #3b82f6;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 9999px;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #3b82f6, #60a5fa);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid #475569;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-secondary:hover {
+      background-color: #1e293b;
+      border-color: #94a3b8;
+    }
+    
+    .faq-item {
+      border: 1px solid #334155;
+      transition: all 0.3s ease;
+    }
+    
+    .faq-item:hover {
+      border-color: #475569;
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
-  <header class="bg-white shadow">
+<body class="dark-bg text-slate-100">
+  <header class="bg-slate-900 shadow-lg">
     <div class="container mx-auto px-4 py-4 flex items-center justify-between">
       <div class="flex items-center space-x-3">
         <img src="assets/images/logo.svg" alt="datax.cash logo" class="logo">
-        <div class="hidden sm:block text-sm text-gray-600">Manage Ur Data, Price Ur Data, Cash Ur Data</div>
+        <div class="hidden sm:block text-sm text-slate-400">Manage Ur Data, Price Ur Data, Cash Ur Data</div>
       </div>
       <nav class="hidden md:flex items-center space-x-6">
-        <a href="index.html" class="text-sm">Home</a>
-        <a href="features.html" class="text-sm">Features</a>
-        <a href="pricing.html" class="text-sm font-semibold">Pricing</a>
-        <a href="docs.html" class="text-sm">Docs</a>
-        <a href="/zh-tw/" class="text-sm">繁體</a>
+        <a href="index.html" class="text-sm text-slate-300 hover:text-white">Home</a>
+        <a href="features.html" class="text-sm text-slate-300 hover:text-white">Features</a>
+        <a href="pricing.html" class="text-sm font-semibold accent-blue">Pricing</a>
+        <a href="docs.html" class="text-sm text-slate-300 hover:text-white">Docs</a>
+        <a href="/zh-tw/" class="text-sm text-slate-300 hover:text-white">繁體</a>
       </nav>
-      <button id="burger" class="md:hidden p-2">
+      <button id="burger" class="md:hidden p-2 text-slate-300">
         <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
       </button>
     </div>
-    <div id="mobileMenu" class="md:hidden hidden">
-      <div class="px-4 pb-4 space-y-2">
-        <a href="index.html" class="block">Home</a>
-        <a href="features.html" class="block">Features</a>
-        <a href="pricing.html" class="block">Pricing</a>
-        <a href="docs.html" class="block">Docs</a>
-        <a href="/zh-tw/" class="block">繁體</a>
+    <div id="mobileMenu" class="md:hidden hidden bg-slate-800">
+      <div class="px-4 pb-4 space-y-2 pt-2">
+        <a href="index.html" class="block py-2 text-slate-300">Home</a>
+        <a href="features.html" class="block py-2 text-slate-300">Features</a>
+        <a href="pricing.html" class="block py-2 text-slate-200">Pricing</a>
+        <a href="docs.html" class="block py-2 text-slate-300">Docs</a>
+        <a href="/zh-tw/" class="block py-2 text-slate-300">繁體</a>
       </div>
     </div>
   </header>
 
   <main class="container mx-auto px-4 py-12">
-    <section class="text-center mb-12">
-      <h1 class="text-4xl font-bold text-gray-900">Pricing</h1>
-      <p class="mt-4 text-lg text-gray-600">datax is completely free, no registration required, no hidden fees</p>
+    <section class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">Simple, Transparent Pricing</h1>
+      <p class="text-lg text-slate-300 max-w-3xl mx-auto">
+        datax is completely free to use with no hidden costs or subscription fees. All features included.
+      </p>
     </section>
 
-    <section class="max-w-2xl mx-auto">
-      <div class="bg-white rounded-lg shadow-sm border-2 border-blue-200 p-8 text-center">
-        <div class="text-6xl font-bold text-blue-700 mb-4">FREE</div>
-        <h2 class="text-2xl font-semibold mb-4">datax Desktop</h2>
-        <p class="text-gray-600 mb-6">Full-featured data tools deployment platform</p>
+    <section class="max-w-4xl mx-auto mb-20">
+      <div class="pricing-card featured card-bg rounded-2xl p-8 text-center relative">
+        <div class="text-5xl font-extrabold accent-blue mb-4">FREE</div>
+        <h2 class="text-2xl font-bold mb-4">datax Desktop</h2>
+        <p class="text-slate-300 mb-8">Full-featured data tools deployment platform</p>
         
-        <div class="text-left mb-8">
-          <h3 class="font-semibold mb-4">✅ Everything included:</h3>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li>• Unlimited hosts and applications</li>
-            <li>• Complete Docker app store</li>
-            <li>• Multi-host management</li>
-            <li>• SSH connection pooling</li>
-            <li>• Real-time monitoring</li>
-            <li>• Security and access control</li>
-            <li>• Cross-platform desktop app</li>
-            <li>• Regular updates</li>
-            <li>• Community support</li>
-          </ul>
+        <div class="text-left mb-10">
+          <h3 class="font-semibold mb-6 text-center">✅ Everything included:</h3>
+          <div class="grid gap-4 md:grid-cols-2">
+            <ul class="space-y-3 text-slate-300">
+              <li class="flex items-start">
+                <span class="text-green-400 mr-3 mt-1">✓</span>
+                <span>Unlimited hosts and applications</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-400 mr-3 mt-1">✓</span>
+                <span>Complete Docker app store</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-400 mr-3 mt-1">✓</span>
+                <span>Multi-host management</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-400 mr-3 mt-1">✓</span>
+                <span>SSH connection pooling</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-400 mr-3 mt-1">✓</span>
+                <span>Real-time monitoring</span>
+              </li>
+            </ul>
+            <ul class="space-y-3 text-slate-300">
+              <li class="flex items-start">
+                <span class="text-green-400 mr-3 mt-1">✓</span>
+                <span>Security and access control</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-400 mr-3 mt-1">✓</span>
+                <span>Cross-platform desktop app</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-400 mr-3 mt-1">✓</span>
+                <span>Regular updates</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-400 mr-3 mt-1">✓</span>
+                <span>Community support</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-400 mr-3 mt-1">✓</span>
+                <span>Country-specific SCREEN technology</span>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div id="pricing-download-section" data-download-component></div>
+        <div id="pricing-download-section" data-download-component class="mb-6"></div>
 
-        <p class="text-sm text-gray-500">No registration required • No hidden fees • No time limits</p>
+        <p class="text-sm text-slate-400">No registration required • No hidden fees • No time limits</p>
       </div>
     </section>
 
-    <section class="mt-16 text-center">
-      <h2 class="text-2xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
+    <section class="text-center mb-16">
+      <h2 class="text-3xl font-bold mb-6">Why Choose datax?</h2>
+      <div class="max-w-4xl mx-auto grid gap-8 md:grid-cols-3">
+        <div class="card-bg p-6 rounded-xl">
+          <div class="text-3xl mb-4 accent-green">💰</div>
+          <h3 class="text-xl font-bold mb-3">Completely Free</h3>
+          <p class="text-slate-400">
+            No subscription fees, no premium features, no hidden costs. Everything you need is included.
+          </p>
+        </div>
+        
+        <div class="card-bg p-6 rounded-xl">
+          <div class="text-3xl mb-4 accent-blue">🚀</div>
+          <h3 class="text-xl font-bold mb-3">Powerful Features</h3>
+          <p class="text-slate-400">
+            Enterprise-grade functionality without the enterprise price tag. Deploy and manage at scale.
+          </p>
+        </div>
+        
+        <div class="card-bg p-6 rounded-xl">
+          <div class="text-3xl mb-4 accent-purple">🔒</div>
+          <h3 class="text-xl font-bold mb-3">Secure & Private</h3>
+          <p class="text-slate-400">
+            Your data stays on your infrastructure. No cloud dependencies or data sharing.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-16">
+      <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
       
       <div class="max-w-3xl mx-auto space-y-6">
-        <div class="bg-white p-6 rounded-lg shadow-sm text-left">
-          <h3 class="font-semibold mb-2">Is datax really free?</h3>
-          <p class="text-gray-600">Yes, datax is completely free to use. There are no hidden costs, subscription fees, or premium features. All functionality is available to all users.</p>
+        <div class="faq-item card-bg p-6 rounded-xl">
+          <h3 class="font-bold mb-3">Is datax really free?</h3>
+          <p class="text-slate-400">
+            Yes, datax is completely free to use. There are no hidden costs, subscription fees, or premium features. 
+            All functionality is available to all users at no cost.
+          </p>
         </div>
 
-        <div class="bg-white p-6 rounded-lg shadow-sm text-left">
-          <h3 class="font-semibold mb-2">Is datax open source?</h3>
-          <p class="text-gray-600">datax is currently free but not open source. We may consider open sourcing parts of the project in the future.</p>
+        <div class="faq-item card-bg p-6 rounded-xl">
+          <h3 class="font-bold mb-3">Is datax open source?</h3>
+          <p class="text-slate-400">
+            datax is currently free but not open source. We may consider open sourcing parts of the project in the future. 
+            The application is distributed as a compiled desktop application.
+          </p>
         </div>
 
-        <div class="bg-white p-6 rounded-lg shadow-sm text-left">
-          <h3 class="font-semibold mb-2">What are the system requirements?</h3>
-          <p class="text-gray-600">datax runs on Windows 10+, macOS 10.14+, and modern Linux distributions. You'll need Docker installed on your target hosts to deploy applications.</p>
+        <div class="faq-item card-bg p-6 rounded-xl">
+          <h3 class="font-bold mb-3">What are the system requirements?</h3>
+          <p class="text-slate-400">
+            datax runs on Windows 10+, macOS 10.14+, and modern Linux distributions. 
+            You'll need Docker installed on your target hosts to deploy applications. 
+            Minimum 4GB RAM and 500MB disk space for the desktop application.
+          </p>
         </div>
 
-        <div class="bg-white p-6 rounded-lg shadow-sm text-left">
-          <h3 class="font-semibold mb-2">How many hosts can I manage?</h3>
-          <p class="text-gray-600">There's no limit on the number of hosts you can manage with datax. The application is designed to scale from single-host setups to large multi-host environments.</p>
+        <div class="faq-item card-bg p-6 rounded-xl">
+          <h3 class="font-bold mb-3">How many hosts can I manage?</h3>
+          <p class="text-slate-400">
+            There's no limit on the number of hosts you can manage with datax. 
+            The application is designed to scale from single-host setups to large multi-host environments. 
+            Performance will depend on your hardware and network resources.
+          </p>
         </div>
 
-        <div class="bg-white p-6 rounded-lg shadow-sm text-left">
-          <h3 class="font-semibold mb-2">Do you offer support?</h3>
-          <p class="text-gray-600">We provide community support through our documentation and user forums. Enterprise support options may be available in the future.</p>
+        <div class="faq-item card-bg p-6 rounded-xl">
+          <h3 class="font-bold mb-3">Do you offer support?</h3>
+          <p class="text-slate-400">
+            We provide community support through our documentation and user forums. 
+            For enterprise users requiring dedicated support, we offer paid support plans with SLA guarantees. 
+            Contact us for more information about enterprise support options.
+          </p>
         </div>
 
-        <div class="bg-white p-6 rounded-lg shadow-sm text-left">
-          <h3 class="font-semibold mb-2">Can I use datax commercially?</h3>
-          <p class="text-gray-600">Yes, datax can be used for commercial purposes at no cost. Please review our license terms for specific details.</p>
+        <div class="faq-item card-bg p-6 rounded-xl">
+          <h3 class="font-bold mb-3">Can I use datax commercially?</h3>
+          <p class="text-slate-400">
+            Yes, datax can be used for commercial purposes at no cost. 
+            The free license includes commercial use rights. 
+            Please review our license terms for specific details about commercial usage.
+          </p>
+        </div>
+
+        <div class="faq-item card-bg p-6 rounded-xl">
+          <h3 class="font-bold mb-3">What makes datax different from other tools?</h3>
+          <p class="text-slate-400">
+            datax is unique in its combination of multi-host management, Docker app store, 
+            and country-specific SCREEN technology. Our DATAX tools for migration, sync, and comparison 
+            are specifically designed for enterprise data operations. The desktop-first approach 
+            provides a seamless user experience that other web-based tools can't match.
+          </p>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="bg-white border-t py-6 mt-12" data-footer-component data-lang="en"></footer>
+  <footer class="bg-slate-900 border-t border-slate-800 py-8 mt-16" data-footer-component data-lang="en"></footer>
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/download-component.js"></script>

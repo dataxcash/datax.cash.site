@@ -7,122 +7,251 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="assets/css/common.css" rel="stylesheet">
-  <style>body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial}</style>
+  <style>
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background-color: #0f172a;
+      color: #f1f5f9;
+    }
+    
+    .dark-bg {
+      background-color: #0f172a;
+    }
+    
+    .card-bg {
+      background-color: #1e293b;
+    }
+    
+    .accent-blue {
+      color: #3b82f6;
+    }
+    
+    .accent-green {
+      color: #10b981;
+    }
+    
+    .sidebar {
+      background-color: #1e293b;
+      border-right: 1px solid #334155;
+    }
+    
+    .nav-link {
+      color: #cbd5e1;
+      transition: all 0.2s ease;
+    }
+    
+    .nav-link:hover {
+      color: #f1f5f9;
+      background-color: #334155;
+    }
+    
+    .nav-link.active {
+      color: #3b82f6;
+      background-color: #334155;
+      border-left: 3px solid #3b82f6;
+    }
+    
+    .doc-section {
+      scroll-margin-top: 80px;
+    }
+    
+    .code-block {
+      background-color: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      overflow-x: auto;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #3b82f6, #60a5fa);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
-  <header class="bg-white shadow">
+<body class="dark-bg text-slate-100">
+  <header class="bg-slate-900 shadow-lg sticky top-0 z-10">
     <div class="container mx-auto px-4 py-4 flex items-center justify-between">
       <div class="flex items-center space-x-3">
         <img src="assets/images/logo.svg" alt="datax.cash logo" class="logo">
-        <div class="hidden sm:block text-sm text-gray-600">Manage Ur Data, Price Ur Data, Cash Ur Data</div>
+        <div class="hidden sm:block text-sm text-slate-400">Manage Ur Data, Price Ur Data, Cash Ur Data</div>
       </div>
       <nav class="hidden md:flex items-center space-x-6">
-        <a href="index.html" class="text-sm">Home</a>
-        <a href="features.html" class="text-sm">Features</a>
-        <a href="pricing.html" class="text-sm">Pricing</a>
-        <a href="docs.html" class="text-sm font-semibold">Docs</a>
-        <a href="/zh-tw/" class="text-sm">繁體</a>
+        <a href="index.html" class="text-sm text-slate-300 hover:text-white">Home</a>
+        <a href="features.html" class="text-sm text-slate-300 hover:text-white">Features</a>
+        <a href="pricing.html" class="text-sm text-slate-300 hover:text-white">Pricing</a>
+        <a href="docs.html" class="text-sm font-semibold accent-blue">Docs</a>
+        <a href="/zh-tw/" class="text-sm text-slate-300 hover:text-white">繁體</a>
       </nav>
-      <button id="burger" class="md:hidden p-2">
+      <button id="burger" class="md:hidden p-2 text-slate-300">
         <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
       </button>
     </div>
-    <div id="mobileMenu" class="md:hidden hidden">
-      <div class="px-4 pb-4 space-y-2">
-        <a href="index.html" class="block">Home</a>
-        <a href="features.html" class="block">Features</a>
-        <a href="pricing.html" class="block">Pricing</a>
-        <a href="docs.html" class="block">Docs</a>
-        <a href="/zh-tw/" class="block">繁體</a>
+    <div id="mobileMenu" class="md:hidden hidden bg-slate-800">
+      <div class="px-4 pb-4 space-y-2 pt-2">
+        <a href="index.html" class="block py-2 text-slate-300">Home</a>
+        <a href="features.html" class="block py-2 text-slate-300">Features</a>
+        <a href="pricing.html" class="block py-2 text-slate-300">Pricing</a>
+        <a href="docs.html" class="block py-2 text-slate-200">Docs</a>
+        <a href="/zh-tw/" class="block py-2 text-slate-300">繁體</a>
       </div>
     </div>
   </header>
 
-  <main class="container mx-auto px-4 py-12">
+  <main class="container mx-auto px-4 py-8">
     <!-- Hero Section with Download -->
     <section class="text-center mb-12">
-      <h1 class="text-4xl font-bold text-gray-900">Documentation</h1>
-      <p class="mt-4 text-lg text-gray-600">Learn how to deploy and manage data tools with datax</p>
+      <h1 class="text-4xl font-bold mb-4">Documentation</h1>
+      <p class="text-lg text-slate-300 max-w-3xl mx-auto mb-6">
+        Learn how to deploy and manage data tools with datax across your global infrastructure
+      </p>
       <div id="docs-hero-download" data-download-component class="mt-6"></div>
     </section>
 
     <div class="flex flex-col lg:flex-row gap-8">
       <!-- Sidebar Navigation -->
       <aside class="lg:w-64 flex-shrink-0">
-        <nav class="bg-white rounded-lg shadow-sm p-4 sticky top-4">
-          <h3 class="font-semibold mb-4">Documentation</h3>
-          <ul class="space-y-2 text-sm">
-            <li><a href="#getting-started" class="text-blue-600 hover:underline">Getting Started</a></li>
-            <li><a href="#installation" class="text-blue-600 hover:underline">Installation</a></li>
-            <li><a href="#host-management" class="text-blue-600 hover:underline">Host Management</a></li>
-            <li><a href="#app-deployment" class="text-blue-600 hover:underline">App Deployment</a></li>
-            <li><a href="#monitoring" class="text-blue-600 hover:underline">Monitoring</a></li>
-            <li><a href="#troubleshooting" class="text-blue-600 hover:underline">Troubleshooting</a></li>
-            <li><a href="#privacy" class="text-blue-600 hover:underline">Privacy & Logs</a></li>
+        <nav class="sidebar rounded-lg shadow-sm p-4 sticky top-24">
+          <h3 class="font-semibold mb-4 text-lg">Documentation</h3>
+          <ul class="space-y-1">
+            <li><a href="#getting-started" class="nav-link block py-2 px-3 rounded">Getting Started</a></li>
+            <li><a href="#installation" class="nav-link block py-2 px-3 rounded">Installation</a></li>
+            <li><a href="#host-management" class="nav-link block py-2 px-3 rounded">Host Management</a></li>
+            <li><a href="#app-deployment" class="nav-link block py-2 px-3 rounded">App Deployment</a></li>
+            <li><a href="#monitoring" class="nav-link block py-2 px-3 rounded">Monitoring</a></li>
+            <li><a href="#country-screen" class="nav-link block py-2 px-3 rounded">Country SCREEN</a></li>
+            <li><a href="#datrax-tools" class="nav-link block py-2 px-3 rounded">DATAX Tools</a></li>
+            <li><a href="#troubleshooting" class="nav-link block py-2 px-3 rounded">Troubleshooting</a></li>
+            <li><a href="#privacy" class="nav-link block py-2 px-3 rounded">Privacy & Logs</a></li>
           </ul>
         </nav>
       </aside>
 
       <!-- Main Content -->
       <div class="flex-1">
-        <section id="getting-started" class="mb-12">
+        <section id="getting-started" class="doc-section mb-12">
           <h2 class="text-3xl font-bold mb-6">Getting Started with datax</h2>
-          <div class="bg-white rounded-lg shadow-sm p-6">
-            <p class="text-gray-600 mb-4">
+          <div class="card-bg rounded-lg shadow-sm p-6">
+            <p class="text-slate-300 mb-6">
               datax is a desktop application that helps you deploy and manage data tools across multiple hosts using Docker containers. 
-              This guide will help you get started quickly.
+              This guide will help you get started quickly with our unique features including country-specific SCREEN technology and DATAX tools.
             </p>
-            <h3 class="font-semibold mb-2">What you'll need:</h3>
-            <ul class="text-sm text-gray-600 space-y-1 mb-4">
-              <li>• A computer running Windows, macOS, or Linux</li>
-              <li>• One or more remote servers with SSH access</li>
-              <li>• Docker installed on your target servers</li>
+            
+            <h3 class="font-bold text-xl mb-4">What you'll need:</h3>
+            <ul class="text-slate-300 space-y-3 mb-6">
+              <li class="flex items-start">
+                <span class="text-green-400 mr-3 mt-1">✓</span>
+                <span>A computer running Windows, macOS, or Linux</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-400 mr-3 mt-1">✓</span>
+                <span>One or more remote servers with SSH access</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-400 mr-3 mt-1">✓</span>
+                <span>Docker installed on your target servers</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-400 mr-3 mt-1">✓</span>
+                <span>Basic understanding of containerization concepts</span>
+              </li>
+            </ul>
+            
+            <div class="card-bg p-4 rounded border-l-4 border-blue-500">
+              <h4 class="font-bold mb-2">💡 Pro Tip</h4>
+              <p class="text-slate-300">
+                datax works best when you have consistent SSH access to your target hosts. 
+                Consider setting up SSH key-based authentication for smoother operation.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="installation" class="doc-section mb-12">
+          <h2 class="text-2xl font-bold mb-6">Installation</h2>
+          <div class="card-bg rounded-lg shadow-sm p-6">
+            <h3 class="font-bold text-lg mb-4">Downloading datax</h3>
+            <p class="text-slate-300 mb-4">
+              Visit our <a href="index.html#download" class="text-blue-400 hover:underline">downloads page</a> to get the latest version of datax for your operating system. 
+              The application is completely free with no registration required.
+            </p>
+            
+            <h3 class="font-bold text-lg mb-4">First Launch</h3>
+            <p class="text-slate-300 mb-4">
+              After installation, launch datax and you'll be greeted with the main interface. No registration or setup is required.
+            </p>
+            
+            <div class="code-block mb-6">
+              # Example launch command on Linux<br>
+              ./datax-app<br><br>
+              # On Windows/macOS, simply double-click the application
+            </div>
+            
+            <h3 class="font-bold text-lg mb-4">Initial Configuration</h3>
+            <p class="text-slate-300 mb-4">
+              On first launch, you may want to:
+            </p>
+            <ul class="text-slate-300 space-y-2 mb-4 ml-6">
+              <li>• Review the welcome tutorial</li>
+              <li>• Configure your preferred theme (light/dark)</li>
+              <li>• Set up keyboard shortcuts</li>
+              <li>• Connect to your first host</li>
             </ul>
           </div>
         </section>
 
-        <section id="installation" class="mb-12">
-          <h2 class="text-2xl font-bold mb-4">Installation</h2>
-          <div class="bg-white rounded-lg shadow-sm p-6">
-            <h3 class="font-semibold mb-3">First Launch</h3>
-            <p class="text-gray-600">After installation, launch datax and you'll be greeted with the main interface. No registration or setup is required.</p>
-          </div>
-        </section>
-
-        <section id="host-management" class="mb-12">
-          <h2 class="text-2xl font-bold mb-4">Host Management</h2>
-          <div class="bg-white rounded-lg shadow-sm p-6">
-            <h3 class="font-semibold mb-3">Adding Hosts</h3>
-            <p class="text-gray-600 mb-4">To deploy applications, you first need to add remote hosts to datax:</p>
-            <ol class="text-sm text-gray-600 space-y-2 mb-4">
+        <section id="host-management" class="doc-section mb-12">
+          <h2 class="text-2xl font-bold mb-6">Host Management</h2>
+          <div class="card-bg rounded-lg shadow-sm p-6">
+            <h3 class="font-bold text-lg mb-4">Adding Hosts</h3>
+            <p class="text-slate-300 mb-4">
+              To deploy applications, you first need to add remote hosts to datax:
+            </p>
+            <ol class="text-slate-300 space-y-3 mb-6 ml-6">
               <li>1. Click the "Add Host" button in the main interface</li>
               <li>2. Enter the host details (IP address, SSH port, credentials)</li>
               <li>3. Test the connection to ensure SSH access works</li>
               <li>4. Save the host configuration</li>
             </ol>
             
-            <h3 class="font-semibold mb-3">Host Requirements</h3>
-            <ul class="text-sm text-gray-600 space-y-1 mb-4">
+            <h3 class="font-bold text-lg mb-4">Host Requirements</h3>
+            <ul class="text-slate-300 space-y-2 mb-6 ml-6">
               <li>• SSH server running and accessible</li>
               <li>• User account with Docker permissions</li>
               <li>• Sufficient disk space for containers</li>
+              <li>• Firewall allowing Docker ports</li>
             </ul>
-
-            <h3 class="font-semibold mb-3">Host Groups and Tags</h3>
-            <p class="text-gray-600">Organize your hosts using groups and tags for easier management of large deployments.</p>
+            
+            <h3 class="font-bold text-lg mb-4">Host Groups and Tags</h3>
+            <p class="text-slate-300 mb-4">
+              Organize your hosts using groups and tags for easier management of large deployments:
+            </p>
+            <ul class="text-slate-300 space-y-2 mb-4 ml-6">
+              <li>• Create logical groups (e.g., "Production", "Development")</li>
+              <li>• Assign tags for specific attributes (e.g., "database", "web-server")</li>
+              <li>• Use groups and tags for targeted deployments</li>
+            </ul>
           </div>
         </section>
 
-        <section id="app-deployment" class="mb-12">
-          <h2 class="text-2xl font-bold mb-4">Application Deployment</h2>
-          <div class="bg-white rounded-lg shadow-sm p-6">
-            <h3 class="font-semibold mb-3">Using the App Store</h3>
-            <p class="text-gray-600 mb-4">datax includes a curated collection of pre-configured data tools:</p>
+        <section id="app-deployment" class="doc-section mb-12">
+          <h2 class="text-2xl font-bold mb-6">Application Deployment</h2>
+          <div class="card-bg rounded-lg shadow-sm p-6">
+            <h3 class="font-bold text-lg mb-4">Using the App Store</h3>
+            <p class="text-slate-300 mb-4">
+              datax includes a curated collection of pre-configured data tools:
+            </p>
             
-            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-6">
-              <div class="p-4 bg-gray-50 rounded-lg">
-                <h4 class="font-semibold mb-3 text-gray-800">🗄️ Databases</h4>
-                <ul class="text-sm text-gray-600 space-y-1">
+            <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 mb-6">
+              <div class="card-bg p-4 rounded-lg border border-slate-700">
+                <h4 class="font-bold mb-3 text-slate-200">🗄️ Databases</h4>
+                <ul class="text-sm text-slate-400 space-y-1">
                   <li>• PostgreSQL 🐘</li>
                   <li>• MySQL 🐬</li>
                   <li>• Oracle Database 🔶</li>
@@ -130,17 +259,17 @@
                 </ul>
               </div>
               
-              <div class="p-4 bg-gray-50 rounded-lg">
-                <h4 class="font-semibold mb-3 text-gray-800">🛠️ Management Tools</h4>
-                <ul class="text-sm text-gray-600 space-y-1">
+              <div class="card-bg p-4 rounded-lg border border-slate-700">
+                <h4 class="font-bold mb-3 text-slate-200">🛠️ Management Tools</h4>
+                <ul class="text-sm text-slate-400 space-y-1">
                   <li>• pgAdmin</li>
                   <li>• MySQL Client 💻</li>
                 </ul>
               </div>
               
-              <div class="p-4 bg-gray-50 rounded-lg">
-                <h4 class="font-semibold mb-3 text-gray-800">⚙️ DATAX Tools</h4>
-                <ul class="text-sm text-gray-600 space-y-1">
+              <div class="card-bg p-4 rounded-lg border border-slate-700">
+                <h4 class="font-bold mb-3 text-slate-200">⚙️ DATAX Tools</h4>
+                <ul class="text-sm text-slate-400 space-y-1">
                   <li>• X0 Diagnosis 🔍</li>
                   <li>• X1 Simulation 🎯</li>
                   <li>• M3 Migration 📦</li>
@@ -148,26 +277,10 @@
                   <li>• V3 Comparison ⚖️</li>
                 </ul>
               </div>
-              
-              <div class="p-4 bg-gray-50 rounded-lg">
-                <h4 class="font-semibold mb-3 text-gray-800">🔐 License Tools</h4>
-                <ul class="text-sm text-gray-600 space-y-1">
-                  <li>• License Control Server</li>
-                  <li>• License Control Dog 🐕</li>
-                </ul>
-              </div>
-              
-              <div class="p-4 bg-gray-50 rounded-lg">
-                <h4 class="font-semibold mb-3 text-gray-800">🎨 Custom Apps</h4>
-                <ul class="text-sm text-gray-600 space-y-1">
-                  <li>• User-defined applications</li>
-                  <li>• Custom Docker images</li>
-                </ul>
-              </div>
             </div>
-
-            <h3 class="font-semibold mb-3">Deployment Process</h3>
-            <ol class="text-sm text-gray-600 space-y-2">
+            
+            <h3 class="font-bold text-lg mb-4">Deployment Process</h3>
+            <ol class="text-slate-300 space-y-3 mb-4 ml-6">
               <li>1. Browse the app store and select an application</li>
               <li>2. Choose target hosts for deployment</li>
               <li>3. Configure application settings (ports, environment variables, volumes)</li>
@@ -177,94 +290,294 @@
           </div>
         </section>
 
-        <section id="monitoring" class="mb-12">
-          <h2 class="text-2xl font-bold mb-4">Monitoring</h2>
-          <div class="bg-white rounded-lg shadow-sm p-6">
-            <h3 class="font-semibold mb-3">Application Status</h3>
-            <p class="text-gray-600 mb-4">datax provides real-time monitoring of your deployed applications:</p>
-            <ul class="text-sm text-gray-600 space-y-1 mb-4">
+        <section id="monitoring" class="doc-section mb-12">
+          <h2 class="text-2xl font-bold mb-6">Monitoring</h2>
+          <div class="card-bg rounded-lg shadow-sm p-6">
+            <h3 class="font-bold text-lg mb-4">Application Status</h3>
+            <p class="text-slate-300 mb-4">
+              datax provides real-time monitoring of your deployed applications:
+            </p>
+            <ul class="text-slate-300 space-y-2 mb-6 ml-6">
               <li>• Container status (running, stopped, error)</li>
               <li>• Resource usage (CPU, memory, disk)</li>
               <li>• Network connectivity</li>
               <li>• Application logs</li>
             </ul>
-
-            <h3 class="font-semibold mb-3">Host Metrics</h3>
-            <p class="text-gray-600">Monitor the health and performance of your hosts through the dashboard interface.</p>
+            
+            <h3 class="font-bold text-lg mb-4">Host Metrics</h3>
+            <p class="text-slate-300 mb-4">
+              Monitor the health and performance of your hosts through the dashboard interface:
+            </p>
+            <ul class="text-slate-300 space-y-2 mb-4 ml-6">
+              <li>• System resource utilization</li>
+              <li>• Disk space availability</li>
+              <li>• Network throughput</li>
+              <li>• Docker daemon status</li>
+            </ul>
           </div>
         </section>
 
-        <section id="troubleshooting" class="mb-12">
-          <h2 class="text-2xl font-bold mb-4">Troubleshooting</h2>
-          <div class="bg-white rounded-lg shadow-sm p-6">
-            <h3 class="font-semibold mb-3">Common Issues</h3>
+        <section id="country-screen" class="doc-section mb-12">
+          <h2 class="text-2xl font-bold mb-6">Country SCREEN Technology</h2>
+          <div class="card-bg rounded-lg shadow-sm p-6">
+            <p class="text-slate-300 mb-4">
+              datax features unique country-specific SCREEN technology that optimizes performance and ensures compliance across global deployments.
+            </p>
             
-            <div class="space-y-4">
-              <div class="p-4 bg-gray-50 rounded-lg">
-                <h4 class="font-semibold mb-2">SSH Connection Failed</h4>
-                <ul class="text-sm text-gray-600 space-y-1">
-                  <li>• Verify SSH server is running on the target host</li>
-                  <li>• Check firewall settings and port accessibility</li>
-                  <li>• Ensure credentials are correct</li>
-                  <li>• Test SSH connection manually from terminal</li>
+            <h3 class="font-bold text-lg mb-4">Available SCREENs:</h3>
+            <div class="grid gap-4 md:grid-cols-2 mb-6">
+              <div class="card-bg p-4 rounded-lg">
+                <h4 class="font-bold mb-2">🇺🇸 US SCREEN</h4>
+                <p class="text-slate-400 text-sm">
+                  Optimized for North American data centers with enhanced security protocols and HIPAA compliance features.
+                </p>
+              </div>
+              
+              <div class="card-bg p-4 rounded-lg">
+                <h4 class="font-bold mb-2">🇪🇺 EU SCREEN</h4>
+                <p class="text-slate-400 text-sm">
+                  GDPR-compliant deployment with regional data sovereignty features and EU-specific security standards.
+                </p>
+              </div>
+              
+              <div class="card-bg p-4 rounded-lg">
+                <h4 class="font-bold mb-2">🇨🇳 CN SCREEN</h4>
+                <p class="text-slate-400 text-sm">
+                  Optimized for Chinese data centers with local compliance support and Great Firewall compatibility.
+                </p>
+              </div>
+              
+              <div class="card-bg p-4 rounded-lg">
+                <h4 class="font-bold mb-2">🇯🇵 JP SCREEN</h4>
+                <p class="text-slate-400 text-sm">
+                  High-performance deployment optimized for Asian infrastructure with local language support.
+                </p>
+              </div>
+            </div>
+            
+            <h3 class="font-bold text-lg mb-4">Selecting a SCREEN</h3>
+            <p class="text-slate-300 mb-4">
+              When adding hosts, you can select the appropriate SCREEN for your region:
+            </p>
+            <div class="code-block mb-4">
+              # During host setup, select your region<br>
+              Region: United States (US SCREEN)<br>
+              Compliance Profile: HIPAA<br>
+              Optimization Level: Performance
+            </div>
+          </div>
+        </section>
+
+        <section id="datrax-tools" class="doc-section mb-12">
+          <h2 class="text-2xl font-bold mb-6">DATAX Tools Suite</h2>
+          <div class="card-bg rounded-lg shadow-sm p-6">
+            <p class="text-slate-300 mb-4">
+              Our specialized DATAX tools provide enterprise-grade capabilities for data operations:
+            </p>
+            
+            <div class="space-y-6">
+              <div>
+                <h3 class="font-bold text-lg mb-2 flex items-center">
+                  <span class="mr-2">🔍</span> X0 Diagnosis
+                </h3>
+                <p class="text-slate-400 mb-2">
+                  Performance analysis and bottleneck detection for your data systems.
+                </p>
+                <ul class="text-slate-400 text-sm ml-6">
+                  <li>• Query performance profiling</li>
+                  <li>• Resource utilization analysis</li>
+                  <li>• Index optimization recommendations</li>
                 </ul>
               </div>
-
-              <div class="p-4 bg-gray-50 rounded-lg">
-                <h4 class="font-semibold mb-2">Docker Deployment Failed</h4>
-                <ul class="text-sm text-gray-600 space-y-1">
-                  <li>• Check user permissions for Docker commands</li>
-                  <li>• Ensure sufficient disk space</li>
-                  <li>• Review application logs for specific errors</li>
+              
+              <div>
+                <h3 class="font-bold text-lg mb-2 flex items-center">
+                  <span class="mr-2">🎯</span> X1 Simulation
+                </h3>
+                <p class="text-slate-400 mb-2">
+                  Load testing and scenario modeling for capacity planning.
+                </p>
+                <ul class="text-slate-400 text-sm ml-6">
+                  <li>• Custom workload simulation</li>
+                  <li>• Stress testing capabilities</li>
+                  <li>• Performance forecasting</li>
                 </ul>
               </div>
-
-              <div class="p-4 bg-gray-50 rounded-lg">
-                <h4 class="font-semibold mb-2">Application Not Accessible</h4>
-                <ul class="text-sm text-gray-600 space-y-1">
-                  <li>• Check port configuration and conflicts</li>
-                  <li>• Verify firewall rules on the host</li>
-                  <li>• Ensure container is running and healthy</li>
-                  <li>• Review network configuration</li>
+              
+              <div>
+                <h3 class="font-bold text-lg mb-2 flex items-center">
+                  <span class="mr-2">📦</span> M3 Migration
+                </h3>
+                <p class="text-slate-400 mb-2">
+                  Cross-platform data migration with validation and rollback.
+                </p>
+                <ul class="text-slate-400 text-sm ml-6">
+                  <li>• Schema and data transfer</li>
+                  <li>• Incremental synchronization</li>
+                  <li>• Automated verification</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 class="font-bold text-lg mb-2 flex items-center">
+                  <span class="mr-2">🔄</span> T3 Sync
+                </h3>
+                <p class="text-slate-400 mb-2">
+                  Real-time data synchronization across distributed systems.
+                </p>
+                <ul class="text-slate-400 text-sm ml-6">
+                  <li>• Bidirectional replication</li>
+                  <li>• Conflict resolution</li>
+                  <li>• Scheduled synchronization</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 class="font-bold text-lg mb-2 flex items-center">
+                  <span class="mr-2">⚖️</span> V3 Comparison
+                </h3>
+                <p class="text-slate-400 mb-2">
+                  Schema and data comparison for auditing and validation.
+                </p>
+                <ul class="text-slate-400 text-sm ml-6">
+                  <li>• Structural differences analysis</li>
+                  <li>• Data discrepancy detection</li>
+                  <li>• Change tracking reports</li>
                 </ul>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="privacy" class="mb-12">
-          <h2 class="text-2xl font-bold mb-4">Privacy & Logging</h2>
-          <div class="bg-white rounded-lg shadow-sm p-6">
-            <h3 class="font-semibold mb-3">Data Privacy</h3>
-            <p class="text-gray-600 mb-4">datax is designed with privacy in mind:</p>
-            <ul class="text-sm text-gray-600 space-y-1 mb-4">
-              <li>• All data is stored locally on your machine</li>
+        <section id="troubleshooting" class="doc-section mb-12">
+          <h2 class="text-2xl font-bold mb-6">Troubleshooting</h2>
+          <div class="card-bg rounded-lg shadow-sm p-6">
+            <h3 class="font-bold text-lg mb-4">Common Issues</h3>
+            
+            <div class="space-y-6">
+              <div>
+                <h4 class="font-bold mb-2">SSH Connection Failures</h4>
+                <p class="text-slate-400 mb-2">
+                  If you're unable to connect to a host:
+                </p>
+                <ul class="text-slate-400 text-sm ml-6">
+                  <li>• Verify SSH service is running on the target host</li>
+                  <li>• Check firewall rules allow SSH connections</li>
+                  <li>• Confirm username and credentials are correct</li>
+                  <li>• Test manual SSH connection from terminal</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h4 class="font-bold mb-2">Docker Deployment Errors</h4>
+                <p class="text-slate-400 mb-2">
+                  If applications fail to deploy:
+                </p>
+                <ul class="text-slate-400 text-sm ml-6">
+                  <li>• Ensure Docker is installed and running on target host</li>
+                  <li>• Verify user has permissions to run Docker commands</li>
+                  <li>• Check available disk space on host</li>
+                  <li>• Review application logs for specific error messages</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h4 class="font-bold mb-2">Performance Issues</h4>
+                <p class="text-slate-400 mb-2">
+                  If experiencing slow performance:
+                </p>
+                <ul class="text-slate-400 text-sm ml-6">
+                  <li>• Check host resource utilization (CPU, memory, disk)</li>
+                  <li>• Verify network connectivity between hosts</li>
+                  <li>• Consider selecting a different SCREEN for your region</li>
+                  <li>• Review application-specific resource allocation</li>
+                </ul>
+              </div>
+            </div>
+            
+            <h3 class="font-bold text-lg mb-4 mt-6">Getting Help</h3>
+            <p class="text-slate-300 mb-4">
+              If you're still experiencing issues:
+            </p>
+            <ul class="text-slate-300 space-y-2 ml-6">
+              <li>• Check our <a href="https://github.com/dataxcash/data.x.cash/issues" class="text-blue-400 hover:underline">GitHub issues</a> for known problems</li>
+              <li>• Review the application logs in the datax interface</li>
+              <li>• Contact our support team through the Help menu</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="privacy" class="doc-section mb-12">
+          <h2 class="text-2xl font-bold mb-6">Privacy & Logs</h2>
+          <div class="card-bg rounded-lg shadow-sm p-6">
+            <h3 class="font-bold text-lg mb-4">Data Privacy</h3>
+            <p class="text-slate-300 mb-4">
+              datax is designed with privacy in mind:
+            </p>
+            <ul class="text-slate-300 space-y-2 mb-6 ml-6">
+              <li>• All data remains on your infrastructure</li>
               <li>• No telemetry or usage data is collected</li>
-              <li>• SSH credentials are encrypted locally</li>
-              <li>• No data is transmitted to external servers</li>
+              <li>• Credentials are encrypted and stored locally</li>
+              <li>• No cloud dependencies for core functionality</li>
             </ul>
-
-            <h3 class="font-semibold mb-3">Local Logging</h3>
-            <p class="text-gray-600 mb-4">datax maintains local logs for troubleshooting:</p>
-            <ul class="text-sm text-gray-600 space-y-1 mb-4">
-              <li>• Application events and errors</li>
-              <li>• SSH connection attempts</li>
-              <li>• Docker deployment activities</li>
-              <li>• System performance metrics</li>
+            
+            <h3 class="font-bold text-lg mb-4">Log Management</h3>
+            <p class="text-slate-300 mb-4">
+              datax maintains comprehensive logs for troubleshooting:
+            </p>
+            <ul class="text-slate-300 space-y-2 mb-4 ml-6">
+              <li>• Application logs are stored locally</li>
+              <li>• Log retention is configurable</li>
+              <li>• Logs can be exported for analysis</li>
+              <li>• Sensitive information is redacted by default</li>
             </ul>
-
-            <h3 class="font-semibold mb-3">Log Management</h3>
-            <p class="text-gray-600">Logs are automatically rotated and can be cleared through the application settings. No sensitive information like passwords is logged.</p>
+            
+            <div class="card-bg p-4 rounded border-l-4 border-yellow-500">
+              <h4 class="font-bold mb-2">⚠️ Important</h4>
+              <p class="text-slate-300">
+                While datax does not transmit your data, we recommend reviewing logs before sharing them 
+                with support to ensure no sensitive information is included.
+              </p>
+            </div>
           </div>
         </section>
       </div>
     </div>
   </main>
 
-  <footer class="bg-white border-t py-6 mt-12" data-footer-component data-lang="en"></footer>
+  <footer class="bg-slate-900 border-t border-slate-800 py-8 mt-16" data-footer-component data-lang="en"></footer>
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/download-component.js"></script>
   <script src="assets/js/footer-component.js"></script>
+  
+  <script>
+    // Simple scrollspy for documentation navigation
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('.doc-section');
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      function activateNavLink() {
+        let current = '';
+        
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          if (window.scrollY >= sectionTop - 100) {
+            current = section.getAttribute('id');
+          }
+        });
+        
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + current) {
+            link.classList.add('active');
+          }
+        });
+      }
+      
+      window.addEventListener('scroll', activateNavLink);
+      activateNavLink(); // Activate on initial load
+    });
+  </script>
 </body>
 </html>

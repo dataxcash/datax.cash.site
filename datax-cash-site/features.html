@@ -7,175 +7,731 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="assets/css/common.css" rel="stylesheet">
-  <style>body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial}</style>
+  <style>
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background-color: #0f172a;
+      color: #f1f5f9;
+    }
+    
+    .dark-bg {
+      background-color: #0f172a;
+    }
+    
+    .card-bg {
+      background-color: #1e293b;
+    }
+    
+    .accent-blue {
+      color: #3b82f6;
+    }
+    
+    .accent-green {
+      color: #10b981;
+    }
+    
+    .accent-purple {
+      color: #8b5cf6;
+    }
+    
+    .accent-yellow {
+      color: #f59e0b;
+    }
+    
+    .accent-red {
+      color: #ef4444;
+    }
+    
+    .feature-card {
+      transition: all 0.3s ease;
+      border: 1px solid #334155;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+      border-color: #3b82f6;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25);
+    }
+    
+    .tool-category {
+      background-color: #334155;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #3b82f6, #60a5fa);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid #475569;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-secondary:hover {
+      background-color: #1e293b;
+      border-color: #94a3b8;
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
-  <header class="bg-white shadow">
+<body class="dark-bg text-slate-100">
+  <header class="bg-slate-900 shadow-lg">
     <div class="container mx-auto px-4 py-4 flex items-center justify-between">
       <div class="flex items-center space-x-3">
         <img src="assets/images/logo.svg" alt="datax.cash logo" class="logo">
-        <div class="hidden sm:block text-sm text-gray-600">Manage Ur Data, Price Ur Data, Cash Ur Data</div>
+        <div class="hidden sm:block text-sm text-slate-400">Manage Ur Data, Price Ur Data, Cash Ur Data</div>
       </div>
       <nav class="hidden md:flex items-center space-x-6">
-        <a href="index.html" class="text-sm">Home</a>
-        <a href="features.html" class="text-sm font-semibold">Features</a>
-        <a href="pricing.html" class="text-sm">Pricing</a>
-        <a href="docs.html" class="text-sm">Docs</a>
-        <a href="/zh-tw/" class="text-sm">繁體</a>
+        <a href="index.html" class="text-sm text-slate-300 hover:text-white">Home</a>
+        <a href="features.html" class="text-sm font-semibold accent-blue">Features</a>
+        <a href="pricing.html" class="text-sm text-slate-300 hover:text-white">Pricing</a>
+        <a href="docs.html" class="text-sm text-slate-300 hover:text-white">Docs</a>
+        <a href="/zh-tw/" class="text-sm text-slate-300 hover:text-white">繁體</a>
       </nav>
-      <button id="burger" class="md:hidden p-2">
+      <button id="burger" class="md:hidden p-2 text-slate-300">
         <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
       </button>
     </div>
-    <div id="mobileMenu" class="md:hidden hidden">
-      <div class="px-4 pb-4 space-y-2">
-        <a href="index.html" class="block">Home</a>
-        <a href="features.html" class="block">Features</a>
-        <a href="pricing.html" class="block">Pricing</a>
-        <a href="docs.html" class="block">Docs</a>
-        <a href="/zh-tw/" class="block">繁體</a>
+    <div id="mobileMenu" class="md:hidden hidden bg-slate-800">
+      <div class="px-4 pb-4 space-y-2 pt-2">
+        <a href="index.html" class="block py-2 text-slate-300">Home</a>
+        <a href="features.html" class="block py-2 text-slate-200">Features</a>
+        <a href="pricing.html" class="block py-2 text-slate-300">Pricing</a>
+        <a href="docs.html" class="block py-2 text-slate-300">Docs</a>
+        <a href="/zh-tw/" class="block py-2 text-slate-300">繁體</a>
       </div>
     </div>
   </header>
 
   <main class="container mx-auto px-4 py-12">
-    <section class="text-center mb-12">
-      <h1 class="text-4xl font-bold text-gray-900">datax Features</h1>
-      <p class="mt-4 text-lg text-gray-600">Everything you need to deploy and manage data tools across multiple hosts</p>
+    <section class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">datax Features</h1>
+      <p class="text-lg text-slate-300 max-w-3xl mx-auto mb-8">
+        Everything you need to deploy and manage data tools across multiple hosts with enterprise-grade security and performance
+      </p>
       <div id="features-hero-download" data-download-component class="mt-6"></div>
     </section>
 
-    <section class="grid gap-8 lg:grid-cols-2">
-      <article class="bg-white p-8 rounded-lg shadow-sm">
-        <div class="text-4xl mb-4">🐳</div>
-        <h2 class="text-xl font-semibold mb-3">Docker App Store</h2>
-        <p class="text-gray-600 mb-6">Browse and deploy pre-configured data tools with one click:</p>
-        
-        <div class="grid gap-4 sm:grid-cols-1 lg:grid-cols-2 text-sm">
-          <div class="space-y-3">
-            <div>
-              <h4 class="font-semibold text-gray-800 mb-2">🗄️ Databases</h4>
-              <ul class="text-gray-600 space-y-1 ml-4">
-                <li>• PostgreSQL 🐘</li>
-                <li>• MySQL 🐬</li>
-                <li>• Oracle Database 🔶</li>
-                <li>• IBM DB2 🔷</li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 class="font-semibold text-gray-800 mb-2">🛠️ Management Tools</h4>
-              <ul class="text-gray-600 space-y-1 ml-4">
-                <li>• pgAdmin</li>
-                <li>• MySQL Client 💻</li>
-              </ul>
-            </div>
-          </div>
+    <!-- Docker App Store Section -->
+    <section class="mb-20">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">🐳 Docker App Store</h2>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+          Browse and deploy pre-configured data tools with one click
+        </p>
+      </div>
+      
+      <div class="grid gap-8 lg:grid-cols-2">
+        <div class="feature-card card-bg p-8 rounded-xl">
+          <h3 class="text-xl font-bold mb-6 flex items-center">
+            <span class="mr-3">🗄️</span> Databases
+          </h3>
           
-          <div class="space-y-3">
-            <div>
-              <h4 class="font-semibold text-gray-800 mb-2">⚙️ DATAX Tools</h4>
-              <ul class="text-gray-600 space-y-1 ml-4">
-                <li>• X0 Diagnosis 🔍</li>
-                <li>• X1 Simulation 🎯</li>
-                <li>• M3 Migration 📦</li>
-                <li>• T3 Sync 🔄</li>
-                <li>• V3 Comparison ⚖️</li>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div class="tool-category p-5 rounded-lg">
+              <h4 class="font-semibold text-slate-200 mb-3 flex items-center">
+                <span class="mr-2 text-blue-400">🐘</span> PostgreSQL
+              </h4>
+              <ul class="text-sm text-slate-400 space-y-2">
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Latest versions</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>PostGIS extension</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Automated backups</span>
+                </li>
               </ul>
             </div>
             
-            <div>
-              <h4 class="font-semibold text-gray-800 mb-2">🔐 License Tools</h4>
-              <ul class="text-gray-600 space-y-1 ml-4">
-                <li>• License Control Server</li>
-                <li>• License Control Dog 🐕</li>
+            <div class="tool-category p-5 rounded-lg">
+              <h4 class="font-semibold text-slate-200 mb-3 flex items-center">
+                <span class="mr-2 text-blue-300">🐬</span> MySQL
+              </h4>
+              <ul class="text-sm text-slate-400 space-y-2">
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>MySQL 5.7/8.0</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>phpMyAdmin included</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Replication setup</span>
+                </li>
               </ul>
             </div>
             
-            <div>
-              <h4 class="font-semibold text-gray-800 mb-2">🎨 Custom Apps</h4>
-              <ul class="text-gray-600 space-y-1 ml-4">
-                <li>• User-defined applications</li>
+            <div class="tool-category p-5 rounded-lg">
+              <h4 class="font-semibold text-slate-200 mb-3 flex items-center">
+                <span class="mr-2 text-red-400">🔶</span> Oracle Database
+              </h4>
+              <ul class="text-sm text-slate-400 space-y-2">
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Express Edition</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Enterprise features</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Web-based tools</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="tool-category p-5 rounded-lg">
+              <h4 class="font-semibold text-slate-200 mb-3 flex items-center">
+                <span class="mr-2 text-blue-500">🔷</span> IBM DB2
+              </h4>
+              <ul class="text-sm text-slate-400 space-y-2">
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Community Edition</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Advanced features</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Performance tools</span>
+                </li>
               </ul>
             </div>
           </div>
         </div>
-      </article>
-
-      <article class="bg-white p-8 rounded-lg shadow-sm">
-        <div class="text-4xl mb-4">🖥️</div>
-        <h2 class="text-xl font-semibold mb-3">Multi-Host Management</h2>
-        <p class="text-gray-600 mb-4">Manage multiple remote servers from a single interface:</p>
-        <ul class="text-sm text-gray-600 space-y-2">
-          <li>• SSH connection pooling and management</li>
-          <li>• Host grouping and tagging</li>
-          <li>• Credential management with encryption</li>
-          <li>• Real-time host status monitoring</li>
-          <li>• Batch operations across multiple hosts</li>
-        </ul>
-      </article>
-
-      <article class="bg-white p-8 rounded-lg shadow-sm">
-        <div class="text-4xl mb-4">⚡</div>
-        <h2 class="text-xl font-semibold mb-3">One-Click Deployment</h2>
-        <p class="text-gray-600 mb-4">Deploy complex data stacks in seconds:</p>
-        <ul class="text-sm text-gray-600 space-y-2">
-          <li>• Pre-configured Docker containers</li>
-          <li>• Automatic port management</li>
-          <li>• Environment variable configuration</li>
-          <li>• Volume mounting and persistence</li>
-          <li>• Network configuration</li>
-        </ul>
-      </article>
-
-      <article class="bg-white p-8 rounded-lg shadow-sm">
-        <div class="text-4xl mb-4">📊</div>
-        <h2 class="text-xl font-semibold mb-3">Application Monitoring</h2>
-        <p class="text-gray-600 mb-4">Keep track of your deployed applications:</p>
-        <ul class="text-sm text-gray-600 space-y-2">
-          <li>• Real-time container status</li>
-          <li>• Resource usage monitoring</li>
-          <li>• Log aggregation and viewing</li>
-          <li>• Health checks and alerts</li>
-          <li>• Performance metrics</li>
-        </ul>
-      </article>
-
-      <article class="bg-white p-8 rounded-lg shadow-sm">
-        <div class="text-4xl mb-4">🔒</div>
-        <h2 class="text-xl font-semibold mb-3">Security & Access Control</h2>
-        <p class="text-gray-600 mb-4">Enterprise-grade security features:</p>
-        <ul class="text-sm text-gray-600 space-y-2">
-          <li>• Encrypted credential storage</li>
-          <li>• SSH key management</li>
-          <li>• Role-based access control</li>
-          <li>• Audit logging</li>
-          <li>• Network isolation</li>
-        </ul>
-      </article>
-
-      <article class="bg-white p-8 rounded-lg shadow-sm">
-        <div class="text-4xl mb-4">🎯</div>
-        <h2 class="text-xl font-semibold mb-3">Desktop Experience</h2>
-        <p class="text-gray-600 mb-4">Native desktop application built with modern technologies:</p>
-        <ul class="text-sm text-gray-600 space-y-2">
-          <li>• Cross-platform: Windows, macOS, Linux</li>
-          <li>• Modern UI with Vue.js and Naive UI</li>
-          <li>• Keyboard shortcuts and navigation</li>
-          <li>• System tray integration</li>
-          <li>• Offline capability</li>
-        </ul>
-      </article>
+        
+        <div class="feature-card card-bg p-8 rounded-xl">
+          <h3 class="text-xl font-bold mb-6 flex items-center">
+            <span class="mr-3">⚙️</span> DATAX Tools
+          </h3>
+          
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div class="tool-category p-5 rounded-lg">
+              <h4 class="font-semibold text-slate-200 mb-3 flex items-center">
+                <span class="mr-2 text-yellow-400">🔍</span> X0 Diagnosis
+              </h4>
+              <ul class="text-sm text-slate-400 space-y-2">
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Performance analysis</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Bottleneck detection</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Query optimization</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="tool-category p-5 rounded-lg">
+              <h4 class="font-semibold text-slate-200 mb-3 flex items-center">
+                <span class="mr-2 text-green-400">🎯</span> X1 Simulation
+              </h4>
+              <ul class="text-sm text-slate-400 space-y-2">
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Load testing</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Scenario modeling</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Capacity planning</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="tool-category p-5 rounded-lg">
+              <h4 class="font-semibold text-slate-200 mb-3 flex items-center">
+                <span class="mr-2 text-purple-400">📦</span> M3 Migration
+              </h4>
+              <ul class="text-sm text-slate-400 space-y-2">
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Cross-platform migration</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Data validation</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Rollback capabilities</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="tool-category p-5 rounded-lg">
+              <h4 class="font-semibold text-slate-200 mb-3 flex items-center">
+                <span class="mr-2 text-blue-300">🔄</span> T3 Sync
+              </h4>
+              <ul class="text-sm text-slate-400 space-y-2">
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Real-time replication</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Conflict resolution</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Scheduled sync</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="tool-category p-5 rounded-lg sm:col-span-2">
+              <h4 class="font-semibold text-slate-200 mb-3 flex items-center">
+                <span class="mr-2 text-red-400">⚖️</span> V3 Comparison
+              </h4>
+              <ul class="text-sm text-slate-400 space-y-2">
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Schema comparison</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Data diff analysis</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Change tracking</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="feature-card card-bg p-8 rounded-xl">
+          <h3 class="text-xl font-bold mb-6 flex items-center">
+            <span class="mr-3">🛠️</span> Management Tools
+          </h3>
+          
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div class="tool-category p-5 rounded-lg">
+              <h4 class="font-semibold text-slate-200 mb-3">pgAdmin</h4>
+              <ul class="text-sm text-slate-400 space-y-2">
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Web-based interface</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Query tool</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Backup/restore</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="tool-category p-5 rounded-lg">
+              <h4 class="font-semibold text-slate-200 mb-3 flex items-center">
+                <span class="mr-2">💻</span> MySQL Client
+              </h4>
+              <ul class="text-sm text-slate-400 space-y-2">
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Command-line tools</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Workbench interface</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Migration wizard</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="feature-card card-bg p-8 rounded-xl">
+          <h3 class="text-xl font-bold mb-6 flex items-center">
+            <span class="mr-3">🔐</span> License Tools
+          </h3>
+          
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div class="tool-category p-5 rounded-lg">
+              <h4 class="font-semibold text-slate-200 mb-3">License Control Server</h4>
+              <ul class="text-sm text-slate-400 space-y-2">
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Centralized licensing</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Usage tracking</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Compliance reporting</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="tool-category p-5 rounded-lg">
+              <h4 class="font-semibold text-slate-200 mb-3 flex items-center">
+                <span class="mr-2">🐕</span> License Control Dog
+              </h4>
+              <ul class="text-sm text-slate-400 space-y-2">
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>License validation</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Security monitoring</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Automated alerts</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="tool-category p-5 rounded-lg sm:col-span-2">
+              <h4 class="font-semibold text-slate-200 mb-3 flex items-center">
+                <span class="mr-2">🎨</span> Custom Apps
+              </h4>
+              <ul class="text-sm text-slate-400 space-y-2">
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>User-defined applications</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Custom Docker images</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-400 mr-2">✓</span>
+                  <span>Template system</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="mt-16 bg-blue-50 rounded-lg p-8 text-center">
-      <h2 class="text-2xl font-bold text-gray-900">Ready to Get Started?</h2>
-      <p class="mt-2 text-gray-600">Download datax and start deploying data tools in minutes</p>
+    <!-- Multi-Host Management Section -->
+    <section class="mb-20">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">🖥️ Multi-Host Management</h2>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+          Manage multiple remote servers from a single interface with advanced SSH capabilities
+        </p>
+      </div>
+      
+      <div class="grid gap-8 lg:grid-cols-2">
+        <div class="feature-card card-bg p-8 rounded-xl">
+          <h3 class="text-xl font-bold mb-6">SSH Connection Management</h3>
+          <ul class="text-slate-400 space-y-4">
+            <li class="flex items-start">
+              <span class="text-green-400 mr-3 mt-1">✓</span>
+              <div>
+                <h4 class="font-semibold text-slate-200">Connection Pooling</h4>
+                <p class="text-sm text-slate-400">Efficiently manage multiple SSH connections with built-in pooling and reuse</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-400 mr-3 mt-1">✓</span>
+              <div>
+                <h4 class="font-semibold text-slate-200">Host Grouping</h4>
+                <p class="text-sm text-slate-400">Organize your hosts into logical groups for easier management and deployment</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-400 mr-3 mt-1">✓</span>
+              <div>
+                <h4 class="font-semibold text-slate-200">Credential Management</h4>
+                <p class="text-sm text-slate-400">Securely store and manage SSH keys and credentials with encryption</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-400 mr-3 mt-1">✓</span>
+              <div>
+                <h4 class="font-semibold text-slate-200">Real-time Status Monitoring</h4>
+                <p class="text-sm text-slate-400">Monitor host connectivity and resource usage in real-time</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="feature-card card-bg p-8 rounded-xl">
+          <h3 class="text-xl font-bold mb-6">Advanced Deployment Features</h3>
+          <ul class="text-slate-400 space-y-4">
+            <li class="flex items-start">
+              <span class="text-green-400 mr-3 mt-1">✓</span>
+              <div>
+                <h4 class="font-semibold text-slate-200">Batch Operations</h4>
+                <p class="text-sm text-slate-400">Deploy applications to multiple hosts simultaneously with batch operations</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-400 mr-3 mt-1">✓</span>
+              <div>
+                <h4 class="font-semibold text-slate-200">Tag-based Targeting</h4>
+                <p class="text-sm text-slate-400">Target deployments to specific hosts based on tags and attributes</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-400 mr-3 mt-1">✓</span>
+              <div>
+                <h4 class="font-semibold text-slate-200">Environment Isolation</h4>
+                <p class="text-sm text-slate-400">Maintain separate environments for development, staging, and production</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-400 mr-3 mt-1">✓</span>
+              <div>
+                <h4 class="font-semibold text-slate-200">Audit Logging</h4>
+                <p class="text-sm text-slate-400">Comprehensive logging of all operations for compliance and troubleshooting</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Application Monitoring Section -->
+    <section class="mb-20">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">📊 Application Monitoring</h2>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+          Keep track of your deployed applications with real-time monitoring and analytics
+        </p>
+      </div>
+      
+      <div class="grid gap-8 lg:grid-cols-3">
+        <div class="feature-card card-bg p-8 rounded-xl">
+          <div class="text-3xl mb-4 accent-blue">📈</div>
+          <h3 class="text-xl font-bold mb-4">Container Status</h3>
+          <ul class="text-slate-400 space-y-3">
+            <li class="flex items-center">
+              <span class="text-green-400 mr-2">✓</span>
+              <span>Running, stopped, error states</span>
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-400 mr-2">✓</span>
+              <span>Uptime tracking</span>
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-400 mr-2">✓</span>
+              <span>Restart history</span>
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-400 mr-2">✓</span>
+              <span>Health checks</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="feature-card card-bg p-8 rounded-xl">
+          <div class="text-3xl mb-4 accent-green">💾</div>
+          <h3 class="text-xl font-bold mb-4">Resource Usage</h3>
+          <ul class="text-slate-400 space-y-3">
+            <li class="flex items-center">
+              <span class="text-green-400 mr-2">✓</span>
+              <span>CPU utilization</span>
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-400 mr-2">✓</span>
+              <span>Memory consumption</span>
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-400 mr-2">✓</span>
+              <span>Disk I/O metrics</span>
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-400 mr-2">✓</span>
+              <span>Network throughput</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="feature-card card-bg p-8 rounded-xl">
+          <div class="text-3xl mb-4 accent-purple">📋</div>
+          <h3 class="text-xl font-bold mb-4">Log Aggregation</h3>
+          <ul class="text-slate-400 space-y-3">
+            <li class="flex items-center">
+              <span class="text-green-400 mr-2">✓</span>
+              <span>Centralized log viewing</span>
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-400 mr-2">✓</span>
+              <span>Real-time log streaming</span>
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-400 mr-2">✓</span>
+              <span>Error detection and alerts</span>
+            </li>
+            <li class="flex items-center">
+              <span class="text-green-400 mr-2">✓</span>
+              <span>Log search and filtering</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Security & Access Control Section -->
+    <section class="mb-20">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">🔒 Security & Access Control</h2>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+          Enterprise-grade security features to protect your data and infrastructure
+        </p>
+      </div>
+      
+      <div class="grid gap-8 lg:grid-cols-2">
+        <div class="feature-card card-bg p-8 rounded-xl">
+          <h3 class="text-xl font-bold mb-6">Data Protection</h3>
+          <ul class="text-slate-400 space-y-4">
+            <li class="flex items-start">
+              <span class="text-green-400 mr-3 mt-1">✓</span>
+              <div>
+                <h4 class="font-semibold text-slate-200">Encrypted Credential Storage</h4>
+                <p class="text-sm text-slate-400">All credentials stored with AES-256 encryption at rest</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-400 mr-3 mt-1">✓</span>
+              <div>
+                <h4 class="font-semibold text-slate-200">SSH Key Management</h4>
+                <p class="text-sm text-slate-400">Secure generation, storage, and rotation of SSH keys</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-400 mr-3 mt-1">✓</span>
+              <div>
+                <h4 class="font-semibold text-slate-200">Network Isolation</h4>
+                <p class="text-sm text-slate-400">Container network isolation to prevent unauthorized access</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="feature-card card-bg p-8 rounded-xl">
+          <h3 class="text-xl font-bold mb-6">Access Control</h3>
+          <ul class="text-slate-400 space-y-4">
+            <li class="flex items-start">
+              <span class="text-green-400 mr-3 mt-1">✓</span>
+              <div>
+                <h4 class="font-semibold text-slate-200">Role-based Access Control</h4>
+                <p class="text-sm text-slate-400">Granular permissions for users and teams</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-400 mr-3 mt-1">✓</span>
+              <div>
+                <h4 class="font-semibold text-slate-200">Audit Logging</h4>
+                <p class="text-sm text-slate-400">Comprehensive logs of all user actions and system events</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-400 mr-3 mt-1">✓</span>
+              <div>
+                <h4 class="font-semibold text-slate-200">Two-factor Authentication</h4>
+                <p class="text-sm text-slate-400">Optional 2FA for enhanced account security</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Desktop Experience Section -->
+    <section class="mb-20">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">🎯 Desktop Experience</h2>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+          Native desktop application built with modern technologies for optimal user experience
+        </p>
+      </div>
+      
+      <div class="feature-card card-bg p-8 rounded-xl">
+        <div class="grid gap-8 md:grid-cols-2">
+          <div>
+            <h3 class="text-xl font-bold mb-6">Cross-platform Compatibility</h3>
+            <ul class="text-slate-400 space-y-4">
+              <li class="flex items-center">
+                <span class="text-green-400 mr-3">✓</span>
+                <span>Windows 10+ support</span>
+              </li>
+              <li class="flex items-center">
+                <span class="text-green-400 mr-3">✓</span>
+                <span>macOS 10.14+ support</span>
+              </li>
+              <li class="flex items-center">
+                <span class="text-green-400 mr-3">✓</span>
+                <span>Modern Linux distributions</span>
+              </li>
+              <li class="flex items-center">
+                <span class="text-green-400 mr-3">✓</span>
+                <span>Consistent UI across platforms</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 class="text-xl font-bold mb-6">User Interface Features</h3>
+            <ul class="text-slate-400 space-y-4">
+              <li class="flex items-center">
+                <span class="text-green-400 mr-3">✓</span>
+                <span>Modern Vue.js interface</span>
+              </li>
+              <li class="flex items-center">
+                <span class="text-green-400 mr-3">✓</span>
+                <span>Naive UI component library</span>
+              </li>
+              <li class="flex items-center">
+                <span class="text-green-400 mr-3">✓</span>
+                <span>Keyboard shortcuts and navigation</span>
+              </li>
+              <li class="flex items-center">
+                <span class="text-green-400 mr-3">✓</span>
+                <span>System tray integration</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-16 text-center card-bg rounded-2xl p-12">
+      <h2 class="text-3xl font-bold mb-6">Ready to Get Started?</h2>
+      <p class="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
+        Download datax and start deploying data tools across your infrastructure in minutes
+      </p>
       <div id="features-download-section" data-download-component></div>
     </section>
   </main>
 
-  <footer class="bg-white border-t py-6 mt-12" data-footer-component data-lang="en"></footer>
+  <footer class="bg-slate-900 border-t border-slate-800 py-8 mt-16" data-footer-component data-lang="en"></footer>
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/download-component.js"></script>
