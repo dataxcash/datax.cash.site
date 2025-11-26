@@ -77,6 +77,23 @@ if ('IntersectionObserver' in window && lazyImages.length > 0) {
     img.classList.add('loading');
     imgObserver.observe(img);
   });
+} else if (lazyImages.length > 0) {
+  // Fallback for browsers that don't support IntersectionObserver
+  lazyImages.forEach(img => {
+    if (img.dataset.src) {
+      img.src = img.dataset.src;
+      img.onload = () => {
+        img.removeAttribute('data-src');
+        img.classList.add('loaded');
+        img.classList.remove('loading');
+      };
+      img.onerror = () => {
+        img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjMyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIE5vdCBGb3VuZDwvdGV4dD48L3N2Zz4=';
+        img.removeAttribute('data-src');
+        img.classList.remove('loading');
+      };
+    }
+  });
 }
 
 // Gallery lightbox functionality with captions
@@ -247,6 +264,25 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
+  // Fallback loading for browsers that don't support IntersectionObserver
+  if (!('IntersectionObserver' in window)) {
+    galleryImages.forEach(img => {
+      if (img.dataset.src) {
+        img.src = img.dataset.src;
+        img.onload = () => {
+          img.removeAttribute('data-src');
+          img.classList.add('loaded');
+          img.classList.remove('loading');
+        };
+        img.onerror = () => {
+          img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjMyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzM0MTU1Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2NjZDU4MSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlByZWxvYWQgRmFpbGVkPC90ZXh0Pjwvc3ZnPg==';
+          img.removeAttribute('data-src');
+          img.classList.remove('loading');
+        };
+      }
+    });
+  }
+  
   // Preload lightbox images for smoother experience
   function preloadImages() {
     // Only preload if lightbox exists on this page
@@ -259,12 +295,17 @@ document.addEventListener('DOMContentLoaded', function() {
     galleryImages.forEach(img => {
       const preloadImg = new Image();
       preloadImg.src = img.dataset.src;
+      // Also handle errors in preloading
+      preloadImg.onerror = () => {
+        console.warn('Failed to preload image:', img.dataset.src);
+      };
     });
   }
   
   // Preload all lightbox images after initial page load
   window.addEventListener('load', function() {
-    preloadImages();
+    // Add a small delay to ensure DOM is fully ready
+    setTimeout(preloadImages, 100);
   });
 });
 
