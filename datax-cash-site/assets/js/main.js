@@ -81,7 +81,7 @@ if ('IntersectionObserver' in window && lazyImages.length > 0) {
   // Fallback for browsers that don't support IntersectionObserver
   lazyImages.forEach(img => {
     if (img.dataset.src) {
-      img.src = img.dataset.src;
+      // Set up error handling for image loading
       img.onload = () => {
         img.removeAttribute('data-src');
         img.classList.add('loaded');
@@ -92,6 +92,7 @@ if ('IntersectionObserver' in window && lazyImages.length > 0) {
         img.removeAttribute('data-src');
         img.classList.remove('loading');
       };
+      img.src = img.dataset.src;
     }
   });
 }
@@ -265,10 +266,10 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // Fallback loading for browsers that don't support IntersectionObserver
-  if (!('IntersectionObserver' in window)) {
+  if (!('IntersectionObserver' in window) && galleryImages.length > 0) {
     galleryImages.forEach(img => {
       if (img.dataset.src) {
-        img.src = img.dataset.src;
+        // Set up error handling for image loading
         img.onload = () => {
           img.removeAttribute('data-src');
           img.classList.add('loaded');
@@ -279,6 +280,7 @@ document.addEventListener('DOMContentLoaded', function() {
           img.removeAttribute('data-src');
           img.classList.remove('loading');
         };
+        img.src = img.dataset.src;
       }
     });
   }
