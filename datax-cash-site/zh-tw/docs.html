@@ -303,13 +303,13 @@
 
         <!-- 主機管理 -->
         <section id="host-management">
-          <div class="bg-white rounded-lg shadow-sm p-6">
+          <div class="card-bg rounded-xl p-6">
             <h2 class="text-2xl font-bold mb-4">🖥️ 主機管理</h2>
             
             <div class="space-y-6">
               <div>
-                <h3 class="font-semibold mb-3">添加新主機</h3>
-                <ol class="text-sm text-gray-600 space-y-2">
+                <h3 class="font-semibold mb-3 text-slate-200">添加新主機</h3>
+                <ol class="text-sm text-slate-400 space-y-2">
                   <li>1. 點擊"添加主機"按鈕</li>
                   <li>2. 輸入主機信息：
                     <ul class="ml-4 mt-1 space-y-1">
@@ -330,10 +330,10 @@
                 </ol>
               </div>
 
-              <div class="p-4 bg-green-50 rounded-lg">
-                <h4 class="font-semibold mb-2">SSH密鑰設置（推薦）</h4>
-                <p class="text-sm text-gray-600 mb-2">為了安全起見，建議使用SSH密鑰而不是密碼：</p>
-                <pre class="text-xs bg-gray-800 text-green-400 p-3 rounded overflow-x-auto">
+              <div class="p-4 bg-green-900/20 rounded-lg border border-green-800/50">
+                <h4 class="font-semibold mb-2 text-green-200">SSH密鑰設置（推薦）</h4>
+                <p class="text-sm text-green-100 mb-2">為了安全起見，建議使用SSH密鑰而不是密碼：</p>
+                <pre class="text-xs bg-slate-800 text-green-400 p-3 rounded overflow-x-auto">
 # 在本地生成SSH密鑰對
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 
@@ -349,38 +349,38 @@ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys</pre>
 
         <!-- 部署應用 -->
         <section id="deployment">
-          <div class="bg-white rounded-lg shadow-sm p-6">
+          <div class="card-bg rounded-xl p-6">
             <h2 class="text-2xl font-bold mb-4">🚀 部署應用</h2>
             
             <div class="space-y-6">
               <div>
-                <h3 class="font-semibold mb-3">部署流程</h3>
+                <h3 class="font-semibold mb-3 text-slate-200">部署流程</h3>
                 <div class="grid gap-4 md:grid-cols-2">
-                  <div class="border rounded-lg p-4">
-                    <h4 class="font-semibold mb-2">1. 選擇應用</h4>
-                    <p class="text-sm text-gray-600">從應用商店選擇您需要的工具，查看支持的版本和系統要求。</p>
+                  <div class="border rounded-lg p-4 border-slate-600">
+                    <h4 class="font-semibold mb-2 text-slate-200">1. 選擇應用</h4>
+                    <p class="text-sm text-slate-400">從應用商店選擇您需要的工具，查看支持的版本和系統要求。</p>
                   </div>
                   
-                  <div class="border rounded-lg p-4">
-                    <h4 class="font-semibold mb-2">2. 配置參數</h4>
-                    <p class="text-sm text-gray-600">設置端口映射、卷掛載、環境變量等配置選項。</p>
+                  <div class="border rounded-lg p-4 border-slate-600">
+                    <h4 class="font-semibold mb-2 text-slate-200">2. 配置參數</h4>
+                    <p class="text-sm text-slate-400">設置端口映射、卷掛載、環境變量等配置選項。</p>
                   </div>
                   
-                  <div class="border rounded-lg p-4">
-                    <h4 class="font-semibold mb-2">3. 選擇主機</h4>
-                    <p class="text-sm text-gray-600">選擇目標部署主機，檢查資源可用性。</p>
+                  <div class="border rounded-lg p-4 border-slate-600">
+                    <h4 class="font-semibold mb-2 text-slate-200">3. 選擇主機</h4>
+                    <p class="text-sm text-slate-400">選擇目標部署主機，檢查資源可用性。</p>
                   </div>
                   
-                  <div class="border rounded-lg p-4">
-                    <h4 class="font-semibold mb-2">4. 開始部署</h4>
-                    <p class="text-sm text-gray-600">確認配置後開始部署，實時查看部署進度和日誌。</p>
+                  <div class="border rounded-lg p-4 border-slate-600">
+                    <h4 class="font-semibold mb-2 text-slate-200">4. 開始部署</h4>
+                    <p class="text-sm text-slate-400">確認配置後開始部署，實時查看部署進度和日誌。</p>
                   </div>
                 </div>
               </div>
 
-              <div class="p-4 bg-blue-50 rounded-lg">
-                <h4 class="font-semibold mb-2">部署最佳實踐</h4>
-                <ul class="text-sm text-gray-600 space-y-1">
+              <div class="p-4 bg-blue-900/20 rounded-lg border border-blue-800/50">
+                <h4 class="font-semibold mb-2 text-blue-200">部署最佳實踐</h4>
+                <ul class="text-sm text-blue-100 space-y-1">
                   <li>• 在生產環境部署前先在測試環境驗證</li>
                   <li>• 確保目標主機有足夠的資源（CPU、內存、磁盤）</li>
                   <li>• 使用有意義的實例名稱便於管理</li>
@@ -394,13 +394,13 @@ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys</pre>
 
         <!-- 監控管理 -->
         <section id="monitoring">
-          <div class="bg-white rounded-lg shadow-sm p-6">
+          <div class="card-bg rounded-xl p-6">
             <h2 class="text-2xl font-bold mb-4">📊 監控管理</h2>
             
             <div class="grid gap-6 md:grid-cols-2">
               <div>
-                <h3 class="font-semibold mb-3">實時監控</h3>
-                <ul class="text-sm text-gray-600 space-y-2">
+                <h3 class="font-semibold mb-3 text-slate-200">實時監控</h3>
+                <ul class="text-sm text-slate-400 space-y-2">
                   <li>• <strong>容器狀態：</strong>運行、停止、重啟狀態</li>
                   <li>• <strong>資源使用：</strong>CPU、內存、磁盤、網絡</li>
                   <li>• <strong>性能指標：</strong>響應時間、吞吐量</li>
@@ -409,8 +409,8 @@ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys</pre>
               </div>
               
               <div>
-                <h3 class="font-semibold mb-3">日誌管理</h3>
-                <ul class="text-sm text-gray-600 space-y-2">
+                <h3 class="font-semibold mb-3 text-slate-200">日誌管理</h3>
+                <ul class="text-sm text-slate-400 space-y-2">
                   <li>• <strong>實時日誌：</strong>查看應用程式實時輸出</li>
                   <li>• <strong>歷史日誌：</strong>搜索和過濾歷史日誌</li>
                   <li>• <strong>日誌導出：</strong>導出日誌用於分析</li>
@@ -423,17 +423,17 @@ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys</pre>
 
         <!-- 故障排除 -->
         <section id="troubleshooting">
-          <div class="bg-white rounded-lg shadow-sm p-6">
+          <div class="card-bg rounded-xl p-6">
             <h2 class="text-2xl font-bold mb-4">🔧 故障排除</h2>
             
             <div class="space-y-6">
               <div>
-                <h3 class="font-semibold mb-3">常見問題解決</h3>
+                <h3 class="font-semibold mb-3 text-slate-200">常見問題解決</h3>
                 
                 <div class="space-y-4">
                   <div class="border-l-4 border-red-500 pl-4">
-                    <h4 class="font-semibold text-red-700">SSH連接失敗</h4>
-                    <ul class="text-sm text-gray-600 mt-1 space-y-1">
+                    <h4 class="font-semibold text-red-400">SSH連接失敗</h4>
+                    <ul class="text-sm text-slate-400 mt-1 space-y-1">
                       <li>• 檢查網絡連接和防火牆設置</li>
                       <li>• 驗證SSH服務是否在目標主機上運行</li>
                       <li>• 確認用戶名、密碼或SSH密鑰正確</li>
@@ -441,9 +441,9 @@ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys</pre>
                     </ul>
                   </div>
                   
-                  <div class="border-l-4 border-yellow-500 pl-4">
-                    <h4 class="font-semibold text-yellow-700">容器啟動失敗</h4>
-                    <ul class="text-sm text-gray-600 mt-1 space-y-1">
+                  <div class="border-l-4 border-amber-500 pl-4">
+                    <h4 class="font-semibold text-amber-400">容器啟動失敗</h4>
+                    <ul class="text-sm text-slate-400 mt-1 space-y-1">
                       <li>• 驗證端口是否被其他服務占用</li>
                       <li>• 確認主機資源充足（CPU、內存、磁盤）</li>
                       <li>• 查看容器日誌獲取詳細錯誤信息</li>
@@ -451,8 +451,8 @@ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys</pre>
                   </div>
                   
                   <div class="border-l-4 border-blue-500 pl-4">
-                    <h4 class="font-semibold text-blue-700">性能問題</h4>
-                    <ul class="text-sm text-gray-600 mt-1 space-y-1">
+                    <h4 class="font-semibold text-blue-400">性能問題</h4>
+                    <ul class="text-sm text-slate-400 mt-1 space-y-1">
                       <li>• 監控資源使用情況，必要時升級硬件</li>
                       <li>• 優化應用程式配置和參數</li>
                       <li>• 檢查網絡延遲和帶寬</li>
@@ -462,10 +462,10 @@ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys</pre>
                 </div>
               </div>
 
-              <div class="p-4 bg-gray-50 rounded-lg">
-                <h4 class="font-semibold mb-2">獲取幫助</h4>
-                <p class="text-sm text-gray-600">如果問題仍然存在，請：</p>
-                <ul class="text-sm text-gray-600 mt-2 space-y-1">
+              <div class="p-4 bg-slate-800 rounded-lg">
+                <h4 class="font-semibold mb-2 text-slate-200">獲取幫助</h4>
+                <p class="text-sm text-slate-400">如果問題仍然存在，請：</p>
+                <ul class="text-sm text-slate-400 mt-2 space-y-1">
                   <li>• 收集相關日誌和錯誤信息</li>
                   <li>• 記錄重現問題的步驟</li>
                   <li>• 檢查系統環境和版本信息</li>
@@ -478,38 +478,38 @@ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys</pre>
 
         <!-- 常見問題 -->
         <section id="faq">
-          <div class="bg-white rounded-lg shadow-sm p-6">
+          <div class="card-bg rounded-xl p-6">
             <h2 class="text-2xl font-bold mb-4">❓ 常見問題</h2>
             
             <div class="space-y-6">
               <div>
-                <h3 class="font-semibold mb-2">datax需要Docker嗎？</h3>
-                <p class="text-gray-600">是的，datax使用Docker容器來部署應用程式。目標主機需要安裝Docker。datax可以幫助您在遠程主機上自動安裝Docker。</p>
+                <h3 class="font-semibold mb-2 text-slate-200">datax需要Docker嗎？</h3>
+                <p class="text-slate-400">是的，datax使用Docker容器來部署應用程式。目標主機需要安裝Docker。datax可以幫助您在遠程主機上自動安裝Docker。</p>
               </div>
               
               <div>
-                <h3 class="font-semibold mb-2">可以管理多少個主機？</h3>
-                <p class="text-gray-600">沒有限制。您可以添加和管理任意數量的遠程主機，只要您的本地機器有足夠的資源來處理連接。</p>
+                <h3 class="font-semibold mb-2 text-slate-200">可以管理多少個主機？</h3>
+                <p class="text-slate-400">沒有限制。您可以添加和管理任意數量的遠程主機，只要您的本地機器有足夠的資源來處理連接。</p>
               </div>
               
               <div>
-                <h3 class="font-semibold mb-2">支持哪些操作系統？</h3>
-                <p class="text-gray-600">datax桌面應用支持Windows、macOS和Linux。遠程主機支持任何能運行Docker的Linux發行版。</p>
+                <h3 class="font-semibold mb-2 text-slate-200">支持哪些操作系統？</h3>
+                <p class="text-slate-400">datax桌面應用支持Windows、macOS和Linux。遠程主機支持任何能運行Docker的Linux發行版。</p>
               </div>
               
               <div>
-                <h3 class="font-semibold mb-2">數據安全如何保障？</h3>
-                <p class="text-gray-600">datax使用SSH加密連接，支持密鑰認證。所有數據傳輸都經過加密，本地不存儲敏感信息。</p>
+                <h3 class="font-semibold mb-2 text-slate-200">數據安全如何保障？</h3>
+                <p class="text-slate-400">datax使用SSH加密連接，支持密鑰認證。所有數據傳輸都經過加密，本地不存儲敏感信息。</p>
               </div>
               
               <div>
-                <h3 class="font-semibold mb-2">如何備份配置？</h3>
-                <p class="text-gray-600">datax配置存儲在本地配置文件中。建議定期備份配置目錄，並為重要的容器數據設置卷掛載。</p>
+                <h3 class="font-semibold mb-2 text-slate-200">如何備份配置？</h3>
+                <p class="text-slate-400">datax配置存儲在本地配置文件中。建議定期備份配置目錄，並為重要的容器數據設置卷掛載。</p>
               </div>
               
               <div>
-                <h3 class="font-semibold mb-2">可以自定義應用程式嗎？</h3>
-                <p class="text-gray-600">是的，您可以添加自定義Docker鏡像和配置模板。datax支持用戶自定義應用程式定義。</p>
+                <h3 class="font-semibold mb-2 text-slate-200">可以自定義應用程式嗎？</h3>
+                <p class="text-slate-400">是的，您可以添加自定義Docker鏡像和配置模板。datax支持用戶自定義應用程式定義。</p>
               </div>
             </div>
           </div>
@@ -519,7 +519,7 @@ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys</pre>
     </div>
   </main>
 
-  <footer class="bg-white border-t py-6 mt-12" data-footer-component data-lang="zh-tw"></footer>
+  <footer class="bg-slate-900 border-t border-slate-800 py-8 mt-16" data-footer-component data-lang="zh-tw"></footer>
 
   <script src="../assets/js/main.js"></script>
   <script src="../assets/js/download-component.js"></script>
