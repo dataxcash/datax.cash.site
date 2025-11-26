@@ -47,23 +47,39 @@ if ('IntersectionObserver' in window && lazyImages.length > 0) {
         // Set decoding to async for better performance
         img.decoding = 'async';
         
-        // Set up error handling for image loading
-        img.onload = () => {
-          img.removeAttribute('data-src');
-          img.classList.add('loaded');
-          // Remove loading class when image is loaded
-          img.classList.remove('loading');
+        // Add retry mechanism for image loading
+        let retryCount = 0;
+        const maxRetries = 3;
+        
+        const loadImage = () => {
+          // Set up error handling for image loading
+          img.onload = () => {
+            img.removeAttribute('data-src');
+            img.classList.add('loaded');
+            // Remove loading class when image is loaded
+            img.classList.remove('loading');
+          };
+          
+          img.onerror = () => {
+            retryCount++;
+            if (retryCount <= maxRetries) {
+              // Retry loading the image after a short delay
+              setTimeout(() => {
+                img.src = src + '?retry=' + retryCount; // Add cache buster
+              }, 500 * retryCount); // Exponential backoff
+            } else {
+              // Fallback to a placeholder if image fails to load after retries
+              img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjMyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIE5vdCBGb3VuZDwvdGV4dD48L3N2Zz4=';
+              img.removeAttribute('data-src');
+              // Remove loading class when image fails to load
+              img.classList.remove('loading');
+            }
+          };
+          
+          img.src = src;
         };
         
-        img.onerror = () => {
-          // Fallback to a placeholder if image fails to load
-          img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjMyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIE5vdCBGb3VuZDwvdGV4dD48L3N2Zz4=';
-          img.removeAttribute('data-src');
-          // Remove loading class when image fails to load
-          img.classList.remove('loading');
-        };
-        
-        img.src = src;
+        loadImage();
         observer.unobserve(img);
       }
     });
@@ -81,18 +97,37 @@ if ('IntersectionObserver' in window && lazyImages.length > 0) {
   // Fallback for browsers that don't support IntersectionObserver
   lazyImages.forEach(img => {
     if (img.dataset.src) {
-      // Set up error handling for image loading
-      img.onload = () => {
-        img.removeAttribute('data-src');
-        img.classList.add('loaded');
-        img.classList.remove('loading');
+      // Add retry mechanism for image loading
+      let retryCount = 0;
+      const maxRetries = 3;
+      const src = img.dataset.src;
+      
+      const loadImage = () => {
+        // Set up error handling for image loading
+        img.onload = () => {
+          img.removeAttribute('data-src');
+          img.classList.add('loaded');
+          img.classList.remove('loading');
+        };
+        
+        img.onerror = () => {
+          retryCount++;
+          if (retryCount <= maxRetries) {
+            // Retry loading the image after a short delay
+            setTimeout(() => {
+              img.src = src + '?retry=' + retryCount; // Add cache buster
+            }, 500 * retryCount); // Exponential backoff
+          } else {
+            img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjMyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIE5vdCBGb3VuZDwvdGV4dD48L3N2Zz4=';
+            img.removeAttribute('data-src');
+            img.classList.remove('loading');
+          }
+        };
+        
+        img.src = src;
       };
-      img.onerror = () => {
-        img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjMyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIE5vdCBGb3VuZDwvdGV4dD48L3N2Zz4=';
-        img.removeAttribute('data-src');
-        img.classList.remove('loading');
-      };
-      img.src = img.dataset.src;
+      
+      loadImage();
     }
   });
 }
@@ -230,23 +265,40 @@ document.addEventListener('DOMContentLoaded', function() {
             // Set decoding to async for better performance
             img.decoding = 'async';
             
-            // Set up error handling for image loading
-            img.onload = () => {
-              img.removeAttribute('data-src');
-              img.classList.add('loaded');
-              // Remove loading class when image is loaded
-              img.classList.remove('loading');
+            // Add retry mechanism for image loading
+            let retryCount = 0;
+            const maxRetries = 3;
+            const src = img.dataset.src;
+            
+            const loadImage = () => {
+              // Set up error handling for image loading
+              img.onload = () => {
+                img.removeAttribute('data-src');
+                img.classList.add('loaded');
+                // Remove loading class when image is loaded
+                img.classList.remove('loading');
+              };
+              
+              img.onerror = () => {
+                retryCount++;
+                if (retryCount <= maxRetries) {
+                  // Retry loading the image after a short delay
+                  setTimeout(() => {
+                    img.src = src + '?retry=' + retryCount; // Add cache buster
+                  }, 500 * retryCount); // Exponential backoff
+                } else {
+                  // Fallback to a placeholder if image fails to load after retries
+                  img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjMyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzM0MTU1Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2NjZDU4MSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlByZWxvYWQgRmFpbGVkPC90ZXh0Pjwvc3ZnPg==';
+                  img.removeAttribute('data-src');
+                  // Remove loading class when image fails to load
+                  img.classList.remove('loading');
+                }
+              };
+              
+              img.src = src;
             };
             
-            img.onerror = () => {
-              // Fallback to a placeholder if image fails to load
-              img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjMyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzM0MTU1Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2NjZDU4MSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlByZWxvYWQgRmFpbGVkPC90ZXh0Pjwvc3ZnPg==';
-              img.removeAttribute('data-src');
-              // Remove loading class when image fails to load
-              img.classList.remove('loading');
-            };
-            
-            img.src = img.dataset.src;
+            loadImage();
           }
           observer.unobserve(img);
         }
@@ -269,18 +321,37 @@ document.addEventListener('DOMContentLoaded', function() {
   if (!('IntersectionObserver' in window) && galleryImages.length > 0) {
     galleryImages.forEach(img => {
       if (img.dataset.src) {
-        // Set up error handling for image loading
-        img.onload = () => {
-          img.removeAttribute('data-src');
-          img.classList.add('loaded');
-          img.classList.remove('loading');
+        // Add retry mechanism for image loading
+        let retryCount = 0;
+        const maxRetries = 3;
+        const src = img.dataset.src;
+        
+        const loadImage = () => {
+          // Set up error handling for image loading
+          img.onload = () => {
+            img.removeAttribute('data-src');
+            img.classList.add('loaded');
+            img.classList.remove('loading');
+          };
+          
+          img.onerror = () => {
+            retryCount++;
+            if (retryCount <= maxRetries) {
+              // Retry loading the image after a short delay
+              setTimeout(() => {
+                img.src = src + '?retry=' + retryCount; // Add cache buster
+              }, 500 * retryCount); // Exponential backoff
+            } else {
+              img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjMyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzM0MTU1Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2NjZDU4MSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlByZWxvYWQgRmFpbGVkPC90ZXh0Pjwvc3ZnPg==';
+              img.removeAttribute('data-src');
+              img.classList.remove('loading');
+            }
+          };
+          
+          img.src = src;
         };
-        img.onerror = () => {
-          img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjMyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzM0MTU1Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2NjZDU4MSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlByZWxvYWQgRmFpbGVkPC90ZXh0Pjwvc3ZnPg==';
-          img.removeAttribute('data-src');
-          img.classList.remove('loading');
-        };
-        img.src = img.dataset.src;
+        
+        loadImage();
       }
     });
   }
@@ -297,17 +368,34 @@ document.addEventListener('DOMContentLoaded', function() {
     galleryImages.forEach(img => {
       const preloadImg = new Image();
       preloadImg.src = img.dataset.src;
-      // Also handle errors in preloading
+      
+      // Add retry mechanism for preloading
+      let retryCount = 0;
+      const maxRetries = 3;
+      const src = img.dataset.src;
+      
+      preloadImg.onload = () => {
+        console.log('Preloaded image:', src);
+      };
+      
       preloadImg.onerror = () => {
-        console.warn('Failed to preload image:', img.dataset.src);
+        retryCount++;
+        if (retryCount <= maxRetries) {
+          // Retry preloading the image after a short delay
+          setTimeout(() => {
+            preloadImg.src = src + '?preload-retry=' + retryCount; // Add cache buster
+          }, 1000 * retryCount); // Exponential backoff
+        } else {
+          console.warn('Failed to preload image after retries:', src);
+        }
       };
     });
   }
   
   // Preload all lightbox images after initial page load
   window.addEventListener('load', function() {
-    // Add a small delay to ensure DOM is fully ready
-    setTimeout(preloadImages, 100);
+    // Add a longer delay to ensure DOM is fully ready and network is stable
+    setTimeout(preloadImages, 500);
   });
 });
 
