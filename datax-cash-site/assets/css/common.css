@@ -18,6 +18,8 @@ html {
 .logo {
   height: var(--logo-height);
   width: auto;
+  /* Ensure logo is visible in dark theme */
+  filter: brightness(0) invert(1);
 }
 
 /* Alternative logo sizes for special cases */
@@ -66,6 +68,19 @@ html {
   width: 100%;
   height: auto;
   display: block;
+}
+
+/* Image loading states */
+img.loading {
+  background-color: #1e293b;
+  opacity: 0.7;
+  filter: blur(2px);
+}
+
+img.loaded {
+  opacity: 1;
+  filter: blur(0);
+  transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
 .gallery-item:hover img {

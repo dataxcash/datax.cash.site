@@ -36,28 +36,40 @@ document.addEventListener('click', (e) => {
 // Enhanced lazy loading images using IntersectionObserver with better error handling
 const lazyImages = [].slice.call(document.querySelectorAll('img[data-src]'));
 if ('IntersectionObserver' in window && lazyImages.length > 0) {
+  // Add rootMargin to start loading images before they enter the viewport
+  // Add threshold to trigger when 10% of the image is visible
   const imgObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const img = entry.target;
         const src = img.dataset.src;
         
+        // Set decoding to async for better performance
+        img.decoding = 'async';
+        
         // Set up error handling for image loading
         img.onload = () => {
           img.removeAttribute('data-src');
           img.classList.add('loaded');
+          // Remove loading class when image is loaded
+          img.classList.remove('loading');
         };
         
         img.onerror = () => {
           // Fallback to a placeholder if image fails to load
           img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjMyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIE5vdCBGb3VuZDwvdGV4dD48L3N2Zz4=';
           img.removeAttribute('data-src');
+          // Remove loading class when image fails to load
+          img.classList.remove('loading');
         };
         
         img.src = src;
         observer.unobserve(img);
       }
     });
+  }, {
+    rootMargin: '50px 0px', // Start loading 50px before entering viewport
+    threshold: 0.1 // Trigger when 10% of the image is visible
   });
   
   lazyImages.forEach(img => {
@@ -197,16 +209,23 @@ document.addEventListener('DOMContentLoaded', function() {
         if (entry.isIntersecting) {
           const img = entry.target;
           if (img.dataset.src) {
+            // Set decoding to async for better performance
+            img.decoding = 'async';
+            
             // Set up error handling for image loading
             img.onload = () => {
               img.removeAttribute('data-src');
               img.classList.add('loaded');
+              // Remove loading class when image is loaded
+              img.classList.remove('loading');
             };
             
             img.onerror = () => {
               // Fallback to a placeholder if image fails to load
               img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjMyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzM0MTU1Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2NjZDU4MSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlByZWxvYWQgRmFpbGVkPC90ZXh0Pjwvc3ZnPg==';
               img.removeAttribute('data-src');
+              // Remove loading class when image fails to load
+              img.classList.remove('loading');
             };
             
             img.src = img.dataset.src;
@@ -214,6 +233,9 @@ document.addEventListener('DOMContentLoaded', function() {
           observer.unobserve(img);
         }
       });
+    }, {
+      rootMargin: '100px 0px', // Start loading 100px before entering viewport for gallery images
+      threshold: 0.1 // Trigger when 10% of the image is visible
     });
     
     galleryImages.forEach(img => {

@@ -8,55 +8,123 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="../assets/css/common.css" rel="stylesheet">
-  <style>body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans TC','Microsoft JhengHei'}</style>
+  <style>
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans TC', 'Microsoft JhengHei';
+      background-color: #0f172a;
+      color: #f1f5f9;
+    }
+    
+    .dark-bg {
+      background-color: #0f172a;
+    }
+    
+    .card-bg {
+      background-color: #1e293b;
+    }
+    
+    .accent-blue {
+      color: #3b82f6;
+    }
+    
+    .accent-green {
+      color: #10b981;
+    }
+    
+    .accent-purple {
+      color: #8b5cf6;
+    }
+    
+    .hover-accent-blue:hover {
+      background-color: #3b82f6;
+    }
+    
+    .feature-card {
+      transition: all 0.3s ease;
+      border: 1px solid #334155;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+      border-color: #3b82f6;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25);
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #3b82f6, #60a5fa);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid #475569;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-secondary:hover {
+      background-color: #1e293b;
+      border-color: #94a3b8;
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
-  <header class="bg-white shadow">
+<body class="dark-bg text-slate-100">
+  <header class="bg-slate-900 shadow-lg">
     <div class="container mx-auto px-4 py-4 flex items-center justify-between">
       <div class="flex items-center space-x-3">
         <img src="../assets/images/logo.svg" alt="datax.cash logo" class="logo">
-        <div class="hidden sm:block text-sm text-gray-600">Manage Ur Data, Price Ur Data, Cash Ur Data</div>
+        <div class="hidden sm:block text-sm text-slate-400">管理您的數據，定價您的數據，兌現您的數據</div>
       </div>
       <nav class="hidden md:flex items-center space-x-6">
-        <a href="index.html" class="text-sm">首頁</a>
-        <a href="features.html" class="text-sm font-semibold">功能特色</a>
-        <a href="pricing.html" class="text-sm">價格方案</a>
-        <a href="docs.html" class="text-sm">文檔</a>
-        <a href="../index.html" class="text-sm">EN</a>
+        <a href="index.html" class="text-sm text-slate-300 hover:text-white">首頁</a>
+        <a href="features.html" class="text-sm font-semibold accent-blue">功能特色</a>
+        <a href="pricing.html" class="text-sm text-slate-300 hover:text-white">價格方案</a>
+        <a href="docs.html" class="text-sm text-slate-300 hover:text-white">文檔</a>
+        <a href="../index.html" class="text-sm text-slate-300 hover:text-white">EN</a>
       </nav>
-      <button id="burger" class="md:hidden p-2">
+      <button id="burger" class="md:hidden p-2 text-slate-300">
         <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
       </button>
     </div>
-    <div id="mobileMenu" class="md:hidden hidden">
-      <div class="px-4 pb-4 space-y-2">
-        <a href="index.html" class="block">首頁</a>
-        <a href="features.html" class="block">功能特色</a>
-        <a href="pricing.html" class="block">價格方案</a>
-        <a href="docs.html" class="block">文檔</a>
-        <a href="../index.html" class="block">EN</a>
+    <div id="mobileMenu" class="md:hidden hidden bg-slate-800">
+      <div class="px-4 pb-4 space-y-2 pt-2">
+        <a href="index.html" class="block py-2 text-slate-200">首頁</a>
+        <a href="features.html" class="block py-2 text-slate-200">功能特色</a>
+        <a href="pricing.html" class="block py-2 text-slate-300">價格方案</a>
+        <a href="docs.html" class="block py-2 text-slate-300">文檔</a>
+        <a href="../index.html" class="block py-2 text-slate-300">EN</a>
       </div>
     </div>
   </header>
 
   <main class="container mx-auto px-4 py-12">
-    <section class="text-center mb-12">
-      <h1 class="text-4xl font-bold mb-4">功能特色</h1>
-      <p class="text-lg text-gray-600">探索datax的強大功能，簡化您的數據工具部署和管理</p>
-      <div id="features-hero-download" data-download-component class="mt-6"></div>
+    <section class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-6">
+        <span class="block">功能特色</span>
+      </h1>
+      <p class="mt-6 text-lg md:text-xl text-slate-300 max-w-3xl mx-auto">
+        探索datax的強大功能，簡化您的數據工具部署和管理
+      </p>
+      <div class="mt-10 flex justify-center">
+        <div id="features-hero-download" data-download-component></div>
+      </div>
     </section>
 
-    <section class="grid gap-8 lg:grid-cols-2">
-      <article class="bg-white p-8 rounded-lg shadow-sm">
-        <div class="text-4xl mb-4">🐳</div>
-        <h2 class="text-xl font-semibold mb-3">Docker應用商店</h2>
-        <p class="text-gray-600 mb-6">一鍵瀏覽和部署預配置的數據工具：</p>
+    <section class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <article class="feature-card card-bg p-8 rounded-xl">
+        <div class="text-4xl mb-6 accent-blue">🐳</div>
+        <h2 class="text-xl font-bold mb-4">Docker應用商店</h2>
+        <p class="text-slate-400 mb-6">一鍵瀏覽和部署預配置的數據工具：</p>
         
-        <div class="grid gap-4 sm:grid-cols-1 lg:grid-cols-2 text-sm">
+        <div class="grid gap-4 text-sm">
           <div class="space-y-3">
             <div>
-              <h4 class="font-semibold text-gray-800 mb-2">🗄️ 數據庫</h4>
-              <ul class="text-gray-600 space-y-1 ml-4">
+              <h4 class="font-semibold text-slate-200 mb-2">🗄️ 數據庫</h4>
+              <ul class="text-slate-400 space-y-1 ml-4">
                 <li>• PostgreSQL 🐘</li>
                 <li>• MySQL 🐬</li>
                 <li>• Oracle Database 🔶</li>
@@ -65,8 +133,8 @@
             </div>
             
             <div>
-              <h4 class="font-semibold text-gray-800 mb-2">🛠️ 管理工具</h4>
-              <ul class="text-gray-600 space-y-1 ml-4">
+              <h4 class="font-semibold text-slate-200 mb-2">🛠️ 管理工具</h4>
+              <ul class="text-slate-400 space-y-1 ml-4">
                 <li>• pgAdmin</li>
                 <li>• MySQL Client 💻</li>
               </ul>
@@ -75,8 +143,8 @@
           
           <div class="space-y-3">
             <div>
-              <h4 class="font-semibold text-gray-800 mb-2">⚙️ DATAX工具</h4>
-              <ul class="text-gray-600 space-y-1 ml-4">
+              <h4 class="font-semibold text-slate-200 mb-2">⚙️ DATAX工具</h4>
+              <ul class="text-slate-400 space-y-1 ml-4">
                 <li>• X0 診斷工具 🔍</li>
                 <li>• X1 仿真工具 🎯</li>
                 <li>• M3 遷移工具 📦</li>
@@ -86,16 +154,16 @@
             </div>
             
             <div>
-              <h4 class="font-semibold text-gray-800 mb-2">🔐 許可證工具</h4>
-              <ul class="text-gray-600 space-y-1 ml-4">
+              <h4 class="font-semibold text-slate-200 mb-2">🔐 許可證工具</h4>
+              <ul class="text-slate-400 space-y-1 ml-4">
                 <li>• 許可證控制服務器</li>
                 <li>• 許可證看門狗 🐕</li>
               </ul>
             </div>
             
             <div>
-              <h4 class="font-semibold text-gray-800 mb-2">🎨 自定義應用</h4>
-              <ul class="text-gray-600 space-y-1 ml-4">
+              <h4 class="font-semibold text-slate-200 mb-2">🎨 自定義應用</h4>
+              <ul class="text-slate-400 space-y-1 ml-4">
                 <li>• 用戶自定義應用程式</li>
               </ul>
             </div>
@@ -103,80 +171,157 @@
         </div>
       </article>
 
-      <article class="bg-white p-8 rounded-lg shadow-sm">
-        <div class="text-4xl mb-4">🖥️</div>
-        <h2 class="text-xl font-semibold mb-3">多主機管理</h2>
-        <p class="text-gray-600 mb-4">從單一桌面界面管理多個遠程服務器：</p>
-        <ul class="text-sm text-gray-600 space-y-2">
-          <li>• <strong>SSH連接管理：</strong>安全連接到遠程主機</li>
-          <li>• <strong>統一控制面板：</strong>集中管理所有部署</li>
-          <li>• <strong>實時監控：</strong>監控應用程式狀態和性能</li>
-          <li>• <strong>批量操作：</strong>同時在多個主機上執行操作</li>
-          <li>• <strong>配置同步：</strong>在不同環境間同步配置</li>
+      <article class="feature-card card-bg p-8 rounded-xl">
+        <div class="text-4xl mb-6 accent-green">🖥️</div>
+        <h2 class="text-xl font-bold mb-4">多主機管理</h2>
+        <p class="text-slate-400 mb-4">從單一桌面界面管理多個遠程服務器：</p>
+        <ul class="text-sm text-slate-400 space-y-2">
+          <li class="flex items-start">
+            <span class="text-green-400 mr-2">✓</span>
+            <span><strong>SSH連接管理：</strong>安全連接到遠程主機</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-400 mr-2">✓</span>
+            <span><strong>統一控制面板：</strong>集中管理所有部署</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-400 mr-2">✓</span>
+            <span><strong>實時監控：</strong>監控應用程式狀態和性能</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-400 mr-2">✓</span>
+            <span><strong>批量操作：</strong>同時在多個主機上執行操作</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-400 mr-2">✓</span>
+            <span><strong>配置同步：</strong>在不同環境間同步配置</span>
+          </li>
         </ul>
       </article>
 
-      <article class="bg-white p-8 rounded-lg shadow-sm">
-        <div class="text-4xl mb-4">⚡</div>
-        <h2 class="text-xl font-semibold mb-3">一鍵部署</h2>
-        <p class="text-gray-600 mb-4">簡化的部署流程，節省時間和精力：</p>
-        <ul class="text-sm text-gray-600 space-y-2">
-          <li>• <strong>預配置模板：</strong>開箱即用的應用程式配置</li>
-          <li>• <strong>自動化設置：</strong>自動處理依賴項和配置</li>
-          <li>• <strong>版本管理：</strong>支持多個應用程式版本</li>
-          <li>• <strong>回滾功能：</strong>快速回滾到之前的版本</li>
-          <li>• <strong>健康檢查：</strong>自動驗證部署狀態</li>
+      <article class="feature-card card-bg p-8 rounded-xl">
+        <div class="text-4xl mb-6 accent-purple">⚡</div>
+        <h2 class="text-xl font-bold mb-4">一鍵部署</h2>
+        <p class="text-slate-400 mb-4">簡化的部署流程，節省時間和精力：</p>
+        <ul class="text-sm text-slate-400 space-y-2">
+          <li class="flex items-start">
+            <span class="text-purple-400 mr-2">✓</span>
+            <span><strong>預配置模板：</strong>開箱即用的應用程式配置</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-purple-400 mr-2">✓</span>
+            <span><strong>自動化設置：</strong>自動處理依賴項和配置</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-purple-400 mr-2">✓</span>
+            <span><strong>版本管理：</strong>支持多個應用程式版本</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-purple-400 mr-2">✓</span>
+            <span><strong>回滾功能：</strong>快速回滾到之前的版本</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-purple-400 mr-2">✓</span>
+            <span><strong>健康檢查：</strong>自動驗證部署狀態</span>
+          </li>
         </ul>
       </article>
 
-      <article class="bg-white p-8 rounded-lg shadow-sm">
-        <div class="text-4xl mb-4">🔒</div>
-        <h2 class="text-xl font-semibold mb-3">安全與控制</h2>
-        <p class="text-gray-600 mb-4">企業級安全功能，保護您的數據和基礎設施：</p>
-        <ul class="text-sm text-gray-600 space-y-2">
-          <li>• <strong>SSH密鑰管理：</strong>安全的身份驗證機制</li>
-          <li>• <strong>訪問控制：</strong>細粒度的權限管理</li>
-          <li>• <strong>審計日誌：</strong>完整的操作記錄</li>
-          <li>• <strong>網絡隔離：</strong>安全的容器網絡配置</li>
-          <li>• <strong>數據加密：</strong>傳輸和存儲數據加密</li>
+      <article class="feature-card card-bg p-8 rounded-xl">
+        <div class="text-4xl mb-6" style="color: #f59e0b;">🔒</div>
+        <h2 class="text-xl font-bold mb-4">安全與控制</h2>
+        <p class="text-slate-400 mb-4">企業級安全功能，保護您的數據和基礎設施：</p>
+        <ul class="text-sm text-slate-400 space-y-2">
+          <li class="flex items-start">
+            <span class="text-amber-400 mr-2">✓</span>
+            <span><strong>SSH密鑰管理：</strong>安全的身份驗證機制</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-amber-400 mr-2">✓</span>
+            <span><strong>訪問控制：</strong>細粒度的權限管理</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-amber-400 mr-2">✓</span>
+            <span><strong>審計日誌：</strong>完整的操作記錄</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-amber-400 mr-2">✓</span>
+            <span><strong>網絡隔離：</strong>安全的容器網絡配置</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-amber-400 mr-2">✓</span>
+            <span><strong>數據加密：</strong>傳輸和存儲數據加密</span>
+          </li>
         </ul>
       </article>
 
-      <article class="bg-white p-8 rounded-lg shadow-sm">
-        <div class="text-4xl mb-4">📊</div>
-        <h2 class="text-xl font-semibold mb-3">監控與分析</h2>
-        <p class="text-gray-600 mb-4">全面的監控和分析功能：</p>
-        <ul class="text-sm text-gray-600 space-y-2">
-          <li>• <strong>實時指標：</strong>CPU、內存、磁盤使用情況</li>
-          <li>• <strong>性能分析：</strong>應用程式性能監控</li>
-          <li>• <strong>日誌聚合：</strong>集中化日誌管理</li>
-          <li>• <strong>告警系統：</strong>自動故障檢測和通知</li>
-          <li>• <strong>報告生成：</strong>定期性能和使用報告</li>
+      <article class="feature-card card-bg p-8 rounded-xl">
+        <div class="text-4xl mb-6" style="color: #ec4899;">📊</div>
+        <h2 class="text-xl font-bold mb-4">監控與分析</h2>
+        <p class="text-slate-400 mb-4">全面的監控和分析功能：</p>
+        <ul class="text-sm text-slate-400 space-y-2">
+          <li class="flex items-start">
+            <span class="text-pink-400 mr-2">✓</span>
+            <span><strong>實時指標：</strong>CPU、內存、磁盤使用情況</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-pink-400 mr-2">✓</span>
+            <span><strong>性能分析：</strong>應用程式性能監控</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-pink-400 mr-2">✓</span>
+            <span><strong>日誌聚合：</strong>集中化日誌管理</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-pink-400 mr-2">✓</span>
+            <span><strong>告警系統：</strong>自動故障檢測和通知</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-pink-400 mr-2">✓</span>
+            <span><strong>報告生成：</strong>定期性能和使用報告</span>
+          </li>
         </ul>
       </article>
 
-      <article class="bg-white p-8 rounded-lg shadow-sm">
-        <div class="text-4xl mb-4">🎯</div>
-        <h2 class="text-xl font-semibold mb-3">用戶體驗</h2>
-        <p class="text-gray-600 mb-4">直觀易用的界面設計：</p>
-        <ul class="text-sm text-gray-600 space-y-2">
-          <li>• <strong>現代化界面：</strong>清潔、直觀的用戶界面</li>
-          <li>• <strong>跨平台支援：</strong>Windows、macOS、Linux</li>
-          <li>• <strong>無需註冊：</strong>下載即可使用</li>
-          <li>• <strong>離線工作：</strong>本地管理功能</li>
-          <li>• <strong>快速搜索：</strong>快速找到所需的工具和配置</li>
+      <article class="feature-card card-bg p-8 rounded-xl">
+        <div class="text-4xl mb-6" style="color: #8b5cf6;">🎯</div>
+        <h2 class="text-xl font-bold mb-4">用戶體驗</h2>
+        <p class="text-slate-400 mb-4">直觀易用的界面設計：</p>
+        <ul class="text-sm text-slate-400 space-y-2">
+          <li class="flex items-start">
+            <span class="text-purple-400 mr-2">✓</span>
+            <span><strong>現代化界面：</strong>清潔、直觀的用戶界面</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-purple-400 mr-2">✓</span>
+            <span><strong>跨平台支援：</strong>Windows、macOS、Linux</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-purple-400 mr-2">✓</span>
+            <span><strong>無需註冊：</strong>下載即可使用</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-purple-400 mr-2">✓</span>
+            <span><strong>離線工作：</strong>本地管理功能</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-purple-400 mr-2">✓</span>
+            <span><strong>快速搜索：</strong>快速找到所需的工具和配置</span>
+          </li>
         </ul>
       </article>
     </section>
 
-    <section class="mt-16 bg-blue-50 rounded-lg p-8 text-center">
-      <h2 class="text-2xl font-bold mb-4">準備開始了嗎？</h2>
-      <p class="text-gray-600 mb-6">立即下載datax，體驗強大的數據工具部署平台</p>
+    <section class="mt-20 card-bg rounded-2xl p-10 text-center">
+      <h2 class="text-3xl font-bold mb-4">準備開始了嗎？</h2>
+      <p class="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
+        立即下載datax，體驗強大的數據工具部署平台
+      </p>
       <div id="features-download-section" data-download-component></div>
     </section>
   </main>
 
-  <footer class="bg-white border-t py-6 mt-12" data-footer-component data-lang="zh-tw"></footer>
+  <footer class="bg-slate-900 border-t border-slate-800 py-8 mt-16" data-footer-component data-lang="zh-tw"></footer>
 
   <script src="../assets/js/main.js"></script>
   <script src="../assets/js/download-component.js"></script>

@@ -8,58 +8,151 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="../assets/css/common.css" rel="stylesheet">
-  <style>body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans TC','Microsoft JhengHei'}</style>
+  <style>
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans TC', 'Microsoft JhengHei';
+      background-color: #0f172a;
+      color: #f1f5f9;
+    }
+    
+    .dark-bg {
+      background-color: #0f172a;
+    }
+    
+    .card-bg {
+      background-color: #1e293b;
+    }
+    
+    .accent-blue {
+      color: #3b82f6;
+    }
+    
+    .accent-green {
+      color: #10b981;
+    }
+    
+    .accent-purple {
+      color: #8b5cf6;
+    }
+    
+    .hover-accent-blue:hover {
+      background-color: #3b82f6;
+    }
+    
+    .feature-card {
+      transition: all 0.3s ease;
+      border: 1px solid #334155;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+      border-color: #3b82f6;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25);
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #3b82f6, #60a5fa);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid #475569;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-secondary:hover {
+      background-color: #1e293b;
+      border-color: #94a3b8;
+    }
+    
+    /* 文档侧边栏样式 */
+    .docs-sidebar {
+      position: sticky;
+      top: 1rem;
+    }
+    
+    .docs-sidebar nav {
+      max-height: calc(100vh - 2rem);
+      overflow-y: auto;
+    }
+    
+    /* 自定义滚动条 */
+    .docs-sidebar nav::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    .docs-sidebar nav::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+    
+    .docs-sidebar nav::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 3px;
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
-  <header class="bg-white shadow">
+<body class="dark-bg text-slate-100">
+  <header class="bg-slate-900 shadow-lg">
     <div class="container mx-auto px-4 py-4 flex items-center justify-between">
       <div class="flex items-center space-x-3">
         <img src="../assets/images/logo.svg" alt="datax.cash logo" class="logo">
-        <div class="hidden sm:block text-sm text-gray-600">Manage Ur Data, Price Ur Data, Cash Ur Data</div>
+        <div class="hidden sm:block text-sm text-slate-400">管理您的數據，定價您的數據，兌現您的數據</div>
       </div>
       <nav class="hidden md:flex items-center space-x-6">
-        <a href="index.html" class="text-sm">首頁</a>
-        <a href="features.html" class="text-sm">功能特色</a>
-        <a href="pricing.html" class="text-sm">價格方案</a>
-        <a href="docs.html" class="text-sm font-semibold">文檔</a>
-        <a href="../index.html" class="text-sm">EN</a>
+        <a href="index.html" class="text-sm text-slate-300 hover:text-white">首頁</a>
+        <a href="features.html" class="text-sm text-slate-300 hover:text-white">功能特色</a>
+        <a href="pricing.html" class="text-sm text-slate-300 hover:text-white">價格方案</a>
+        <a href="docs.html" class="text-sm font-semibold accent-blue">文檔</a>
+        <a href="../index.html" class="text-sm text-slate-300 hover:text-white">EN</a>
       </nav>
-      <button id="burger" class="md:hidden p-2">
+      <button id="burger" class="md:hidden p-2 text-slate-300">
         <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
       </button>
     </div>
-    <div id="mobileMenu" class="md:hidden hidden">
-      <div class="px-4 pb-4 space-y-2">
-        <a href="index.html" class="block">首頁</a>
-        <a href="features.html" class="block">功能特色</a>
-        <a href="pricing.html" class="block">價格方案</a>
-        <a href="docs.html" class="block">文檔</a>
-        <a href="../index.html" class="block">EN</a>
+    <div id="mobileMenu" class="md:hidden hidden bg-slate-800">
+      <div class="px-4 pb-4 space-y-2 pt-2">
+        <a href="index.html" class="block py-2 text-slate-200">首頁</a>
+        <a href="features.html" class="block py-2 text-slate-300">功能特色</a>
+        <a href="pricing.html" class="block py-2 text-slate-300">價格方案</a>
+        <a href="docs.html" class="block py-2 text-slate-200">文檔</a>
+        <a href="../index.html" class="block py-2 text-slate-300">EN</a>
       </div>
     </div>
   </header>
 
   <main class="container mx-auto px-4 py-12">
-    <section class="text-center mb-12">
-      <h1 class="text-4xl font-bold mb-4">文檔</h1>
-      <p class="text-lg text-gray-600">學習如何使用datax部署和管理您的數據工具</p>
-      <div id="docs-hero-download" data-download-component class="mt-6"></div>
+    <section class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-6">
+        <span class="block">文檔</span>
+      </h1>
+      <p class="mt-6 text-lg md:text-xl text-slate-300 max-w-3xl mx-auto">
+        學習如何使用datax部署和管理您的數據工具
+      </p>
+      <div class="mt-10 flex justify-center">
+        <div id="docs-hero-download" data-download-component></div>
+      </div>
     </section>
 
     <div class="grid gap-8 lg:grid-cols-4">
       <!-- 側邊欄導航 -->
       <aside class="lg:col-span-1">
-        <nav class="bg-white rounded-lg shadow-sm p-6 sticky top-6">
-          <h2 class="font-semibold mb-4">目錄</h2>
+        <nav class="card-bg rounded-xl p-6 docs-sidebar">
+          <h2 class="font-semibold mb-4 text-slate-200">目錄</h2>
           <ul class="space-y-2 text-sm">
-            <li><a href="#getting-started" class="text-blue-600 hover:underline">快速開始</a></li>
-            <li><a href="#installation" class="text-blue-600 hover:underline">安裝指南</a></li>
-            <li><a href="#app-store" class="text-blue-600 hover:underline">應用商店</a></li>
-            <li><a href="#host-management" class="text-blue-600 hover:underline">主機管理</a></li>
-            <li><a href="#deployment" class="text-blue-600 hover:underline">部署應用</a></li>
-            <li><a href="#monitoring" class="text-blue-600 hover:underline">監控管理</a></li>
-            <li><a href="#troubleshooting" class="text-blue-600 hover:underline">故障排除</a></li>
-            <li><a href="#faq" class="text-blue-600 hover:underline">常見問題</a></li>
+            <li><a href="#getting-started" class="text-blue-400 hover:underline">快速開始</a></li>
+            <li><a href="#installation" class="text-blue-400 hover:underline">安裝指南</a></li>
+            <li><a href="#app-store" class="text-blue-400 hover:underline">應用商店</a></li>
+            <li><a href="#host-management" class="text-blue-400 hover:underline">主機管理</a></li>
+            <li><a href="#deployment" class="text-blue-400 hover:underline">部署應用</a></li>
+            <li><a href="#monitoring" class="text-blue-400 hover:underline">監控管理</a></li>
+            <li><a href="#troubleshooting" class="text-blue-400 hover:underline">故障排除</a></li>
+            <li><a href="#faq" class="text-blue-400 hover:underline">常見問題</a></li>
           </ul>
         </nav>
       </aside>
@@ -69,24 +162,24 @@
         
         <!-- 快速開始 -->
         <section id="getting-started">
-          <div class="bg-white rounded-lg shadow-sm p-6">
+          <div class="card-bg rounded-xl p-6">
             <h2 class="text-2xl font-bold mb-4">🚀 快速開始</h2>
-            <p class="text-gray-600 mb-4">歡迎使用datax！這個快速指南將幫助您在幾分鐘內開始使用。</p>
+            <p class="text-slate-400 mb-4">歡迎使用datax！這個快速指南將幫助您在幾分鐘內開始使用。</p>
             
             <div class="space-y-4">
               <div class="border-l-4 border-blue-500 pl-4">
-                <h3 class="font-semibold">第1步：下載和安裝</h3>
-                <p class="text-sm text-gray-600">從官網下載適合您操作系統的datax安裝包</p>
+                <h3 class="font-semibold text-slate-200">第1步：下載和安裝</h3>
+                <p class="text-sm text-slate-400">從官網下載適合您操作系統的datax安裝包</p>
               </div>
               
               <div class="border-l-4 border-blue-500 pl-4">
-                <h3 class="font-semibold">第2步：添加主機</h3>
-                <p class="text-sm text-gray-600">配置SSH連接到您的遠程服務器</p>
+                <h3 class="font-semibold text-slate-200">第2步：添加主機</h3>
+                <p class="text-sm text-slate-400">配置SSH連接到您的遠程服務器</p>
               </div>
               
               <div class="border-l-4 border-blue-500 pl-4">
-                <h3 class="font-semibold">第3步：部署應用</h3>
-                <p class="text-sm text-gray-600">從應用商店選擇並部署您需要的數據工具</p>
+                <h3 class="font-semibold text-slate-200">第3步：部署應用</h3>
+                <p class="text-sm text-slate-400">從應用商店選擇並部署您需要的數據工具</p>
               </div>
             </div>
           </div>
@@ -94,14 +187,14 @@
 
         <!-- 安裝指南 -->
         <section id="installation">
-          <div class="bg-white rounded-lg shadow-sm p-6">
+          <div class="card-bg rounded-xl p-6">
             <h2 class="text-2xl font-bold mb-4">💻 安裝指南</h2>
             
-            <h3 class="font-semibold mb-3">安裝步驟</h3>
+            <h3 class="font-semibold mb-3 text-slate-200">安裝步驟</h3>
             <div class="grid gap-6 md:grid-cols-3 mt-4">
-              <div class="border rounded-lg p-4">
-                <h4 class="font-semibold mb-2">🪟 Windows</h4>
-                <ol class="text-sm text-gray-600 space-y-1">
+              <div class="border rounded-lg p-4 border-slate-600">
+                <h4 class="font-semibold mb-2 text-slate-200">🪟 Windows</h4>
+                <ol class="text-sm text-slate-400 space-y-1">
                   <li>1. 下載 datax-windows.exe</li>
                   <li>2. 以管理員身份運行安裝程式</li>
                   <li>3. 按照安裝嚮導完成安裝</li>
@@ -109,9 +202,9 @@
                 </ol>
               </div>
               
-              <div class="border rounded-lg p-4">
-                <h4 class="font-semibold mb-2">🍎 macOS</h4>
-                <ol class="text-sm text-gray-600 space-y-1">
+              <div class="border rounded-lg p-4 border-slate-600">
+                <h4 class="font-semibold mb-2 text-slate-200">🍎 macOS</h4>
+                <ol class="text-sm text-slate-400 space-y-1">
                   <li>1. 下載 datax-macos.dmg</li>
                   <li>2. 雙擊打開DMG文件</li>
                   <li>3. 將datax拖拽到Applications文件夾</li>
@@ -119,9 +212,9 @@
                 </ol>
               </div>
               
-              <div class="border rounded-lg p-4">
-                <h3 class="font-semibold mb-2">🐧 Linux</h3>
-                <ol class="text-sm text-gray-600 space-y-1">
+              <div class="border rounded-lg p-4 border-slate-600">
+                <h4 class="font-semibold mb-2 text-slate-200">🐧 Linux</h4>
+                <ol class="text-sm text-slate-400 space-y-1">
                   <li>1. 下載 datax-linux.AppImage</li>
                   <li>2. 添加執行權限：chmod +x datax-linux.AppImage</li>
                   <li>3. 雙擊運行或使用終端：./datax-linux.AppImage</li>
@@ -130,9 +223,9 @@
               </div>
             </div>
 
-            <div class="mt-6 p-4 bg-yellow-50 rounded-lg">
-              <h4 class="font-semibold mb-2">系統要求</h4>
-              <ul class="text-sm text-gray-600 space-y-1">
+            <div class="mt-6 p-4 bg-amber-900/20 rounded-lg border border-amber-800/50">
+              <h4 class="font-semibold mb-2 text-amber-200">系統要求</h4>
+              <ul class="text-sm text-amber-100 space-y-1">
                 <li>• <strong>操作系統：</strong>Windows 10+、macOS 10.14+、Linux (Ubuntu 18.04+)</li>
                 <li>• <strong>內存：</strong>最少4GB RAM，推薦8GB+</li>
                 <li>• <strong>存儲：</strong>最少1GB可用空間</li>
@@ -144,14 +237,15 @@
 
         <!-- 應用商店 -->
         <section id="app-store">
-          <div class="bg-white rounded-lg shadow-sm p-6">
-            <h3 class="font-semibold mb-3">使用應用商店</h3>
-            <p class="text-gray-600 mb-4">datax包含精心策劃的預配置數據工具集合：</p>
+          <div class="card-bg rounded-xl p-6">
+            <h2 class="text-2xl font-bold mb-4">🏪 應用商店</h2>
+            <h3 class="font-semibold mb-3 text-slate-200">使用應用商店</h3>
+            <p class="text-slate-400 mb-4">datax包含精心策劃的預配置數據工具集合：</p>
             
             <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-6">
-              <div class="p-4 bg-gray-50 rounded-lg">
-                <h4 class="font-semibold mb-3 text-gray-800">🗄️ 數據庫</h4>
-                <ul class="text-sm text-gray-600 space-y-1">
+              <div class="p-4 bg-slate-800 rounded-lg">
+                <h4 class="font-semibold mb-3 text-slate-200">🗄️ 數據庫</h4>
+                <ul class="text-sm text-slate-400 space-y-1">
                   <li>• PostgreSQL 🐘</li>
                   <li>• MySQL 🐬</li>
                   <li>• Oracle Database 🔶</li>
@@ -159,17 +253,17 @@
                 </ul>
               </div>
               
-              <div class="p-4 bg-gray-50 rounded-lg">
-                <h4 class="font-semibold mb-3 text-gray-800">🛠️ 管理工具</h4>
-                <ul class="text-sm text-gray-600 space-y-1">
+              <div class="p-4 bg-slate-800 rounded-lg">
+                <h4 class="font-semibold mb-3 text-slate-200">🛠️ 管理工具</h4>
+                <ul class="text-sm text-slate-400 space-y-1">
                   <li>• pgAdmin</li>
                   <li>• MySQL Client 💻</li>
                 </ul>
               </div>
               
-              <div class="p-4 bg-gray-50 rounded-lg">
-                <h4 class="font-semibold mb-3 text-gray-800">⚙️ DATAX工具</h4>
-                <ul class="text-sm text-gray-600 space-y-1">
+              <div class="p-4 bg-slate-800 rounded-lg">
+                <h4 class="font-semibold mb-3 text-slate-200">⚙️ DATAX工具</h4>
+                <ul class="text-sm text-slate-400 space-y-1">
                   <li>• X0 診斷工具 🔍</li>
                   <li>• X1 仿真工具 🎯</li>
                   <li>• M3 遷移工具 📦</li>
@@ -178,32 +272,31 @@
                 </ul>
               </div>
               
-              <div class="p-4 bg-gray-50 rounded-lg">
-                <h4 class="font-semibold mb-3 text-gray-800">🔐 許可證工具</h4>
-                <ul class="text-sm text-gray-600 space-y-1">
+              <div class="p-4 bg-slate-800 rounded-lg">
+                <h4 class="font-semibold mb-3 text-slate-200">🔐 許可證工具</h4>
+                <ul class="text-sm text-slate-400 space-y-1">
                   <li>• 許可證控制服務器</li>
                   <li>• 許可證看門狗 🐕</li>
                 </ul>
               </div>
               
-              <div class="p-4 bg-gray-50 rounded-lg">
-                <h4 class="font-semibold mb-3 text-gray-800">🎨 自定義應用</h4>
-                <ul class="text-sm text-gray-600 space-y-1">
+              <div class="p-4 bg-slate-800 rounded-lg">
+                <h4 class="font-semibold mb-3 text-slate-200">🎨 自定義應用</h4>
+                <ul class="text-sm text-slate-400 space-y-1">
                   <li>• 用戶自定義應用程式</li>
                   <li>• 自定義Docker鏡像</li>
                 </ul>
               </div>
             </div>
 
-            <div class="p-4 bg-blue-50 rounded-lg">
-              <h4 class="font-semibold mb-2">如何使用應用商店</h4>
-              <ol class="text-sm text-gray-600 space-y-1">
-                <li>1. 在datax主界面點擊"應用商店"</li>
-                <li>2. 瀏覽可用的應用程式和工具</li>
-                <li>3. 點擊應用程式查看詳細信息和版本</li>
-                <li>4. 選擇目標主機和配置選項</li>
-                <li>5. 點擊"部署"開始安裝過程</li>
-              </ol>
+            <div class="p-4 bg-blue-900/20 rounded-lg border border-blue-800/50">
+              <h4 class="font-semibold mb-2 text-blue-200">如何使用應用商店</h4>
+              <ul class="text-sm text-blue-100 space-y-1">
+                <li>• <strong>瀏覽應用：</strong>查看所有可用的預配置數據工具</li>
+                <li>• <strong>查看詳情：</strong>點擊應用查看詳細信息、版本和支持的配置選項</li>
+                <li>• <strong>部署應用：</strong>選擇目標主機並配置參數後開始部署</li>
+                <li>• <strong>管理實例：</strong>查看部署狀態、訪問日誌和管理應用實例</li>
+              </ul>
             </div>
           </div>
         </section>
